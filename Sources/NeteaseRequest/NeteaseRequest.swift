@@ -28,6 +28,8 @@ enum NoCookieSession {
 enum NeteaseRequest {
     
     enum EndPoint {
+        static let cellPhoneLogin = "https://wknetesae.vercel.app/login/cellphone"
+        static let accountInfo = "https://wknetesae.vercel.app/user/account"
         static let newsong = "https://wknetesae.vercel.app/personalized/newsong?limit=10"
     }
     
@@ -72,7 +74,7 @@ enum NeteaseRequest {
                             url: URLConvertible,
                             parameters: Parameters = [:],
                             headers: [String: String]? = nil,
-                            dataObj: String = "data",
+                            dataObj: String? = nil,
                             noCookie: Bool = false,
                             complete: ((Result<JSON, RequestError>) -> Void)? = nil)
     {
@@ -87,9 +89,13 @@ enum NeteaseRequest {
                     complete?(.failure(.statusFail(code: errorCode, message: message)))
                     return
                 }
-                let dataj = json[dataObj]
-                print("\(url) response: \(json)")
-                complete?(.success(dataj))
+                if let tempDataObj = dataObj {
+                    let dataj = json[tempDataObj]
+                    print("\(url) response: \(json)")
+                    complete?(.success(dataj))
+                } else {
+                    complete?(.success(json))
+                }
             case let .failure(err):
                 complete?(.failure(err))
             }
@@ -101,7 +107,7 @@ enum NeteaseRequest {
                                       parameters: Parameters = [:],
                                       headers: [String: String]? = nil,
                                       decoder: JSONDecoder? = nil,
-                                      dataObj: String = "data",
+                                      dataObj: String? = nil,
                                       noCookie: Bool = false,
                                       complete: ((Result<T, RequestError>) -> Void)?)
     {
@@ -140,7 +146,7 @@ enum NeteaseRequest {
                                       headers: [String: String]? = nil,
                                       decoder: JSONDecoder? = nil,
                                       noCookie: Bool = false,
-                                      dataObj: String = "data") async throws -> T
+                                      dataObj: String? = nil) async throws -> T
     {
         return try await withCheckedThrowingContinuation { configure in
             request(method: method, url: url, parameters: parameters, headers: headers, decoder: decoder, dataObj: dataObj, noCookie: noCookie) {
