@@ -30,6 +30,10 @@ enum NeteaseRequest {
     enum EndPoint {
         static let cellPhoneLogin = "https://wknetesae.vercel.app/login/cellphone"
         static let accountInfo = "https://wknetesae.vercel.app/user/account"
+        static let userSubcount = "https://wknetesae.vercel.app/user/subcount"
+        static let userLevelInfo = "https://wknetesae.vercel.app/user/level"
+        static let userFollows = "https://wknetesae.vercel.app/user/follows"
+        static let userFolloweds = "https://wknetesae.vercel.app/user/followeds"
         static let newsong = "https://wknetesae.vercel.app/personalized/newsong?limit=10"
     }
     
@@ -49,8 +53,8 @@ enum NeteaseRequest {
             session = NoCookieSession.session
             session.sessionConfiguration.httpShouldSetCookies = false
         }
-        session.sessionConfiguration.timeoutIntervalForResource = 10
-        session.sessionConfiguration.timeoutIntervalForRequest = 10
+        session.sessionConfiguration.timeoutIntervalForResource = 30
+        session.sessionConfiguration.timeoutIntervalForRequest = 30
         session.request(url,
                         method: method,
                         parameters: parameters,
