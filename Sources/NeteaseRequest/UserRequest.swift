@@ -25,9 +25,16 @@ struct NRProfileModel: Codable {
     let avatarImgId: Int
     let avatarUrl: String
     let backgroundUrl: String
-    let birthday: Date?
+    let birthday: TimeInterval?
     let gender: Int
     let vipType: Int
+    
+    var birthd: String {
+        let date = Date(timeIntervalSince1970: (birthday ?? TimeInterval()) / 1000)
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "yyyy-MM-dd"
+        return dateformatter.string(from: date)
+    }
 }
 
 struct NRUserSubcountModel: Codable {
@@ -77,8 +84,8 @@ func cellPhoneLogin(phone: String, password: String) async throws -> CellPhoneMo
 /// 获取账号信息
 func fetchAccountInfo(cookie: String) async throws -> NRProfileModel {
 //    let cookie: String = UserDefaults.standard.value(forKey: "cookie") as! String
-//    let decoder = JSONDecoder()
-//    decoder.dateDecodingStrategy = .formatted(DateFormatter.myDateFormatter)
+    let decoder = JSONDecoder()
+    decoder.dateDecodingStrategy = .formatted(DateFormatter.myDateFormatter)
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.accountInfo,
                                             parameters: ["cookie": cookie],
 //                                            decoder: decoder,
@@ -120,4 +127,5 @@ extension DateFormatter {
         formatter.locale = Locale(identifier: "zh_Hans_CN")
         return formatter
     }()
+    
 }

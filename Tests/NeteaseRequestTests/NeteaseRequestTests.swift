@@ -26,7 +26,7 @@ final class NeteaseRequestTests: XCTestCase {
 
         do {
             let profileModel: NRProfileModel = try await fetchAccountInfo(cookie: cookie)
-            print("profileInfo ==== \(profileModel.birthday ?? Date())")
+            print("profileInfo ==== \(profileModel.birthd)")
         } catch  {
             print(error);
         }
