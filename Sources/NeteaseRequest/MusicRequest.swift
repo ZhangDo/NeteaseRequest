@@ -18,6 +18,33 @@ enum AreaType: Int {
     case western = 96 // 欧美
 }
 
+enum Order: String {
+    ///热门
+    case hot = "hot"
+    ///时间
+    case time = "time"
+    
+}
+
+enum SongLevel: String, Codable {
+    ///标准
+    case standard = "standard"
+    ///较高
+    case higher = "higher"
+    ///极高
+    case exhigh = "exhigh"
+    ///无损
+    case lossless = "lossless"
+    ///Hi-Res
+    case hires = "hires"
+    ///高清环绕声
+    case jyeffect = "jyeffect"
+    ///沉浸环绕声
+    case sky = "sky"
+    ///超清母带
+    case jymaster = "jymaster"
+    
+}
 
 struct ArtistModel: Codable {
     let accountId: Int?
@@ -31,10 +58,14 @@ struct ArtistModel: Codable {
     let musicSize: Int
     let picUrl: String?
     let trans: String?
-
 }
 
-
+struct SongModel: Codable {
+    let name: String
+    let id: Int
+    let publishTime: TimeInterval
+    let level: SongLevel?
+}
 
 
 ///获取歌手分类列表
@@ -46,4 +77,12 @@ struct ArtistModel: Codable {
 /// - Returns: [ArtistModel]
 func fetchArtistList(type: SingerType = .allSinger, area: AreaType = .allArea, initial: String? = nil, limit: Int = 30) async throws -> [ArtistModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistList, parameters: ["type": type.rawValue, "area": area.rawValue, "limit": limit, "initial": initial ?? ""], dataObj: "artists")
+}
+/// 获取歌手热门 50 首歌曲
+/// - Parameters:
+///  - id: 歌手 id
+/// - Returns: [SongModel]
+
+func fetchTopSongs(singerId: Int) async throws -> [SongModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.topSong, parameters: ["id": singerId], dataObj: "songs")
 }

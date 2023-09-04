@@ -75,6 +75,17 @@ final class NeteaseRequestTests: XCTestCase {
         } catch {
             print(error)
         }
+        
+        
+        do {
+            let songModel: [SongModel] = try await fetchTopSongs(singerId: 31211)
+            let name: [String] = songModel.map { model in
+                return model.name
+            }
+            print("song ==== \(name)")
+        } catch {
+            print(error)
+        }
 
         
     }
