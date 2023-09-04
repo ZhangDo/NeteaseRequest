@@ -67,6 +67,25 @@ struct SongModel: Codable {
     let level: SongLevel?
 }
 
+struct AudioUrlModel: Codable {
+    let id: Int
+    let url: String
+    let size: Int
+    let expi: Int
+    let time: Int
+    let type: String
+}
+
+///获取音频url
+/// - Parameters:
+///  - id: 音频 id
+///  - level: 播放音质等级
+/// - Returns: [SongUrlModel]
+
+func fetchAudioUrl(id: Int, level: SongLevel = .standard) async throws -> [AudioUrlModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.audioUrl, parameters: ["id": id, "level": level.rawValue], dataObj: "data")
+}
+
 
 ///获取歌手分类列表
 /// - Parameters:

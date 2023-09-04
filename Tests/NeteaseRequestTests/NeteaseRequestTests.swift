@@ -86,6 +86,18 @@ final class NeteaseRequestTests: XCTestCase {
         } catch {
             print(error)
         }
+        
+        do {
+            let audioUrlModel: [AudioUrlModel] = try await fetchAudioUrl(id: 442869301)
+            let name: [String] = audioUrlModel.map { model in
+                return model.url
+            }
+            print("audioUrlModel.url ==== \(name)")
+        } catch {
+            print(error)
+        }
+        
+        
 
         
     }
