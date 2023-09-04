@@ -77,15 +77,14 @@ struct NRUserFollowsModel: Codable {
 
 //MARK: 手机密码登录
 ///手机密码登录
+/// - Parameter phone: 手机号
+/// - Parameter password: 密码
 func cellPhoneLogin(phone: String, password: String) async throws -> CellPhoneModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.cellPhoneLogin, parameters: ["phone": phone, "password": password])
 }
 //MARK: 获取账号信息
 /// 获取账号信息
 func fetchAccountInfo(cookie: String) async throws -> NRProfileModel {
-//    let cookie: String = UserDefaults.standard.value(forKey: "cookie") as! String
-    let decoder = JSONDecoder()
-    decoder.dateDecodingStrategy = .formatted(DateFormatter.myDateFormatter)
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.accountInfo,
                                             parameters: ["cookie": cookie],
 //                                            decoder: decoder,
@@ -111,21 +110,8 @@ func fetchUserFollows(parameters: Parameters) async throws -> [NRUserFollowsMode
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userFollows, parameters: parameters, dataObj: "follow")
 }
 
-//MARK: 获取用户关注列表
-///获取用户关注列表
+//MARK: 获取用户粉丝列表
+///获取用户粉丝列表
 func fetchUserFolloweds(parameters: Parameters) async throws -> [NRUserFollowsModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userFolloweds, parameters: parameters, dataObj: "followeds")
-}
-
-
-
-extension DateFormatter {
-    static let myDateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        formatter.timeZone = TimeZone(secondsFromGMT: 8)
-        formatter.locale = Locale(identifier: "zh_Hans_CN")
-        return formatter
-    }()
-    
 }
