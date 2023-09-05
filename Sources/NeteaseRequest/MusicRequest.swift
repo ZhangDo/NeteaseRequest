@@ -46,7 +46,7 @@ enum SongLevel: String, Codable {
     
 }
 
-struct ArtistModel: Codable {
+struct NRArtistModel: Codable {
     let accountId: Int?
     let albumSize: Int
     let briefDesc: String
@@ -60,14 +60,14 @@ struct ArtistModel: Codable {
     let trans: String?
 }
 
-struct SongModel: Codable {
+struct NRSongModel: Codable {
     let name: String
     let id: Int
     let publishTime: TimeInterval?
     let level: SongLevel?
 }
 
-struct AudioUrlModel: Codable {
+struct NRAudioUrlModel: Codable {
     let id: Int
     let url: String
     let size: Int
@@ -82,7 +82,7 @@ struct AudioUrlModel: Codable {
 ///  - level: 播放音质等级
 /// - Returns: [AudioUrlModel]
 
-func fetchAudioUrl(id: Int, level: SongLevel = .standard) async throws -> [AudioUrlModel] {
+func fetchAudioUrl(id: Int, level: SongLevel = .standard) async throws -> [NRAudioUrlModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.audioUrl, parameters: ["id": id, "level": level.rawValue], dataObj: "data")
 }
 
@@ -94,7 +94,7 @@ func fetchAudioUrl(id: Int, level: SongLevel = .standard) async throws -> [Audio
 ///  - initial: 按首字母索引查找参数
 ///  - limit: 返回数量 , 默认为 30
 /// - Returns: [ArtistModel]
-func fetchArtistList(type: SingerType = .allSinger, area: AreaType = .allArea, initial: String? = nil, limit: Int = 30) async throws -> [ArtistModel] {
+func fetchArtistList(type: SingerType = .allSinger, area: AreaType = .allArea, initial: String? = nil, limit: Int = 30) async throws -> [NRArtistModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistList, parameters: ["type": type.rawValue, "area": area.rawValue, "limit": limit, "initial": initial ?? ""], dataObj: "artists")
 }
 /// 获取歌手热门 50 首歌曲
@@ -102,7 +102,7 @@ func fetchArtistList(type: SingerType = .allSinger, area: AreaType = .allArea, i
 ///  - id: 歌手 id
 /// - Returns: [SongModel]
 
-func fetchTopSongs(singerId: Int) async throws -> [SongModel] {
+func fetchTopSongs(singerId: Int) async throws -> [NRSongModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.topSong, parameters: ["id": singerId], dataObj: "songs")
 }
 
@@ -114,6 +114,6 @@ func fetchTopSongs(singerId: Int) async throws -> [SongModel] {
 ///  - limit: 返回数量 , 默认为 30
 /// - Returns: [SongModel]
 
-func fetchAllSongs(singerId: Int, order: Order = .hot, limit: Int = 30) async throws -> [SongModel] {
+func fetchAllSongs(singerId: Int, order: Order = .hot, limit: Int = 30) async throws -> [NRSongModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.allSong, parameters: ["id": singerId, "order":order, "limit": limit], dataObj: "songs")
 }

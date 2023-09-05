@@ -75,6 +75,16 @@ struct NRUserFollowsModel: Codable {
     let signature: String?
 }
 
+
+struct NRSingerInfoModel: Codable {
+    let info: String
+    let id: Int
+    let name: String
+    let albumSize: Int?
+    let mvSize: Int?
+    let picUrl: String
+}
+
 //MARK: 手机密码登录
 ///手机密码登录
 /// - Parameter phone: 手机号
@@ -114,4 +124,14 @@ func fetchUserFollows(parameters: Parameters) async throws -> [NRUserFollowsMode
 ///获取用户粉丝列表
 func fetchUserFolloweds(parameters: Parameters) async throws -> [NRUserFollowsModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userFolloweds, parameters: parameters, dataObj: "followeds")
+}
+
+
+/// 获取收藏的歌手列表
+/// - Parameters:
+///  - cookie: cookie
+/// - Returns: [NRSingerInfoModel]
+
+func fetchSublist(cookie: String) async throws -> [NRSingerInfoModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistSublist, parameters: ["cookie": cookie], dataObj: "data")
 }

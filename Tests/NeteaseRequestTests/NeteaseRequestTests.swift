@@ -67,7 +67,7 @@ final class NeteaseRequestTests: XCTestCase {
         
         
 //        do {
-//            let artistList: [ArtistModel] = try await fetchArtistList()
+//            let artistList: [NRArtistModel] = try await fetchArtistList()
 //            let name: [String] = artistList.map { model in
 //                return model.name
 //            }
@@ -78,7 +78,7 @@ final class NeteaseRequestTests: XCTestCase {
 //
 //
 //        do {
-//            let songModel: [SongModel] = try await fetchTopSongs(singerId: 31211)
+//            let songModel: [NRSongModel] = try await fetchTopSongs(singerId: 31211)
 //            let name: [String] = songModel.map { model in
 //                return model.name
 //            }
@@ -88,7 +88,7 @@ final class NeteaseRequestTests: XCTestCase {
 //        }
 //
 //        do {
-//            let audioUrlModel: [AudioUrlModel] = try await fetchAudioUrl(id: 442869301)
+//            let audioUrlModel: [NRAudioUrlModel] = try await fetchAudioUrl(id: 442869301)
 //            let name: [String] = audioUrlModel.map { model in
 //                return model.url
 //            }
@@ -98,8 +98,18 @@ final class NeteaseRequestTests: XCTestCase {
 //        }
         
         do {
-            let songModel: [SongModel] = try await fetchAllSongs(singerId: 31211)
+            let songModel: [NRSongModel] = try await fetchAllSongs(singerId: 31211)
             let name: [String] = songModel.map { model in
+                return model.name
+            }
+            print("song ==== \(name)")
+        } catch {
+            print(error)
+        }
+        
+        do {
+            let singerModel: [NRSingerInfoModel] = try await fetchSublist(cookie: cookie)
+            let name: [String] = singerModel.map { model in
                 return model.name
             }
             print("song ==== \(name)")
@@ -108,11 +118,6 @@ final class NeteaseRequestTests: XCTestCase {
         }
 
         
-    }
-    
-    
-    func getNewSons() async throws ->  [NewSongs] {
-        return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.newsong, parameters: [:], dataObj: "result")
     }
     
     
