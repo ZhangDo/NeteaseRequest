@@ -66,19 +66,39 @@ final class NeteaseRequestTests: XCTestCase {
 //        }
         
         
-        do {
-            let artistList: [ArtistModel] = try await fetchArtistList()
-            let name: [String] = artistList.map { model in
-                return model.name
-            }
-            print("artist ==== \(name)")
-        } catch {
-            print(error)
-        }
+//        do {
+//            let artistList: [ArtistModel] = try await fetchArtistList()
+//            let name: [String] = artistList.map { model in
+//                return model.name
+//            }
+//            print("artist ==== \(name)")
+//        } catch {
+//            print(error)
+//        }
+//
+//
+//        do {
+//            let songModel: [SongModel] = try await fetchTopSongs(singerId: 31211)
+//            let name: [String] = songModel.map { model in
+//                return model.name
+//            }
+//            print("song ==== \(name)")
+//        } catch {
+//            print(error)
+//        }
+//
+//        do {
+//            let audioUrlModel: [AudioUrlModel] = try await fetchAudioUrl(id: 442869301)
+//            let name: [String] = audioUrlModel.map { model in
+//                return model.url
+//            }
+//            print("audioUrlModel.url ==== \(name)")
+//        } catch {
+//            print(error)
+//        }
         
-        
         do {
-            let songModel: [SongModel] = try await fetchTopSongs(singerId: 31211)
+            let songModel: [SongModel] = try await fetchAllSongs(singerId: 31211)
             let name: [String] = songModel.map { model in
                 return model.name
             }
@@ -86,18 +106,6 @@ final class NeteaseRequestTests: XCTestCase {
         } catch {
             print(error)
         }
-        
-        do {
-            let audioUrlModel: [AudioUrlModel] = try await fetchAudioUrl(id: 442869301)
-            let name: [String] = audioUrlModel.map { model in
-                return model.url
-            }
-            print("audioUrlModel.url ==== \(name)")
-        } catch {
-            print(error)
-        }
-        
-        
 
         
     }

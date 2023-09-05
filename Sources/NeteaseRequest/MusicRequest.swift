@@ -63,7 +63,7 @@ struct ArtistModel: Codable {
 struct SongModel: Codable {
     let name: String
     let id: Int
-    let publishTime: TimeInterval
+    let publishTime: TimeInterval?
     let level: SongLevel?
 }
 
@@ -80,7 +80,7 @@ struct AudioUrlModel: Codable {
 /// - Parameters:
 ///  - id: 音频 id
 ///  - level: 播放音质等级
-/// - Returns: [SongUrlModel]
+/// - Returns: [AudioUrlModel]
 
 func fetchAudioUrl(id: Int, level: SongLevel = .standard) async throws -> [AudioUrlModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.audioUrl, parameters: ["id": id, "level": level.rawValue], dataObj: "data")
@@ -104,4 +104,16 @@ func fetchArtistList(type: SingerType = .allSinger, area: AreaType = .allArea, i
 
 func fetchTopSongs(singerId: Int) async throws -> [SongModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.topSong, parameters: ["id": singerId], dataObj: "songs")
+}
+
+
+/// 获取歌手全部歌曲
+/// - Parameters:
+///  - id: 歌手 id]
+///  - order: 排序
+///  - limit: 返回数量 , 默认为 30
+/// - Returns: [SongModel]
+
+func fetchAllSongs(singerId: Int, order: Order = .hot, limit: Int = 30) async throws -> [SongModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.allSong, parameters: ["id": singerId, "order":order, "limit": limit], dataObj: "songs")
 }

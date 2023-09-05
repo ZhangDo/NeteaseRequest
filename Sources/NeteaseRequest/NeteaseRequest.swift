@@ -36,6 +36,7 @@ enum NeteaseRequest {
         static let userFolloweds = "https://wknetesae.vercel.app/user/followeds"
         static let artistList = "https://wknetesae.vercel.app/artist/list"
         static let topSong = "https://wknetesae.vercel.app/artist/top/song"
+        static let allSong = "https://wknetesae.vercel.app/artist/songs"
         
         static let audioUrl = "https://wknetesae.vercel.app/song/url/v1"
         
