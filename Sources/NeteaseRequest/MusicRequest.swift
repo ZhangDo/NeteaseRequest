@@ -1,15 +1,14 @@
 import Foundation
 import SwiftyJSON
 import Alamofire
-
-enum SingerType: Int {
+public enum NRSingerType: Int {
     case allSinger = -1 // 全部
     case male = 1 // 男歌手
     case female = 2 // 女歌手
     case band = 3 // 乐队
 }
 
-enum AreaType: Int {
+public enum NRAreaType: Int {
     case allArea = -1 // 全部
     case other = 0 // 其他
     case chinese = 7 // 华语
@@ -18,7 +17,7 @@ enum AreaType: Int {
     case western = 96 // 欧美
 }
 
-enum Order: String {
+public enum NROrder: String {
     ///热门
     case hot = "hot"
     ///时间
@@ -26,7 +25,7 @@ enum Order: String {
     
 }
 
-enum SongLevel: String, Codable {
+public enum NRSongLevel: String, Codable {
     ///标准
     case standard = "standard"
     ///较高
@@ -46,7 +45,7 @@ enum SongLevel: String, Codable {
     
 }
 
-struct NRArtistModel: Codable {
+public struct NRArtistModel: Codable {
     let accountId: Int?
     let albumSize: Int
     let briefDesc: String
@@ -60,14 +59,14 @@ struct NRArtistModel: Codable {
     let trans: String?
 }
 
-struct NRSongModel: Codable {
+public struct NRSongModel: Codable {
     let name: String
     let id: Int
     let publishTime: TimeInterval?
-    let level: SongLevel?
+    let level: NRSongLevel?
 }
 
-struct NRAudioUrlModel: Codable {
+public struct NRAudioUrlModel: Codable {
     let id: Int
     let url: String
     let size: Int
@@ -82,7 +81,7 @@ struct NRAudioUrlModel: Codable {
 ///  - level: 播放音质等级
 /// - Returns: [AudioUrlModel]
 
-func fetchAudioUrl(id: Int, level: SongLevel = .standard) async throws -> [NRAudioUrlModel] {
+public func fetchAudioUrl(id: Int, level: NRSongLevel = .standard) async throws -> [NRAudioUrlModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.audioUrl, parameters: ["id": id, "level": level.rawValue], dataObj: "data")
 }
 
@@ -94,7 +93,7 @@ func fetchAudioUrl(id: Int, level: SongLevel = .standard) async throws -> [NRAud
 ///  - initial: 按首字母索引查找参数
 ///  - limit: 返回数量 , 默认为 30
 /// - Returns: [ArtistModel]
-func fetchArtistList(type: SingerType = .allSinger, area: AreaType = .allArea, initial: String? = nil, limit: Int = 30) async throws -> [NRArtistModel] {
+public func fetchArtistList(type: NRSingerType = .allSinger, area: NRAreaType = .allArea, initial: String? = nil, limit: Int = 30) async throws -> [NRArtistModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistList, parameters: ["type": type.rawValue, "area": area.rawValue, "limit": limit, "initial": initial ?? ""], dataObj: "artists")
 }
 /// 获取歌手热门 50 首歌曲
@@ -102,7 +101,7 @@ func fetchArtistList(type: SingerType = .allSinger, area: AreaType = .allArea, i
 ///  - id: 歌手 id
 /// - Returns: [SongModel]
 
-func fetchTopSongs(singerId: Int) async throws -> [NRSongModel] {
+public func fetchTopSongs(singerId: Int) async throws -> [NRSongModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.topSong, parameters: ["id": singerId], dataObj: "songs")
 }
 
@@ -114,6 +113,6 @@ func fetchTopSongs(singerId: Int) async throws -> [NRSongModel] {
 ///  - limit: 返回数量 , 默认为 30
 /// - Returns: [SongModel]
 
-func fetchAllSongs(singerId: Int, order: Order = .hot, limit: Int = 30) async throws -> [NRSongModel] {
+public func fetchAllSongs(singerId: Int, order: NROrder = .hot, limit: Int = 30) async throws -> [NRSongModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.allSong, parameters: ["id": singerId, "order":order, "limit": limit], dataObj: "songs")
 }

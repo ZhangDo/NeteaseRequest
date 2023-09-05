@@ -28,20 +28,20 @@ enum NoCookieSession {
 enum NeteaseRequest {
     
     enum EndPoint {
-        static let cellPhoneLogin = "https://wknetesae.vercel.app/login/cellphone"
-        static let accountInfo = "https://wknetesae.vercel.app/user/account"
-        static let userSubcount = "https://wknetesae.vercel.app/user/subcount"
-        static let userLevelInfo = "https://wknetesae.vercel.app/user/level"
-        static let userFollows = "https://wknetesae.vercel.app/user/follows"
-        static let userFolloweds = "https://wknetesae.vercel.app/user/followeds"
-        static let artistList = "https://wknetesae.vercel.app/artist/list"
-        static let topSong = "https://wknetesae.vercel.app/artist/top/song"
-        static let allSong = "https://wknetesae.vercel.app/artist/songs"
-        static let artistSublist = "https://wknetesae.vercel.app/artist/sublist"
+        static let cellPhoneLogin = "https://wknetease.zeabur.app/login/cellphone"
+        static let accountInfo = "https://wknetease.zeabur.app/user/account"
+        static let userSubcount = "https://wknetease.zeabur.app/user/subcount"
+        static let userLevelInfo = "https://wknetease.zeabur.app/user/level"
+        static let userFollows = "https://wknetease.zeabur.app/user/follows"
+        static let userFolloweds = "https://wknetease.zeabur.app/user/followeds"
+        static let artistList = "https://wknetease.zeabur.app/artist/list"
+        static let topSong = "https://wknetease.zeabur.app/artist/top/song"
+        static let allSong = "https://wknetease.zeabur.app/artist/songs"
+        static let artistSublist = "https://wknetease.zeabur.app/artist/sublist"
         
-        static let audioUrl = "https://wknetesae.vercel.app/song/url/v1"
+        static let audioUrl = "https://wknetease.zeabur.app/song/url/v1"
         
-        static let newsong = "https://wknetesae.vercel.app/personalized/newsong?limit=10"
+        static let newsong = "https://wknetease.zeabur.app/personalized/newsong?limit=10"
     }
     
     
@@ -81,7 +81,7 @@ enum NeteaseRequest {
         
     }
     
-    static func requestJSON(method: HTTPMethod = .get,
+static func requestJSON(method: HTTPMethod = .get,
                             url: URLConvertible,
                             parameters: Parameters = [:],
                             headers: [String: String]? = nil,

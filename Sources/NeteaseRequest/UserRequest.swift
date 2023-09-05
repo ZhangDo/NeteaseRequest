@@ -2,7 +2,7 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-struct CellPhoneModel: Codable {
+public struct CellPhoneModel: Codable {
     let loginType: Int
     let account: AccountModel
     let token: String
@@ -18,7 +18,7 @@ struct CellPhoneModel: Codable {
 }
 
 
-struct NRProfileModel: Codable {
+public struct NRProfileModel: Codable {
     let userId: Int
     let userType: Int
     let nickname: String
@@ -37,7 +37,7 @@ struct NRProfileModel: Codable {
     }
 }
 
-struct NRUserSubcountModel: Codable {
+public struct NRUserSubcountModel: Codable {
     let programCount: Int
     let djRadioCount: Int
     let mvCount: Int
@@ -49,7 +49,7 @@ struct NRUserSubcountModel: Codable {
 }
 
 
-struct NRUserLevelInfoModel: Codable {
+public struct NRUserLevelInfoModel: Codable {
     let userId: Int
     let info: String
     let progress: Int
@@ -60,7 +60,7 @@ struct NRUserLevelInfoModel: Codable {
     let level: Int
 }
 
-struct NRUserFollowsModel: Codable {
+public struct NRUserFollowsModel: Codable {
     let py: String
     let time: Int
     let userType: Int
@@ -76,7 +76,7 @@ struct NRUserFollowsModel: Codable {
 }
 
 
-struct NRSingerInfoModel: Codable {
+public struct NRSingerInfoModel: Codable {
     let info: String
     let id: Int
     let name: String
@@ -89,12 +89,12 @@ struct NRSingerInfoModel: Codable {
 ///手机密码登录
 /// - Parameter phone: 手机号
 /// - Parameter password: 密码
-func cellPhoneLogin(phone: String, password: String) async throws -> CellPhoneModel {
+public func cellPhoneLogin(phone: String, password: String) async throws -> CellPhoneModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.cellPhoneLogin, parameters: ["phone": phone, "password": password])
 }
 //MARK: 获取账号信息
 /// 获取账号信息
-func fetchAccountInfo(cookie: String) async throws -> NRProfileModel {
+public func fetchAccountInfo(cookie: String) async throws -> NRProfileModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.accountInfo,
                                             parameters: ["cookie": cookie],
 //                                            decoder: decoder,
@@ -103,26 +103,26 @@ func fetchAccountInfo(cookie: String) async throws -> NRProfileModel {
 
 //MARK: 获取用户信息 , 歌单，收藏，mv, dj 数量
 ///获取用户信息 , 歌单，收藏，mv, dj 数量
-func fetchUserSubcount(cookie: String) async throws -> NRUserSubcountModel {
+public func fetchUserSubcount(cookie: String) async throws -> NRUserSubcountModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userSubcount, parameters: ["cookie": cookie])
 
 }
 
 //MARK: 获取用户等级信息
 ///获取用户等级信息
-func fetchUserLevelIno(cookie: String) async throws -> NRUserLevelInfoModel {
+public func fetchUserLevelIno(cookie: String) async throws -> NRUserLevelInfoModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userLevelInfo, parameters: ["cookie": cookie],dataObj: "data")
 }
 
 //MARK: 获取用户关注列表
 ///获取用户关注列表
-func fetchUserFollows(parameters: Parameters) async throws -> [NRUserFollowsModel] {
+public func fetchUserFollows(parameters: Parameters) async throws -> [NRUserFollowsModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userFollows, parameters: parameters, dataObj: "follow")
 }
 
 //MARK: 获取用户粉丝列表
 ///获取用户粉丝列表
-func fetchUserFolloweds(parameters: Parameters) async throws -> [NRUserFollowsModel] {
+public func fetchUserFolloweds(parameters: Parameters) async throws -> [NRUserFollowsModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userFolloweds, parameters: parameters, dataObj: "followeds")
 }
 
@@ -132,6 +132,6 @@ func fetchUserFolloweds(parameters: Parameters) async throws -> [NRUserFollowsMo
 ///  - cookie: cookie
 /// - Returns: [NRSingerInfoModel]
 
-func fetchSublist(cookie: String) async throws -> [NRSingerInfoModel] {
+public func fetchSublist(cookie: String) async throws -> [NRSingerInfoModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistSublist, parameters: ["cookie": cookie], dataObj: "data")
 }
