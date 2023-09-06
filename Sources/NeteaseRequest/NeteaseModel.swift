@@ -260,3 +260,25 @@ public struct NRAudioUrlModel: Codable {
         self.type = type
     }
 }
+
+public struct NRCatModel: Codable {
+    public var all: NRCatInfoModel
+    public var sub: [NRCatInfoModel]
+    public var categories: [String: String]
+    
+    
+}
+
+public struct NRCatInfoModel: Codable {
+    public var name: String
+    public var resourceCount: Int
+    public var type: Int
+    public var category: Int
+    
+    public init(name: String, resourceCount: Int, type: Int, category: Int) {
+        self.name = name
+        self.resourceCount = resourceCount
+        self.type = type
+        self.category = category
+    }
+}

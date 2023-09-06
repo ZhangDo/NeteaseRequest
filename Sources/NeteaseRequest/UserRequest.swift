@@ -52,3 +52,4 @@ public func fetchUserFolloweds(parameters: Parameters) async throws -> [NRUserFo
 public func fetchSublist(cookie: String) async throws -> [NRSingerInfoModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistSublist, parameters: ["cookie": cookie], dataObj: "data")
 }
+

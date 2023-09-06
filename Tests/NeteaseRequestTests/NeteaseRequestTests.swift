@@ -97,26 +97,37 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
-        do {
-            let songModel: [NRSongModel] = try await fetchAllSongs(singerId: 31211)
-            let name: [String] = songModel.map { model in
-                return model.name
-            }
-            print("song ==== \(name)")
-        } catch {
-            print(error)
-        }
-        
-        do {
-            let singerModel: [NRSingerInfoModel] = try await fetchSublist(cookie: cookie)
-            let name: [String] = singerModel.map { model in
-                return model.name
-            }
-            print("song ==== \(name)")
-        } catch {
-            print(error)
-        }
+//        do {
+//            let songModel: [NRSongModel] = try await fetchAllSongs(singerId: 31211)
+//            let name: [String] = songModel.map { model in
+//                return model.name
+//            }
+//            print("song ==== \(name)")
+//        } catch {
+//            print(error)
+//        }
+//
+//        do {
+//            let singerModel: [NRSingerInfoModel] = try await fetchSublist(cookie: cookie)
+//            let name: [String] = singerModel.map { model in
+//                return model.name
+//            }
+//            print("song ==== \(name)")
+//        } catch {
+//            print(error)
+//        }
 
+        do {
+            let catListModel: NRCatModel = try await fetchPlayCatList()
+            let sub:[NRCatInfoModel] = catListModel.sub
+            let filterModels: [NRCatInfoModel] = sub.filter { model in
+                model.category == 1
+            }
+            print(filterModels)
+            
+        } catch {
+            print(error)
+        }
         
     }
     

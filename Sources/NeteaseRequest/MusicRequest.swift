@@ -43,3 +43,11 @@ public func fetchTopSongs(singerId: Int) async throws -> [NRSongModel] {
 public func fetchAllSongs(singerId: Int, order: NROrder = .hot, limit: Int = 30) async throws -> [NRSongModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.allSong, parameters: ["id": singerId, "order":order, "limit": limit], dataObj: "songs")
 }
+
+
+/// 获取歌单分类
+/// - Returns: [SongModel]
+
+public func fetchPlayCatList() async throws -> NRCatModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.catList)
+}
