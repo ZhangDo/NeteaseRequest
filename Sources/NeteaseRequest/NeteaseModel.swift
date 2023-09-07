@@ -271,7 +271,7 @@ public struct NRCatModel: Codable {
 
 public struct NRCatInfoModel: Codable {
     public var name: String
-    public var resourceCount: Int
+    public var resourceCount: Int?
     public var type: Int
     public var category: Int
     

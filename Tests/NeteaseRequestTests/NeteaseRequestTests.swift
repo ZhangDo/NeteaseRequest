@@ -116,12 +116,23 @@ final class NeteaseRequestTests: XCTestCase {
 //        } catch {
 //            print(error)
 //        }
-
+//        do {
+//            let catListModel: NRCatModel = try await fetchPlayCatList()
+//            let sub:[NRCatInfoModel] = catListModel.sub
+//            let filterModels: [NRCatInfoModel] = sub.filter { model in
+//                model.category == 0
+//            }
+//            print(filterModels)
+//            
+//        } catch {
+//            print(error)
+//        }
+        
+        
         do {
-            let catListModel: NRCatModel = try await fetchPlayCatList()
-            let sub:[NRCatInfoModel] = catListModel.sub
-            let filterModels: [NRCatInfoModel] = sub.filter { model in
-                model.category == 1
+            let hotListModel: [NRCatInfoModel] = try await fetchHotPlayList()
+            let filterModels: [NRCatInfoModel] = hotListModel.filter { model in
+                model.category == 0
             }
             print(filterModels)
             

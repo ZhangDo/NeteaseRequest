@@ -51,3 +51,10 @@ public func fetchAllSongs(singerId: Int, order: NROrder = .hot, limit: Int = 30)
 public func fetchPlayCatList() async throws -> NRCatModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.catList)
 }
+
+/// 获取热门歌单分类
+/// - Returns: [NRCatInfoModel]
+
+public func fetchHotPlayList() async throws -> [NRCatInfoModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.hotPlayList,dataObj: "tags")
+}
