@@ -58,3 +58,12 @@ public func fetchPlayCatList() async throws -> NRCatModel {
 public func fetchHotPlayList() async throws -> [NRCatInfoModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.hotPlayList,dataObj: "tags")
 }
+
+/// 获取歌单 ( 网友精选碟 )
+///  - order: 排序
+///  - cat: tag, 比如 " 华语 "、" 古风 " 、" 欧美 "、" 流行 ", 默认为 "全部",可从歌单分类接口获取(/playlist/catlist)
+/// - Returns: [NRPlayListModel]
+
+public func fetchTopPlayList(order: NROrder = .hot, cat: String = "全部") async throws -> [NRPlayListModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.topPlayList,dataObj: "playlists")
+}

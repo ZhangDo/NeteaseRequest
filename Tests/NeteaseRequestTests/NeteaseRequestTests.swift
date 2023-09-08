@@ -129,10 +129,21 @@ final class NeteaseRequestTests: XCTestCase {
 //        }
         
         
+//        do {
+//            let hotListModel: [NRCatInfoModel] = try await fetchHotPlayList()
+//            let filterModels: [NRCatInfoModel] = hotListModel.filter { model in
+//                model.category == 0
+//            }
+//            print(filterModels)
+//
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let hotListModel: [NRCatInfoModel] = try await fetchHotPlayList()
-            let filterModels: [NRCatInfoModel] = hotListModel.filter { model in
-                model.category == 0
+            let topListModel: [NRPlayListModel] = try await fetchTopPlayList()
+            let filterModels: [String] = topListModel.map { model in
+                return model.name
             }
             print(filterModels)
             

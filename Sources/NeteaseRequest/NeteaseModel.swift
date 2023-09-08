@@ -282,3 +282,20 @@ public struct NRCatInfoModel: Codable {
         self.category = category
     }
 }
+
+
+public struct NRPlayListModel: Codable {
+    public var name: String
+    public var id: Int
+    public var description: String?
+    public var coverImgUrl: String?
+    public var userId: Int?
+    
+    public init(name: String, id: Int, description: String? = nil, coverImgUrl: String? = nil, userId: Int? = nil) {
+        self.name = name
+        self.id = id
+        self.description = description
+        self.coverImgUrl = coverImgUrl
+        self.userId = userId
+    }
+}
