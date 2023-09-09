@@ -140,10 +140,21 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let topListModel: [NRPlayListModel] = try await fetchTopPlayList()
+//            let filterModels: [String] = topListModel.map { model in
+//                return model.name
+//            }
+//            print(filterModels)
+//
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let topListModel: [NRPlayListModel] = try await fetchTopPlayList()
-            let filterModels: [String] = topListModel.map { model in
-                return model.name
+            let highqualityListModel: [NRPlayListModel] = try await fetchHighqualityPlayList()
+            let filterModels: [String] = highqualityListModel.map { model in
+                return model.description ?? ""
             }
             print(filterModels)
             
