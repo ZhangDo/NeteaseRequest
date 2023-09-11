@@ -299,3 +299,17 @@ public struct NRPlayListModel: Codable {
         self.userId = userId
     }
 }
+
+public struct NRPlayListDetailModel: Codable {
+    public var id: Int
+    public var name: String
+    public var coverImgUrl: String
+    public var userId: Int
+    public var createTime: TimeInterval?
+    public var playCount: Int
+    public var description: String
+    public var subscribedCount: Int
+    public var trackNumberUpdateTime: TimeInterval?
+    public var trackUpdateTime: TimeInterval?
+    public var tags: [String]?
+}

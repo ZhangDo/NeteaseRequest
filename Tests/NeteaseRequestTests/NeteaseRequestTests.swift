@@ -150,17 +150,15 @@ final class NeteaseRequestTests: XCTestCase {
 //        } catch {
 //            print(error)
 //        }
-        
-        do {
-            let highqualityListModel: [NRPlayListModel] = try await fetchHighqualityPlayList()
-            let filterModels: [String] = highqualityListModel.map { model in
-                return model.description ?? ""
-            }
-            print(filterModels)
-            
-        } catch {
-            print(error)
+        let highqualityListModel: [NRPlayListModel] = (try? await fetchHighqualityPlayList()) ?? []
+        let filterModels: [Int] = highqualityListModel.map { model in
+            return model.id
         }
+        print(filterModels)
+        let playListDetail: NRPlayListDetailModel = try! await fetchPlayListDetail(id: filterModels.first!)
+        
+        print(playListDetail)
+      
         
     }
     

@@ -65,7 +65,7 @@ public func fetchHotPlayList() async throws -> [NRCatInfoModel] {
 /// - Returns: [NRPlayListModel]
 
 public func fetchTopPlayList(order: NROrder = .hot, cat: String = "全部") async throws -> [NRPlayListModel] {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.topPlayList,dataObj: "playlists")
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.topPlayList, parameters: ["order": order, cat: cat], dataObj: "playlists")
 }
 
 /// 获取精品歌单
@@ -74,5 +74,13 @@ public func fetchTopPlayList(order: NROrder = .hot, cat: String = "全部") asyn
 /// - Returns: [NRPlayListModel]
 ///
 public func fetchHighqualityPlayList(cat: String = "全部",limit: Int = 30) async throws -> [NRPlayListModel] {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.highqualityPlayList, dataObj: "playlists")
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.highqualityPlayList, parameters: ["cat": cat, "limit": limit], dataObj: "playlists")
+}
+
+/// 获取歌单详情
+///  - id: 歌单id
+/// - Returns: [NRPlayListModel]
+///
+public func fetchPlayListDetail(id: Int) async throws -> NRPlayListDetailModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.playlistDetail, parameters: ["id": id], dataObj: "playlist")
 }
