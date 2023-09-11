@@ -47,6 +47,8 @@ enum NeteaseRequest {
         
         static let playlistDetail = "https://wknetease.zeabur.app/playlist/detail"
         
+        static let playListTrackAll = "https://wknetease.zeabur.app/playlist/track/all"
+        
         static let newsong = "https://wknetease.zeabur.app/personalized/newsong?limit=10"
     }
     

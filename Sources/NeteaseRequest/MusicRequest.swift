@@ -84,3 +84,12 @@ public func fetchHighqualityPlayList(cat: String = "全部",limit: Int = 30) asy
 public func fetchPlayListDetail(id: Int) async throws -> NRPlayListDetailModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.playlistDetail, parameters: ["id": id], dataObj: "playlist")
 }
+
+/// 获取歌单中的歌曲
+///  - id: 歌单id
+///  - limit: 50
+/// - Returns: [NRSongModel]
+///
+public func fetchPlayListTrackAll(id: Int, limit: Int = 30, offset: Int = 0) async throws -> [NRSongModel]  {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.playListTrackAll, parameters: ["id": id, "limit": limit, "offset": offset], dataObj: "songs")
+}

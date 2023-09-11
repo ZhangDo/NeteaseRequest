@@ -150,15 +150,21 @@ final class NeteaseRequestTests: XCTestCase {
 //        } catch {
 //            print(error)
 //        }
-        let highqualityListModel: [NRPlayListModel] = (try? await fetchHighqualityPlayList()) ?? []
-        let filterModels: [Int] = highqualityListModel.map { model in
-            return model.id
+//        let highqualityListModel: [NRPlayListModel] = (try? await fetchHighqualityPlayList()) ?? []
+//        let filterModels: [Int] = highqualityListModel.map { model in
+//            return model.id
+//        }
+//        print(filterModels)
+//        let playListDetail: NRPlayListDetailModel = try! await fetchPlayListDetail(id: filterModels.first!)
+//
+//        print(playListDetail)
+      
+        
+        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 8615539052)
+        let filterModels: [String] = allSongs.map { model in
+            return model.name
         }
         print(filterModels)
-        let playListDetail: NRPlayListDetailModel = try! await fetchPlayListDetail(id: filterModels.first!)
-        
-        print(playListDetail)
-      
         
     }
     
