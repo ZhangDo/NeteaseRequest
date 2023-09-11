@@ -312,4 +312,18 @@ public struct NRPlayListDetailModel: Codable {
     public var trackNumberUpdateTime: TimeInterval?
     public var trackUpdateTime: TimeInterval?
     public var tags: [String]?
+    
+    public init(id: Int, name: String, coverImgUrl: String, userId: Int, createTime: TimeInterval? = nil, playCount: Int, description: String, subscribedCount: Int, trackNumberUpdateTime: TimeInterval? = nil, trackUpdateTime: TimeInterval? = nil, tags: [String]? = nil) {
+        self.id = id
+        self.name = name
+        self.coverImgUrl = coverImgUrl
+        self.userId = userId
+        self.createTime = createTime
+        self.playCount = playCount
+        self.description = description
+        self.subscribedCount = subscribedCount
+        self.trackNumberUpdateTime = trackNumberUpdateTime
+        self.trackUpdateTime = trackUpdateTime
+        self.tags = tags
+    }
 }
