@@ -254,11 +254,11 @@ public struct NRAlModel: Codable {
 
 public struct NRAudioUrlModel: Codable {
     public var id: Int
-    public var url: String
+    public var url: String?
     public var size: Int
     public var expi: Int
     public var time: Int
-    public var type: String
+    public var type: String?
     
     public init(id: Int, url: String, size: Int, expi: Int, time: Int, type: String) {
         self.id = id
@@ -334,5 +334,16 @@ public struct NRPlayListDetailModel: Codable {
         self.trackNumberUpdateTime = trackNumberUpdateTime
         self.trackUpdateTime = trackUpdateTime
         self.tags = tags
+    }
+}
+
+
+public struct NRCheckAudioModel: Codable {
+    public var success: Bool
+    public var message: String
+    
+    public init(success: Bool, message: String) {
+        self.success = success
+        self.message = message
     }
 }

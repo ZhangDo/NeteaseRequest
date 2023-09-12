@@ -28,28 +28,33 @@ enum NoCookieSession {
 enum NeteaseRequest {
     
     enum EndPoint {
-        static let cellPhoneLogin = "https://wknetease.zeabur.app/login/cellphone"
-        static let accountInfo = "https://wknetease.zeabur.app/user/account"
-        static let userSubcount = "https://wknetease.zeabur.app/user/subcount"
-        static let userLevelInfo = "https://wknetease.zeabur.app/user/level"
-        static let userFollows = "https://wknetease.zeabur.app/user/follows"
-        static let userFolloweds = "https://wknetease.zeabur.app/user/followeds"
-        static let artistList = "https://wknetease.zeabur.app/artist/list"
-        static let topSong = "https://wknetease.zeabur.app/artist/top/song"
-        static let allSong = "https://wknetease.zeabur.app/artist/songs"
-        static let artistSublist = "https://wknetease.zeabur.app/artist/sublist"
-        static let audioUrl = "https://wknetease.zeabur.app/song/url/v1"
+        private static var baseURL: String {
+            return "https://wknetease.zeabur.app"
+        }
+        static let cellPhoneLogin = "\(baseURL)/login/cellphone"
+        static let accountInfo = "\(baseURL)/user/account"
+        static let userSubcount = "\(baseURL)/user/subcount"
+        static let userLevelInfo = "\(baseURL)/user/level"
+        static let userFollows = "\(baseURL)/user/follows"
+        static let userFolloweds = "\(baseURL)/user/followeds"
+        static let artistList = "\(baseURL)/artist/list"
+        static let topSong = "\(baseURL)/artist/top/song"
+        static let allSong = "\(baseURL)/artist/songs"
+        static let artistSublist = "\(baseURL)/artist/sublist"
+        static let audioUrl = "\(baseURL)/song/url/v1"
         
-        static let catList = "https://wknetease.zeabur.app/playlist/catlist"
-        static let hotPlayList = "https://wknetease.zeabur.app/playlist/hot"
-        static let topPlayList = "https://wknetease.zeabur.app/top/playlist"
-        static let highqualityPlayList = "https://wknetease.zeabur.app/top/playlist/highquality"
+        static let catList = "\(baseURL)/playlist/catlist"
+        static let hotPlayList = "\(baseURL)/playlist/hot"
+        static let topPlayList = "\(baseURL)/top/playlist"
+        static let highqualityPlayList = "\(baseURL)/top/playlist/highquality"
         
-        static let playlistDetail = "https://wknetease.zeabur.app/playlist/detail"
+        static let playlistDetail = "\(baseURL)/playlist/detail"
         
-        static let playListTrackAll = "https://wknetease.zeabur.app/playlist/track/all"
+        static let playListTrackAll = "\(baseURL)/playlist/track/all"
         
-        static let newsong = "https://wknetease.zeabur.app/personalized/newsong?limit=10"
+        static let checkAudio = "\(baseURL)/check/music"
+        
+        static let newsong = "\(baseURL)/personalized/newsong?limit=10"
     }
     
     

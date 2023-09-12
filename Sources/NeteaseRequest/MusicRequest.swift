@@ -93,3 +93,9 @@ public func fetchPlayListDetail(id: Int) async throws -> NRPlayListDetailModel {
 public func fetchPlayListTrackAll(id: Int, limit: Int = 30, offset: Int = 0) async throws -> [NRSongModel]  {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.playListTrackAll, parameters: ["id": id, "limit": limit, "offset": offset], dataObj: "songs")
 }
+
+///检查音频是否可用
+/// - id: 音频id
+public func checkAudio(id: Int) async throws -> NRCheckAudioModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.checkAudio)
+}

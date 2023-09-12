@@ -161,10 +161,20 @@ final class NeteaseRequestTests: XCTestCase {
       
         
         let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 8615539052)
-        let filterModels: [String] = allSongs.map { model in
-            return model.name
+        let filterModels: [Int] = allSongs.map { model in
+            return model.id
         }
-        print(filterModels)
+        
+        do {
+            let checkModel: NRCheckAudioModel = try await checkAudio(id: filterModels.first!)
+            print(checkModel.message)
+        } catch {
+            print(error)
+        }
+        
+        
+        
+        
         
     }
     
