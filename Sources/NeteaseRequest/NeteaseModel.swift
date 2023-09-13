@@ -275,7 +275,11 @@ public struct NRCatModel: Codable {
     public var sub: [NRCatInfoModel]
     public var categories: [String: String]
     
-    
+    init(all: NRCatInfoModel, sub: [NRCatInfoModel], categories: [String : String]) {
+        self.all = all
+        self.sub = sub
+        self.categories = categories
+    }
 }
 
 public struct NRCatInfoModel: Codable {
@@ -345,5 +349,15 @@ public struct NRCheckAudioModel: Codable {
     public init(success: Bool, message: String) {
         self.success = success
         self.message = message
+    }
+}
+
+public struct NRLyricModel: Codable {
+    public var version: Int
+    public var lyric: String?
+    
+    init(version: Int, lyric: String? = nil) {
+        self.version = version
+        self.lyric = lyric
     }
 }

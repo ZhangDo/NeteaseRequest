@@ -3,6 +3,8 @@ import XCTest
 
 final class NeteaseRequestTests: XCTestCase {
     func testExample() async {
+        
+        NR_BASEURL = "https://wknetesae.vercel.app"
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
@@ -158,23 +160,22 @@ final class NeteaseRequestTests: XCTestCase {
 //        let playListDetail: NRPlayListDetailModel = try! await fetchPlayListDetail(id: filterModels.first!)
 //
 //        print(playListDetail)
-      
-        NR_BASEURL = "https://wknetesae.vercel.app"
         
-        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 8615539052)
-        let filterModels: [Int] = allSongs.map { model in
-            return model.id
-        }
-        
-        do {
-            let checkModel: NRCheckAudioModel = try await checkAudio(id: filterModels.first!)
-            print(checkModel.message)
-        } catch {
-            print(error)
-        }
+//        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 8615539052)
+//        let filterModels: [Int] = allSongs.map { model in
+//            return model.id
+//        }
+//
+//        do {
+//            let checkModel: NRCheckAudioModel = try await checkAudio(id: filterModels.first!)
+//            print(checkModel.message)
+//        } catch {
+//            print(error)
+//        }
         
         
-        
+        let lyricModel: NRLyricModel = try! await fetchLyric(id: 2054003356)
+        print(lyricModel.lyric ?? "")
         
         
     }

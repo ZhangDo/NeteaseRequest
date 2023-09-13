@@ -53,6 +53,8 @@ enum NeteaseRequest {
         
         static let checkAudio = "\(NR_BASEURL)/check/music"
         
+        static let lyric = "\(NR_BASEURL)/lyric"
+        
         static let newsong = "\(NR_BASEURL)/personalized/newsong?limit=10"
     }
     

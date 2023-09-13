@@ -97,5 +97,11 @@ public func fetchPlayListTrackAll(id: Int, limit: Int = 30, offset: Int = 0) asy
 ///检查音频是否可用
 /// - id: 音频id
 public func checkAudio(id: Int) async throws -> NRCheckAudioModel {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.checkAudio)
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.checkAudio, parameters: ["id":id])
+}
+
+///获取歌词
+/// - id: 音频id
+public func fetchLyric(id: Int) async throws -> NRLyricModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.lyric, parameters: ["id":id], dataObj: "lrc")
 }
