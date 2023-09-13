@@ -159,6 +159,7 @@ final class NeteaseRequestTests: XCTestCase {
 //
 //        print(playListDetail)
       
+        NR_BASEURL = "https://wknetesae.vercel.app"
         
         let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 8615539052)
         let filterModels: [Int] = allSongs.map { model in

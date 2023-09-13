@@ -2,6 +2,8 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+public var NR_BASEURL = ""
+
 
 struct NewSongs: Codable {
     let name: String
@@ -28,33 +30,30 @@ enum NoCookieSession {
 enum NeteaseRequest {
     
     enum EndPoint {
-        private static var baseURL: String {
-            return "https://wknetease.zeabur.app"
-        }
-        static let cellPhoneLogin = "\(baseURL)/login/cellphone"
-        static let accountInfo = "\(baseURL)/user/account"
-        static let userSubcount = "\(baseURL)/user/subcount"
-        static let userLevelInfo = "\(baseURL)/user/level"
-        static let userFollows = "\(baseURL)/user/follows"
-        static let userFolloweds = "\(baseURL)/user/followeds"
-        static let artistList = "\(baseURL)/artist/list"
-        static let topSong = "\(baseURL)/artist/top/song"
-        static let allSong = "\(baseURL)/artist/songs"
-        static let artistSublist = "\(baseURL)/artist/sublist"
-        static let audioUrl = "\(baseURL)/song/url/v1"
+        static let cellPhoneLogin = "\(NR_BASEURL)/login/cellphone"
+        static let accountInfo = "\(NR_BASEURL)/user/account"
+        static let userSubcount = "\(NR_BASEURL)/user/subcount"
+        static let userLevelInfo = "\(NR_BASEURL)/user/level"
+        static let userFollows = "\(NR_BASEURL)/user/follows"
+        static let userFolloweds = "\(NR_BASEURL)/user/followeds"
+        static let artistList = "\(NR_BASEURL)/artist/list"
+        static let topSong = "\(NR_BASEURL)/artist/top/song"
+        static let allSong = "\(NR_BASEURL)/artist/songs"
+        static let artistSublist = "\(NR_BASEURL)/artist/sublist"
+        static let audioUrl = "\(NR_BASEURL)/song/url/v1"
         
-        static let catList = "\(baseURL)/playlist/catlist"
-        static let hotPlayList = "\(baseURL)/playlist/hot"
-        static let topPlayList = "\(baseURL)/top/playlist"
-        static let highqualityPlayList = "\(baseURL)/top/playlist/highquality"
+        static let catList = "\(NR_BASEURL)/playlist/catlist"
+        static let hotPlayList = "\(NR_BASEURL)/playlist/hot"
+        static let topPlayList = "\(NR_BASEURL)/top/playlist"
+        static let highqualityPlayList = "\(NR_BASEURL)/top/playlist/highquality"
         
-        static let playlistDetail = "\(baseURL)/playlist/detail"
+        static let playlistDetail = "\(NR_BASEURL)/playlist/detail"
         
-        static let playListTrackAll = "\(baseURL)/playlist/track/all"
+        static let playListTrackAll = "\(NR_BASEURL)/playlist/track/all"
         
-        static let checkAudio = "\(baseURL)/check/music"
+        static let checkAudio = "\(NR_BASEURL)/check/music"
         
-        static let newsong = "\(baseURL)/personalized/newsong?limit=10"
+        static let newsong = "\(NR_BASEURL)/personalized/newsong?limit=10"
     }
     
     
