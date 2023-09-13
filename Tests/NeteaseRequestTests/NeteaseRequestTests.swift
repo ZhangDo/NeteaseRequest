@@ -4,7 +4,7 @@ import XCTest
 final class NeteaseRequestTests: XCTestCase {
     func testExample() async {
         
-        NR_BASEURL = "https://wknetesae.vercel.app"
+        NR_BASEURL = "https://service-ioi18dzi-1259615918.gz.apigw.tencentcs.com/release"
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
@@ -89,15 +89,15 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
 //
-//        do {
-//            let audioUrlModel: [NRAudioUrlModel] = try await fetchAudioUrl(id: 442869301)
-//            let name: [String] = audioUrlModel.map { model in
-//                return model.url
-//            }
-//            print("audioUrlModel.url ==== \(name)")
-//        } catch {
-//            print(error)
-//        }
+        do {
+            let audioUrlModel: [NRAudioUrlModel] = try await fetchAudioUrl(id: 442869301, cookie: cookie)
+            let name: [String] = audioUrlModel.map { model in
+                return model.url!
+            }
+            print("audioUrlModel.url ==== \(name)")
+        } catch {
+            print(error)
+        }
         
 //        do {
 //            let songModel: [NRSongModel] = try await fetchAllSongs(singerId: 31211)

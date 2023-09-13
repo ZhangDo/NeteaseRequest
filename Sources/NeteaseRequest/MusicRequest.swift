@@ -8,8 +8,8 @@ import Alamofire
 ///  - level: 播放音质等级
 /// - Returns: [AudioUrlModel]
 
-public func fetchAudioUrl(id: Int, level: NRSongLevel = .standard) async throws -> [NRAudioUrlModel] {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.audioUrl, parameters: ["id": id, "level": level.rawValue], dataObj: "data")
+public func fetchAudioUrl(id: Int, level: NRSongLevel = .standard, cookie: String) async throws -> [NRAudioUrlModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.audioUrl, parameters: ["id": id, "level": level.rawValue, "cookie": cookie], dataObj: "data")
 }
 
 
