@@ -6,6 +6,7 @@ import Alamofire
 /// - Parameters:
 ///  - id: 音频 id
 ///  - level: 播放音质等级
+///  - cookie: 登录cookie
 /// - Returns: [AudioUrlModel]
 
 public func fetchAudioUrl(id: Int, level: NRSongLevel = .standard, cookie: String) async throws -> [NRAudioUrlModel] {
@@ -104,4 +105,13 @@ public func checkAudio(id: Int) async throws -> NRCheckAudioModel {
 /// - id: 音频id
 public func fetchLyric(id: Int) async throws -> NRLyricModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.lyric, parameters: ["id":id], dataObj: "lrc")
+}
+
+/// 获取每日推荐歌单
+
+///  - cookie: 登录cookie
+/// - Returns: [NRRecommendPlayListModel]
+
+public func fetchRecommendPlayList(cookie: String) async throws -> [NRRecommendPlayListModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recommendPlayList, parameters: ["cookie": cookie], dataObj: "recommend")
 }

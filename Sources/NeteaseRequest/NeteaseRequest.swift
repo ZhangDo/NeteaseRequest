@@ -55,6 +55,8 @@ enum NeteaseRequest {
         
         static let lyric = "\(NR_BASEURL)/lyric"
         
+        static let recommendPlayList = "\(NR_BASEURL)/recommend/resource"
+        
         static let newsong = "\(NR_BASEURL)/personalized/newsong?limit=10"
     }
     
