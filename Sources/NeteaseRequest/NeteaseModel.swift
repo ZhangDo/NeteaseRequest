@@ -313,6 +313,40 @@ public struct NRPlayListModel: Codable {
     }
 }
 
+public struct NRRecommendPlayListModel: Codable {
+    public var name: String
+    public var id: Int
+    public var description: String?
+    public var picUrl: String?
+    public var userId: Int?
+    public var creator: NRPlayListCreator?
+    
+    public init(name: String, id: Int, description: String? = nil, picUrl: String? = nil, userId: Int? = nil, creator: NRPlayListCreator? = nil) {
+        self.name = name
+        self.id = id
+        self.description = description
+        self.picUrl = picUrl
+        self.userId = userId
+        self.creator = creator
+    }
+}
+
+public struct NRPlayListCreator: Codable {
+    var remarkName: String?
+    var mutual: Bool
+    var avatarUrl: String?
+    var nickname: String?
+    var signature: String?
+    
+    public init(remarkName: String? = nil, mutual: Bool, avatarUrl: String? = nil, nickname: String? = nil, signature: String? = nil) {
+        self.remarkName = remarkName
+        self.mutual = mutual
+        self.avatarUrl = avatarUrl
+        self.nickname = nickname
+        self.signature = signature
+    }
+}
+
 public struct NRPlayListDetailModel: Codable {
     public var id: Int
     public var name: String

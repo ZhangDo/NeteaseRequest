@@ -47,7 +47,7 @@ public func fetchUserFolloweds(parameters: Parameters) async throws -> [NRUserFo
 /// 获取收藏的歌手列表
 /// - Parameters:
 ///  - cookie: cookie
-/// - Returns: [NRSingerInfoModel]
+/// - Returns: [NRSingefrInfoModel]
 
 public func fetchSublist(cookie: String) async throws -> [NRSingerInfoModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistSublist, parameters: ["cookie": cookie], dataObj: "data")
