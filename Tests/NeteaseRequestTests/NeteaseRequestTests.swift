@@ -165,6 +165,7 @@ final class NeteaseRequestTests: XCTestCase {
 //        let filterModels: [Int] = allSongs.map { model in
 //            return model.id
 //        }
+//        print(allSongs)
 //
 //        do {
 //            let checkModel: NRCheckAudioModel = try await checkAudio(id: filterModels.first!)

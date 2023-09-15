@@ -44,6 +44,25 @@ public enum NRSongLevel: String, Codable {
     
 }
 
+
+public enum NRFee: Int, Codable {
+    ///免费或无版权
+    case free = 0
+    ///VIP 歌曲
+    case vip = 1
+    ///非会员可免费播放低音质，会员可播放高音质及下载
+    case notVip = 8
+}
+
+public enum NROriginCoverType: Int, Codable {
+    ///未知
+    case unowned = 0
+    ///原唱
+    case origin = 1
+    ///翻唱
+    case cover = 2
+}
+
 public struct CellPhoneModel: Codable {
     public var loginType: Int
     public var account: AccountModel
@@ -235,14 +254,17 @@ public struct NRSongModel: Codable {
     public var publishTime: TimeInterval?
     public var level: NRSongLevel?
     public var al: NRAlModel
+    public var fee: NRFee?
+    public var originCoverType: NROriginCoverType?
     
-    
-    public init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel) {
+    public init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel, fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil) {
         self.name = name
         self.id = id
         self.publishTime = publishTime
         self.level = level
         self.al = al
+        self.fee = fee
+        self.originCoverType = originCoverType
     }
 }
 
