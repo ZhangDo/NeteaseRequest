@@ -254,18 +254,25 @@ public struct NRSongModel: Codable {
     public var publishTime: TimeInterval?
     public var level: NRSongLevel?
     public var al: NRAlModel
+    public var ar: [NRArModel]?
     public var fee: NRFee?
     public var originCoverType: NROriginCoverType?
     
-    public init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel, fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil) {
+    init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel, ar: [NRArModel]? = nil, fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil) {
         self.name = name
         self.id = id
         self.publishTime = publishTime
         self.level = level
         self.al = al
+        self.ar = ar
         self.fee = fee
         self.originCoverType = originCoverType
     }
+}
+
+public struct NRArModel: Codable {
+    public var name: String?
+    public var id: Int?
 }
 
 public struct NRAlModel: Codable {
