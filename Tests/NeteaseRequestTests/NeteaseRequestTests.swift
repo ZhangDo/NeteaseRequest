@@ -178,12 +178,18 @@ final class NeteaseRequestTests: XCTestCase {
 //        let lyricModel: NRLyricModel = try! await fetchLyric(id: 2054003356)
 //        print(lyricModel.lyric ?? "")
         
-        let recommendPlayList: [NRRecommendPlayListModel] = try! await fetchRecommendPlayList(cookie: cookie)
-        let recommendPlayListNames: [String] = recommendPlayList.map { model in
-            return model.name 
-        }
+//        let recommendPlayList: [NRRecommendPlayListModel] = try! await fetchRecommendPlayList(cookie: cookie)
+//        let recommendPlayListNames: [String] = recommendPlayList.map { model in
+//            return model.name
+//        }
+//
+//        print(recommendPlayListNames)
         
-        print(recommendPlayListNames)
+        let allSongs: [NRSongModel] =  try! await fetchDailtSongs(cookie: cookie)
+        let filterModels: [String] = allSongs.map { model in
+            return model.name
+        }
+        print(filterModels)
         
         
     }
