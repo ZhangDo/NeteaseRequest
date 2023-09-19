@@ -424,3 +424,29 @@ public struct NRLyricModel: Codable {
         self.lyric = lyric
     }
 }
+
+public struct NRDailySongModel: Codable {
+    public var dailySongs: [NRSongModel]
+    public var recommendReasons: [NRRecommendReasonModel]
+    
+    public init(dailySongs: [NRSongModel], recommendReasons: [NRRecommendReasonModel]) {
+        self.dailySongs = dailySongs
+        self.recommendReasons = recommendReasons
+    }
+
+    
+}
+
+public struct NRRecommendReasonModel: Codable {
+    public var songId: Int
+    public var reason: String
+    public var reasonId: String
+    public var targetUrl: String?
+    
+    init(songId: Int, reason: String, reasonId: String, targetUrl: String? = nil) {
+        self.songId = songId
+        self.reason = reason
+        self.reasonId = reasonId
+        self.targetUrl = targetUrl
+    }
+}

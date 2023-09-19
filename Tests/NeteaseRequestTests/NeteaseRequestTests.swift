@@ -185,8 +185,8 @@ final class NeteaseRequestTests: XCTestCase {
 //
 //        print(recommendPlayListNames)
         
-        let allSongs: [NRSongModel] =  try! await fetchDailtSongs(cookie: cookie)
-        let filterModels: [String] = allSongs.map { model in
+        let dailySongModel: NRDailySongModel =  try! await fetchDailtSongs(cookie: cookie)
+        let filterModels: [String] = dailySongModel.dailySongs.map { model in
             return model.name
         }
         print(filterModels)
