@@ -450,3 +450,15 @@ public struct NRRecommendReasonModel: Codable {
         self.targetUrl = targetUrl
     }
 }
+
+public struct NRPersonalFMModel: Codable {
+    public var name: String
+    public var id: Int
+    public var fee: NRFee?
+    
+    public init(name: String, id: Int, fee: NRFee? = nil) {
+        self.name = name
+        self.id = id
+        self.fee = fee
+    }
+}

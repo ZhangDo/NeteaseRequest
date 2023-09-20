@@ -122,3 +122,10 @@ public func fetchRecommendPlayList(cookie: String) async throws -> [NRRecommendP
 public func fetchDailtSongs(cookie: String) async throws -> NRDailySongModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recommendSongs, parameters: ["cookie": cookie], dataObj: "data")
 }
+
+///获取私人FM
+/// - cookie: 登录cookie
+/// - Returns: [NRPersonalFMModel]
+public func fetchPersonalFM(cookie: String) async throws -> [NRPersonalFMModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.personalfm, parameters: ["cookie": cookie], dataObj: "data")
+}
