@@ -197,12 +197,18 @@ final class NeteaseRequestTests: XCTestCase {
 //        }
 //        print(filterModels)
         
-        let personalizedPlayList: [NRRecommendPlayListModel] = try! await fetchPersonalizedPlayList(cookie: cookie)
-        let personalizedPlayListNames: [String] = personalizedPlayList.map { model in
+//        let personalizedPlayList: [NRRecommendPlayListModel] = try! await fetchPersonalizedPlayList(cookie: cookie)
+//        let personalizedPlayListNames: [String] = personalizedPlayList.map { model in
+//            return model.name
+//        }
+//
+//        print(personalizedPlayListNames)
+        
+        let newSongModels: [NRNewSongModel] = try! await fetchNewSong(cookie: cookie)
+        let newSongNames: [String] = newSongModels.map { model in
             return model.name
         }
-
-        print(personalizedPlayListNames)
+        print(newSongNames)
         
     }
     

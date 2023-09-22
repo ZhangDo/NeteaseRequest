@@ -5,12 +5,7 @@ import SwiftyJSON
 public var NR_BASEURL = ""
 
 
-struct NewSongs: Codable {
-    let name: String
-    let picUrl: String
-    let type: Int
-    
-}
+
 
 
 enum RequestError: Error {
@@ -61,7 +56,7 @@ enum NeteaseRequest {
 //        /推荐歌单
         static let personalizedPlayList = "\(NR_BASEURL)/personalized"
         
-        static let newsong = "\(NR_BASEURL)/personalized/newsong?limit=10"
+        static let newsong = "\(NR_BASEURL)/personalized/newsong"
     }
     
     

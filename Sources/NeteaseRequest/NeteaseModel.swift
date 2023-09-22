@@ -443,7 +443,7 @@ public struct NRRecommendReasonModel: Codable {
     public var reasonId: String
     public var targetUrl: String?
     
-    init(songId: Int, reason: String, reasonId: String, targetUrl: String? = nil) {
+    public init(songId: Int, reason: String, reasonId: String, targetUrl: String? = nil) {
         self.songId = songId
         self.reason = reason
         self.reasonId = reasonId
@@ -460,5 +460,20 @@ public struct NRPersonalFMModel: Codable {
         self.name = name
         self.id = id
         self.fee = fee
+    }
+}
+
+public struct NRNewSongModel: Codable {
+    public let id: Int
+    public let name: String
+    public let picUrl: String
+    public let type: Int
+//    public let song: NRSongModel?
+    
+    public init(id: Int, name: String, picUrl: String, type: Int) {
+        self.id = id
+        self.name = name
+        self.picUrl = picUrl
+        self.type = type
     }
 }
