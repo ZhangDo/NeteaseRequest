@@ -490,12 +490,12 @@ public struct NRNewSongModel: Codable {
 public struct NRBannerModel: Codable {
     public let pic: String
     public let targetId: Int?
-    public let targetType: Int?
+    public let targetType: NRBannerTargetType?
     public let typeTitle: String?
     public let url: String?
     public let titleColor: String?
     
-    public init(pic: String, targetId: Int?, targetType: Int?, typeTitle: String?, url: String?, titleColor: String?) {
+    public init(pic: String, targetId: Int?, targetType: NRBannerTargetType?, typeTitle: String?, url: String?, titleColor: String?) {
         self.pic = pic
         self.targetId = targetId
         self.targetType = targetType

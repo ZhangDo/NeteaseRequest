@@ -214,10 +214,10 @@ final class NeteaseRequestTests: XCTestCase {
         let typeTitles: [String] = bannerModels.map { model in
             return model.typeTitle!
         }
-        print(typeTitles)
+        print(bannerModels)
         
-        let albumDetail: NRAlbumDetailModel = try! await fetchAlbumDetail(id: 174767494)
-        print(albumDetail.album.description ?? "")
+//        let albumDetail: NRAlbumDetailModel = try! await fetchAlbumDetail(id: 174767494)
+//        print(albumDetail.album.description ?? "")
         
     }
     
