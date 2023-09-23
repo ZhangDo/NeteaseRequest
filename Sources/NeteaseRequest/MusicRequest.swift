@@ -145,3 +145,22 @@ public func fetchPersonalizedPlayList(cookie: String, limit: Int = 30) async thr
 public func fetchNewSong(cookie: String, limit: Int = 30) async throws -> [NRNewSongModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.newsong, parameters: ["cookie": cookie, "limit": limit], dataObj: "result")
 }
+
+
+/// 获取Banner
+///  - type:
+///    - 0: pc
+///    - 1: android
+///    - 2: iphone
+///    - 3: ipad
+/// - Returns: [NRBannerModel]
+public func fetchBanners(type: Int = 2) async throws -> [NRBannerModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.banner, parameters: ["type": type], dataObj: "banners")
+}
+
+/// 获取Album内容
+///  - id: targetId
+/// - Returns: [NRBannerModel]
+public func fetchAlbumDetail(id: Int) async throws -> NRAlbumDetailModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.albumContent, parameters: ["id": id])
+}

@@ -55,6 +55,10 @@ enum NeteaseRequest {
         static let personalfm = "\(NR_BASEURL)/personal_fm"
 //        /推荐歌单
         static let personalizedPlayList = "\(NR_BASEURL)/personalized"
+        ///banner
+        static let banner = "\(NR_BASEURL)/banner"
+        ///获取专辑内容
+        static let albumContent = "\(NR_BASEURL)/album"
         
         static let newsong = "\(NR_BASEURL)/personalized/newsong"
     }

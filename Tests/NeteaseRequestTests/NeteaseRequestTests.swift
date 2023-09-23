@@ -204,11 +204,20 @@ final class NeteaseRequestTests: XCTestCase {
 //
 //        print(personalizedPlayListNames)
         
-        let newSongModels: [NRNewSongModel] = try! await fetchNewSong(cookie: cookie)
-        let newSongNames: [String] = newSongModels.map { model in
-            return model.name
+//        let newSongModels: [NRNewSongModel] = try! await fetchNewSong(cookie: cookie)
+//        let newSongNames: [String] = newSongModels.map { model in
+//            return model.name
+//        }
+//        print(newSongNames)
+        
+        let bannerModels: [NRBannerModel] = try! await fetchBanners(type: 2)
+        let typeTitles: [String] = bannerModels.map { model in
+            return model.typeTitle!
         }
-        print(newSongNames)
+        print(typeTitles)
+        
+        let albumDetail: NRAlbumDetailModel = try! await fetchAlbumDetail(id: 174767494)
+        print(albumDetail.album.description ?? "")
         
     }
     

@@ -63,6 +63,15 @@ public enum NROriginCoverType: Int, Codable {
     case cover = 2
 }
 
+public enum NRBannerTargetType: Int, Codable {
+    ///歌曲
+    case song = 1
+    ///专辑
+    case album = 10
+    ///其它
+    case other = 3000
+}
+
 public struct CellPhoneModel: Codable {
     public var loginType: Int
     public var account: AccountModel
@@ -476,4 +485,43 @@ public struct NRNewSongModel: Codable {
         self.picUrl = picUrl
         self.type = type
     }
+}
+
+public struct NRBannerModel: Codable {
+    public let pic: String
+    public let targetId: Int?
+    public let targetType: Int?
+    public let typeTitle: String?
+    public let url: String?
+    public let titleColor: String?
+    
+    public init(pic: String, targetId: Int?, targetType: Int?, typeTitle: String?, url: String?, titleColor: String?) {
+        self.pic = pic
+        self.targetId = targetId
+        self.targetType = targetType
+        self.typeTitle = typeTitle
+        self.url = url
+        self.titleColor = titleColor
+    }
+}
+
+public struct NRAlbumModel: Codable {
+    public let picUrl: String?
+    public let description: String?
+    
+    public init(picUrl: String?, description: String?) {
+        self.picUrl = picUrl
+        self.description = description
+    }
+}
+
+public struct NRAlbumDetailModel: Codable {
+    public let songs: [NRSongModel]
+    public let album: NRAlbumModel
+    
+    public init(songs: [NRSongModel], album: NRAlbumModel) {
+        self.songs = songs
+        self.album = album
+    }
+    
 }
