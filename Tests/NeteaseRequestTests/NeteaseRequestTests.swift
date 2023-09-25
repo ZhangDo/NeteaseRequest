@@ -211,9 +211,9 @@ final class NeteaseRequestTests: XCTestCase {
 //        print(newSongNames)
         
         let bannerModels: [NRBannerModel] = try! await fetchBanners(type: 2)
-        let typeTitles: [String] = bannerModels.map { model in
-            return model.typeTitle!
-        }
+//        let typeTitles: [String] = bannerModels.map { model in
+//            return model.typeTitle!
+//        }
         print(bannerModels)
         
 //        let albumDetail: NRAlbumDetailModel = try! await fetchAlbumDetail(id: 174767494)

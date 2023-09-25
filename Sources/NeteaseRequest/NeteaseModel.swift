@@ -494,14 +494,16 @@ public struct NRBannerModel: Codable {
     public let typeTitle: String?
     public let url: String?
     public let titleColor: String?
+    public let song: NRSongModel?
     
-    public init(pic: String, targetId: Int?, targetType: NRBannerTargetType?, typeTitle: String?, url: String?, titleColor: String?) {
+    public init(pic: String, targetId: Int?, targetType: NRBannerTargetType?, typeTitle: String?, url: String?, titleColor: String?, song: NRSongModel?) {
         self.pic = pic
         self.targetId = targetId
         self.targetType = targetType
         self.typeTitle = typeTitle
         self.url = url
         self.titleColor = titleColor
+        self.song = song
     }
 }
 
