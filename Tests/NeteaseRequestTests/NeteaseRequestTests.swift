@@ -162,9 +162,7 @@ final class NeteaseRequestTests: XCTestCase {
 //        print(playListDetail)
         
 //        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 8615539052)
-//        let filterModels: [Int] = allSongs.map { model in
-//            return model.id
-//        }
+//        let filterModels: String = (allSongs.first?.ar.map{ $0.name ?? "" }.joined(separator: "/"))!
 //        print(allSongs)
 //
 //        do {
