@@ -161,9 +161,14 @@ final class NeteaseRequestTests: XCTestCase {
 //
 //        print(playListDetail)
         
-//        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 8615539052)
-//        let filterModels: String = (allSongs.first?.ar.map{ $0.name ?? "" }.joined(separator: "/"))!
-//        print(allSongs)
+        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 7780071743)
+        let filterModels: [String] = allSongs.map { $0.dt }.map { dt in
+            let min = dt / 1000 / 60
+            let sec = dt / 1000 % 60
+            return String(format: "%d:%02d", min, sec)
+        }
+        
+        print(filterModels)
 //
 //        do {
 //            let checkModel: NRCheckAudioModel = try await checkAudio(id: filterModels.first!)
@@ -208,11 +213,11 @@ final class NeteaseRequestTests: XCTestCase {
 //        }
 //        print(newSongNames)
         
-        let bannerModels: [NRBannerModel] = try! await fetchBanners(type: 2)
+//        let bannerModels: [NRBannerModel] = try! await fetchBanners(type: 2)
 //        let typeTitles: [String] = bannerModels.map { model in
 //            return model.typeTitle!
 //        }
-        print(bannerModels)
+//        print(bannerModels)
         
 //        let albumDetail: NRAlbumDetailModel = try! await fetchAlbumDetail(id: 174767494)
 //        print(albumDetail.album.description ?? "")

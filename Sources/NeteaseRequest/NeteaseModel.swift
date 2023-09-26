@@ -266,8 +266,9 @@ public struct NRSongModel: Codable {
     public var ar: [NRArModel]
     public var fee: NRFee?
     public var originCoverType: NROriginCoverType?
+    public var dt: Int
     
-    init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel, ar: [NRArModel], fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil) {
+    init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel, ar: [NRArModel], fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil, dt: Int) {
         self.name = name
         self.id = id
         self.publishTime = publishTime
@@ -276,6 +277,7 @@ public struct NRSongModel: Codable {
         self.ar = ar
         self.fee = fee
         self.originCoverType = originCoverType
+        self.dt = dt
     }
 }
 
@@ -392,13 +394,13 @@ public struct NRPlayListDetailModel: Codable {
     public var userId: Int
     public var createTime: TimeInterval?
     public var playCount: Int
-    public var description: String
+    public var description: String?
     public var subscribedCount: Int
     public var trackNumberUpdateTime: TimeInterval?
     public var trackUpdateTime: TimeInterval?
     public var tags: [String]?
     
-    public init(id: Int, name: String, coverImgUrl: String, userId: Int, createTime: TimeInterval? = nil, playCount: Int, description: String, subscribedCount: Int, trackNumberUpdateTime: TimeInterval? = nil, trackUpdateTime: TimeInterval? = nil, tags: [String]? = nil) {
+    public init(id: Int, name: String, coverImgUrl: String, userId: Int, createTime: TimeInterval? = nil, playCount: Int, description: String?, subscribedCount: Int, trackNumberUpdateTime: TimeInterval? = nil, trackUpdateTime: TimeInterval? = nil, tags: [String]? = nil) {
         self.id = id
         self.name = name
         self.coverImgUrl = coverImgUrl
