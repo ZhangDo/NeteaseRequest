@@ -360,14 +360,16 @@ public struct NRRecommendPlayListModel: Codable {
     public var picUrl: String?
     public var userId: Int?
     public var creator: NRPlayListCreator?
+    public var copywriter: String?
     
-    public init(name: String, id: Int, description: String? = nil, picUrl: String? = nil, userId: Int? = nil, creator: NRPlayListCreator? = nil) {
+    public init(name: String, id: Int, description: String? = nil, picUrl: String? = nil, userId: Int? = nil, creator: NRPlayListCreator? = nil, copywriter: String? = nil) {
         self.name = name
         self.id = id
         self.description = description
         self.picUrl = picUrl
         self.userId = userId
         self.creator = creator
+        self.copywriter = copywriter
     }
 }
 
