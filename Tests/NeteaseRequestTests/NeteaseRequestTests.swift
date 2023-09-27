@@ -157,18 +157,18 @@ final class NeteaseRequestTests: XCTestCase {
 //            return model.id
 //        }
 //        print(filterModels)
-//        let playListDetail: NRPlayListDetailModel = try! await fetchPlayListDetail(id: filterModels.first!)
+        let playListDetail: NRPlayListDetailModel = try! await fetchPlayListDetail(id: 7780071743, cookie: cookie)
+
+        print(playListDetail)
+        
+//        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 7780071743)
+//        let filterModels: [String] = allSongs.map { $0.dt }.map { dt in
+//            let min = dt / 1000 / 60
+//            let sec = dt / 1000 % 60
+//            return String(format: "%d:%02d", min, sec)
+//        }
 //
-//        print(playListDetail)
-        
-        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 7780071743)
-        let filterModels: [String] = allSongs.map { $0.dt }.map { dt in
-            let min = dt / 1000 / 60
-            let sec = dt / 1000 % 60
-            return String(format: "%d:%02d", min, sec)
-        }
-        
-        print(filterModels)
+//        print(filterModels)
 //
 //        do {
 //            let checkModel: NRCheckAudioModel = try await checkAudio(id: filterModels.first!)

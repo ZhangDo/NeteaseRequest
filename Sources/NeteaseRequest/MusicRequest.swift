@@ -82,8 +82,8 @@ public func fetchHighqualityPlayList(cat: String = "全部",limit: Int = 30) asy
 ///  - id: 歌单id
 /// - Returns: [NRPlayListModel]
 ///
-public func fetchPlayListDetail(id: Int) async throws -> NRPlayListDetailModel {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.playlistDetail, parameters: ["id": id], dataObj: "playlist")
+public func fetchPlayListDetail(id: Int, cookie: String) async throws -> NRPlayListDetailModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.playlistDetail, parameters: ["id": id, "cookie": cookie], dataObj: "playlist")
 }
 
 /// 获取歌单中的歌曲
