@@ -516,10 +516,12 @@ public struct NRBannerModel: Codable {
 public struct NRAlbumModel: Codable {
     public let picUrl: String?
     public let description: String?
+    public let name: String?
     
-    public init(picUrl: String?, description: String?) {
+    public init(picUrl: String?, description: String?, name: String?) {
         self.picUrl = picUrl
         self.description = description
+        self.name = name
     }
 }
 
