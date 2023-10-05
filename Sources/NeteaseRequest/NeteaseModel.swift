@@ -50,6 +50,9 @@ public enum NRFee: Int, Codable {
     case free = 0
     ///VIP 歌曲
     case vip = 1
+    ///购买专辑
+    case buyAlbum = 4
+    
     ///非会员可免费播放低音质，会员可播放高音质及下载
     case notVip = 8
 }
