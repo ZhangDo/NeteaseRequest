@@ -318,7 +318,7 @@ public struct NRCatModel: Codable {
     public var sub: [NRCatInfoModel]
     public var categories: [String: String]
     
-    init(all: NRCatInfoModel, sub: [NRCatInfoModel], categories: [String : String]) {
+    public init(all: NRCatInfoModel, sub: [NRCatInfoModel], categories: [String : String]) {
         self.all = all
         self.sub = sub
         self.categories = categories
@@ -537,4 +537,14 @@ public struct NRAlbumDetailModel: Codable {
         self.album = album
     }
     
+}
+
+public struct NRDJCatelistModel: Codable {
+    public let id: Int
+    public let name: String
+    
+    public init(id: Int, name: String) {
+        self.id = id
+        self.name = name
+    }
 }

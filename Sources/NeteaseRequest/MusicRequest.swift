@@ -164,3 +164,9 @@ public func fetchBanners(type: Int = 2) async throws -> [NRBannerModel] {
 public func fetchAlbumDetail(id: Int) async throws -> NRAlbumDetailModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.albumContent, parameters: ["id": id])
 }
+
+/// 获取电台 - 分类
+/// - Returns: [NRBannerModel]
+public func fetchDJCatelist() async throws -> [NRDJCatelistModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djCatelist, dataObj: "categories")
+}

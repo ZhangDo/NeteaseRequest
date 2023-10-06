@@ -61,6 +61,11 @@ enum NeteaseRequest {
         static let albumContent = "\(NR_BASEURL)/album"
         
         static let newsong = "\(NR_BASEURL)/personalized/newsong"
+        
+        
+        //电台
+        static let djCatelist = "\(NR_BASEURL)/dj/catelist"
+        
     }
     
     

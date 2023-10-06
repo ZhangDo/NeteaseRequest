@@ -157,9 +157,9 @@ final class NeteaseRequestTests: XCTestCase {
 //            return model.id
 //        }
 //        print(filterModels)
-        let playListDetail: NRPlayListDetailModel = try! await fetchPlayListDetail(id: 7780071743, cookie: cookie)
-
-        print(playListDetail)
+//        let playListDetail: NRPlayListDetailModel = try! await fetchPlayListDetail(id: 7780071743, cookie: cookie)
+//
+//        print(playListDetail)
         
 //        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 7780071743)
 //        let filterModels: [String] = allSongs.map { $0.dt }.map { dt in
@@ -181,12 +181,12 @@ final class NeteaseRequestTests: XCTestCase {
 //        let lyricModel: NRLyricModel = try! await fetchLyric(id: 2054003356)
 //        print(lyricModel.lyric ?? "")
         
-        let recommendPlayList: [NRRecommendPlayListModel] = try! await fetchRecommendPlayList(cookie: cookie)
-        let recommendPlayListNames: [String] = recommendPlayList.map { model in
-            return model.copywriter ?? ""
-        }
+//        let recommendPlayList: [NRRecommendPlayListModel] = try! await fetchRecommendPlayList(cookie: cookie)
+//        let recommendPlayListNames: [String] = recommendPlayList.map { model in
+//            return model.copywriter ?? ""
+//        }
 //
-        print(recommendPlayListNames)
+//        print(recommendPlayListNames)
         
 //        let dailySongModel: NRDailySongModel =  try! await fetchDailtSongs(cookie: cookie)
 //        let filterModels: [String] = dailySongModel.dailySongs.map { model in
@@ -221,6 +221,10 @@ final class NeteaseRequestTests: XCTestCase {
         
 //        let albumDetail: NRAlbumDetailModel = try! await fetchAlbumDetail(id: 174767494)
 //        print(albumDetail.album.description ?? "")
+        
+        
+        let djCatelist: [NRDJCatelistModel] = try! await fetchDJCatelist()
+        print(djCatelist)
         
     }
     
