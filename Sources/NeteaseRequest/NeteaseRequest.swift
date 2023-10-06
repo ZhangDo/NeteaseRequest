@@ -84,8 +84,8 @@ enum NeteaseRequest {
             session = NoCookieSession.session
             session.sessionConfiguration.httpShouldSetCookies = false
         }
-        session.sessionConfiguration.timeoutIntervalForResource = 30
-        session.sessionConfiguration.timeoutIntervalForRequest = 30
+        session.sessionConfiguration.timeoutIntervalForResource = 90
+        session.sessionConfiguration.timeoutIntervalForRequest = 90
         session.request(url,
                         method: method,
                         parameters: parameters,
