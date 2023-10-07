@@ -223,8 +223,11 @@ final class NeteaseRequestTests: XCTestCase {
 //        print(albumDetail.album.description ?? "")
         
         
-        let djCatelist: [NRDJCatelistModel] = try! await fetchDJCatelist()
-        print(djCatelist)
+//        let djCatelist: [NRDJCatelistModel] = try! await fetchDJCatelist()
+//        print(djCatelist)
+        
+        let djHotRadios: [NRDJRadioModel] = try! await fetchDJHotRadio(cateId: 2)
+        print(djHotRadios.first!)
         
     }
     

@@ -170,3 +170,11 @@ public func fetchAlbumDetail(id: Int) async throws -> NRAlbumDetailModel {
 public func fetchDJCatelist() async throws -> [NRDJCatelistModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djCatelist, dataObj: "categories")
 }
+
+/// 电台 - 类别热门电台
+///  - cateId: 分类id
+///  - Returns: [NRDJRadioModel]
+public func fetchDJHotRadio(cateId: Int) async throws -> [NRDJRadioModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djHotRadio, parameters: ["cateId": cateId], dataObj: "djRadios")
+}
+

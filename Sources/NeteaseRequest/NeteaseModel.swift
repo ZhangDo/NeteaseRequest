@@ -271,7 +271,7 @@ public struct NRSongModel: Codable {
     public var originCoverType: NROriginCoverType?
     public var dt: Int
     
-    init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel, ar: [NRArModel], fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil, dt: Int) {
+    public init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel, ar: [NRArModel], fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil, dt: Int) {
         self.name = name
         self.id = id
         self.publishTime = publishTime
@@ -287,12 +287,21 @@ public struct NRSongModel: Codable {
 public struct NRArModel: Codable {
     public var name: String?
     public var id: Int?
+    public init(name: String? = nil, id: Int? = nil) {
+        self.name = name
+        self.id = id
+    }
 }
 
 public struct NRAlModel: Codable {
     public var name: String
     public var id: Int
     public var picUrl: String
+    public init(name: String, id: Int, picUrl: String) {
+        self.name = name
+        self.id = id
+        self.picUrl = picUrl
+    }
 }
 
 public struct NRAudioUrlModel: Codable {
@@ -437,7 +446,7 @@ public struct NRLyricModel: Codable {
     public var version: Int
     public var lyric: String?
     
-    init(version: Int, lyric: String? = nil) {
+    public init(version: Int, lyric: String? = nil) {
         self.version = version
         self.lyric = lyric
     }
@@ -482,10 +491,10 @@ public struct NRPersonalFMModel: Codable {
 }
 
 public struct NRNewSongModel: Codable {
-    public let id: Int
-    public let name: String
-    public let picUrl: String
-    public let type: Int
+    public var id: Int
+    public var name: String
+    public var picUrl: String
+    public var type: Int
 //    public let song: NRSongModel?
     
     public init(id: Int, name: String, picUrl: String, type: Int) {
@@ -497,13 +506,13 @@ public struct NRNewSongModel: Codable {
 }
 
 public struct NRBannerModel: Codable {
-    public let pic: String
-    public let targetId: Int?
-    public let targetType: Int?
-    public let typeTitle: String?
-    public let url: String?
-    public let titleColor: String?
-    public let song: NRSongModel?
+    public var pic: String
+    public var targetId: Int?
+    public var targetType: Int?
+    public var typeTitle: String?
+    public var url: String?
+    public var titleColor: String?
+    public var song: NRSongModel?
     
     public init(pic: String, targetId: Int?, targetType: Int?, typeTitle: String?, url: String?, titleColor: String?, song: NRSongModel?) {
         self.pic = pic
@@ -517,9 +526,9 @@ public struct NRBannerModel: Codable {
 }
 
 public struct NRAlbumModel: Codable {
-    public let picUrl: String?
-    public let description: String?
-    public let name: String?
+    public var picUrl: String?
+    public var description: String?
+    public var name: String?
     
     public init(picUrl: String?, description: String?, name: String?) {
         self.picUrl = picUrl
@@ -529,8 +538,8 @@ public struct NRAlbumModel: Codable {
 }
 
 public struct NRAlbumDetailModel: Codable {
-    public let songs: [NRSongModel]
-    public let album: NRAlbumModel
+    public var songs: [NRSongModel]
+    public var album: NRAlbumModel
     
     public init(songs: [NRSongModel], album: NRAlbumModel) {
         self.songs = songs
@@ -540,11 +549,72 @@ public struct NRAlbumDetailModel: Codable {
 }
 
 public struct NRDJCatelistModel: Codable {
-    public let id: Int
-    public let name: String
+    public var id: Int
+    public var name: String
     
     public init(id: Int, name: String) {
         self.id = id
         self.name = name
+    }
+}
+
+public struct NRDJRadioModel: Codable {
+    public var dj: NRDJModel
+    public var category: String
+    public var secondCategory: String
+    public var buyed: Bool
+    public var lastProgramName: String?
+    public var picUrl: String
+    public var programCount: Int
+    public var subCount: Int
+    public var lastProgramId: Int
+    public var desc: String
+    public var name: String
+    public var id: Int
+    public var rcmdtext: String
+    
+    public init(dj: NRDJModel, category: String, secondCategory: String, buyed: Bool, lastProgramName: String, picUrl: String, programCount: Int, subCount: Int, lastProgramId: Int, desc: String, name: String, id: Int, rcmdtext: String) {
+        self.dj = dj
+        self.category = category
+        self.secondCategory = secondCategory
+        self.buyed = buyed
+        self.lastProgramName = lastProgramName
+        self.picUrl = picUrl
+        self.programCount = programCount
+        self.subCount = subCount
+        self.lastProgramId = lastProgramId
+        self.desc = desc
+        self.name = name
+        self.id = id
+        self.rcmdtext = rcmdtext
+    }
+}
+
+
+public struct NRDJModel: Codable {
+    public var avatarUrl: String
+    public var birthday: TimeInterval?
+    public var gender: Int
+    public var birthd: String {
+         let date = Date(timeIntervalSince1970: (birthday ?? TimeInterval()) / 1000)
+         let dateformatter = DateFormatter()
+         dateformatter.dateFormat = "yyyy-MM-dd"
+         return dateformatter.string(from: date)
+     }
+    public var userId: Int
+    public var userType: Int
+    public var nickname: String
+    public var signature: String
+    public var backgroundUrl: String?
+    
+    public init(avatarUrl: String, birthday: TimeInterval? = nil, gender: Int, userId: Int, userType: Int, nickname: String, signature: String, backgroundUrl: String? = nil) {
+        self.avatarUrl = avatarUrl
+        self.birthday = birthday
+        self.gender = gender
+        self.userId = userId
+        self.userType = userType
+        self.nickname = nickname
+        self.signature = signature
+        self.backgroundUrl = backgroundUrl
     }
 }
