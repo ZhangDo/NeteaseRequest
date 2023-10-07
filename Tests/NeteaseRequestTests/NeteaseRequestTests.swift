@@ -219,15 +219,17 @@ final class NeteaseRequestTests: XCTestCase {
 //        }
 //        print(bannerModels)
         
-//        let albumDetail: NRAlbumDetailModel = try! await fetchAlbumDetail(id: 174767494)
-//        print(albumDetail.album.description ?? "")
+        let albumDetail: NRAlbumDetailModel = try! await fetchAlbumDetail(id: 174767494)
+        let names: [String] = albumDetail.album!.artists!.map { model in
+            return model.name
+        }
         
-        
+        print(names)
 //        let djCatelist: [NRDJCatelistModel] = try! await fetchDJCatelist()
 //        print(djCatelist)
         
-        let djHotRadios: [NRDJRadioModel] = try! await fetchDJHotRadio(cateId: 2)
-        print(djHotRadios.first!)
+//        let djHotRadios: [NRDJRadioModel] = try! await fetchDJHotRadio(cateId: 2)
+//        print(djHotRadios.first!)
         
     }
     
