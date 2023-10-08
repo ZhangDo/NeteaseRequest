@@ -234,8 +234,12 @@ final class NeteaseRequestTests: XCTestCase {
 //        let personalPrograms = try! await fetchPersonalProgram()
 //        print(personalPrograms)
         
-        let djRecommends = try! await fetchDJRecommend(cookie: cookie)
-        print(djRecommends)
+//        let djRecommends = try! await fetchDJRecommend(cookie: cookie)
+//        print(djRecommends)
+        
+        let djpersonalRecommends = try! await fetchPersonalRecommend(cookie: cookie)
+        print(djpersonalRecommends)
+        
     }
     
     
