@@ -183,3 +183,10 @@ public func fetchDJHotRadio(cateId: Int) async throws -> [NRDJRadioModel] {
 public func fetchPersonalProgram(limit: Int = 10) async throws -> [NRDJProgramModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.personalProgram, parameters: ["limit": limit], dataObj: "result")
 }
+/// 获取推荐电台
+/// - cookie: cookie
+/// - Returns: [NRDJRadioModel]
+public func fetchDJRecommend(cookie: String) async throws -> [NRDJRadioModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djRecommend, parameters: ["cookie": cookie], dataObj: "djRadios")
+}
+

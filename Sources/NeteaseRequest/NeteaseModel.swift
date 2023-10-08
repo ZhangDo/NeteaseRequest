@@ -564,13 +564,13 @@ public struct NRDJCatelistModel: Codable {
 public struct NRDJRadioModel: Codable {
     public var dj: NRDJModel
     public var category: String
-    public var secondCategory: String
+    public var secondCategory: String?
     public var buyed: Bool
     public var lastProgramName: String?
     public var picUrl: String
     public var programCount: Int
     public var subCount: Int
-    public var lastProgramId: Int
+    public var lastProgramId: Int?
     public var desc: String?
     public var name: String
     public var id: Int

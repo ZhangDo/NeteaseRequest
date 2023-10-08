@@ -67,6 +67,8 @@ enum NeteaseRequest {
         static let djCatelist = "\(NR_BASEURL)/dj/catelist"
         //电台 - 类别热门电台
         static let djHotRadio = "\(NR_BASEURL)/dj/radio/hot"
+        // 获取推荐电台
+        static let djRecommend = "\(NR_BASEURL)/dj/recommend"
         //获取推荐电台节目
         static let personalProgram = "\(NR_BASEURL)/personalized/djprogram"
         
