@@ -621,3 +621,77 @@ public struct NRDJModel: Codable {
         self.backgroundUrl = backgroundUrl
     }
 }
+
+public struct NRDJProgramModel: Codable {
+    public var id: Int
+    public var type: Int
+    public var name: String
+    public var copywriter: String?
+    public var picUrl: String?
+    public var canDislike: Bool
+    public var program: NRProgramModel
+    public init(id: Int, type: Int, name: String, copywriter: String? = nil, picUrl: String? = nil, canDislike: Bool, program: NRProgramModel) {
+        self.id = id
+        self.type = type
+        self.name = name
+        self.copywriter = copywriter
+        self.picUrl = picUrl
+        self.canDislike = canDislike
+        self.program = program
+    }
+    
+}
+
+public struct NRProgramModel: Codable {
+    public var dj: NRDJModel
+    public var radio: NRRadioModel
+    public var subscribedCount: Int
+    public var reward: Bool
+    public var mainTrackId: Int
+    public var serialNum: Int
+    public var listenerCount: Int
+    public var name: String
+    public var id: Int
+    public var createTime: Int
+    public var description: String?
+    public var userId: Int
+    public var coverUrl: String?
+    public init(dj: NRDJModel, radio: NRRadioModel, subscribedCount: Int, reward: Bool, mainTrackId: Int, serialNum: Int, listenerCount: Int, name: String, id: Int, createTime: Int, description: String? = nil, userId: Int, coverUrl: String? = nil) {
+        self.dj = dj
+        self.radio = radio
+        self.subscribedCount = subscribedCount
+        self.reward = reward
+        self.mainTrackId = mainTrackId
+        self.serialNum = serialNum
+        self.listenerCount = listenerCount
+        self.name = name
+        self.id = id
+        self.createTime = createTime
+        self.description = description
+        self.userId = userId
+        self.coverUrl = coverUrl
+    }
+    
+}
+
+public struct NRRadioModel: Codable {
+    public var id: Int
+    public var name: String
+    public var picUrl: String
+    public var desc: String?
+    public var subCount: Int
+    public var programCount: Int
+    public var category: String?
+    public var rcmdText: String?
+    
+    public init(id: Int, name: String, picUrl: String, desc: String? = nil, subCount: Int, programCount: Int, category: String? = nil, rcmdText: String? = nil) {
+        self.id = id
+        self.name = name
+        self.picUrl = picUrl
+        self.desc = desc
+        self.subCount = subCount
+        self.programCount = programCount
+        self.category = category
+        self.rcmdText = rcmdText
+    }
+}

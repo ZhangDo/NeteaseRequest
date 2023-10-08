@@ -177,4 +177,9 @@ public func fetchDJCatelist() async throws -> [NRDJCatelistModel] {
 public func fetchDJHotRadio(cateId: Int) async throws -> [NRDJRadioModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djHotRadio, parameters: ["cateId": cateId], dataObj: "djRadios")
 }
-
+/// 获取推荐电台节目
+///  - limit: 10
+///  - Returns: [NRDJProgramModel]
+public func fetchPersonalProgram(limit: Int = 10) async throws -> [NRDJProgramModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.personalProgram, parameters: ["limit": limit], dataObj: "result")
+}
