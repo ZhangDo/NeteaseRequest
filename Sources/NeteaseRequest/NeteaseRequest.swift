@@ -74,7 +74,9 @@ enum NeteaseRequest {
         //获取电台个性推荐 dj/personalize/recommend
         static let djPersonalRecommend = "\(NR_BASEURL)/dj/personalize/recommend"
         //获取电台节目列表
-        static let dhProgram = "\(NR_BASEURL)/dj/program"
+        static let djProgram = "\(NR_BASEURL)/dj/program"
+        //获取电台节目详情
+        static let djPRogramDetail = "\(NR_BASEURL)/dj/program/detail"
         
     }
     

@@ -204,10 +204,17 @@ public func fetchPersonalRecommend(cookie: String) async throws -> [NRDJRadioMod
 ///  - asc : 排序方式,默认为 false (新 => 老 ) 设置 true 可改为 老 => 新
 /// - Returns: [NRProgramModel]
 public func fetchDJProgram(rid: Int, limit: Int = 30, offset: Int = 0, asc: Bool = false) async throws -> [NRProgramModel] {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.dhProgram,
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djProgram,
                                             parameters: ["rid": rid,
                                                          "limit": limit,
                                                          "offset": offset,
-                                                         "asc": asc], dataObj: "programs")
+                                                         "asc": asc], 
+                                            dataObj: "programs")
 }
 
+/// 获取节目详情
+///  - id：节目 id
+///  - Returns:NRProgramModel
+public func fetchDJProgramDetail(id: Int) async throws -> NRProgramModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djPRogramDetail, parameters: ["id": id], dataObj: "program")
+}
