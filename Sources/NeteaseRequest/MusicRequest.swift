@@ -197,3 +197,17 @@ public func fetchDJRecommend(cookie: String) async throws -> [NRDJRadioModel] {
 public func fetchPersonalRecommend(cookie: String) async throws -> [NRDJRadioModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djPersonalRecommend, parameters: ["cookie": cookie], dataObj: "data")
 }
+/// 获取电台 - 节目列表
+///  - rid: 电台 的 id
+///  - limit: 返回数量 , 默认为 30
+///  - offset : 偏移数量，用于分页 , 如 :( 页数 -1)*30, 其中 30 为 limit 的值 , 默认为 0
+///  - asc : 排序方式,默认为 false (新 => 老 ) 设置 true 可改为 老 => 新
+/// - Returns: [NRProgramModel]
+public func fetchDJProgram(rid: Int, limit: Int = 30, offset: Int = 0, asc: Bool = false) async throws -> [NRProgramModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.dhProgram,
+                                            parameters: ["rid": rid,
+                                                         "limit": limit,
+                                                         "offset": offset,
+                                                         "asc": asc], dataObj: "programs")
+}
+

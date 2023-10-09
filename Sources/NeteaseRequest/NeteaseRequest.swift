@@ -73,6 +73,8 @@ enum NeteaseRequest {
         static let personalProgram = "\(NR_BASEURL)/personalized/djprogram"
         //获取电台个性推荐 dj/personalize/recommend
         static let djPersonalRecommend = "\(NR_BASEURL)/dj/personalize/recommend"
+        //获取电台节目列表
+        static let dhProgram = "\(NR_BASEURL)/dj/program"
         
     }
     

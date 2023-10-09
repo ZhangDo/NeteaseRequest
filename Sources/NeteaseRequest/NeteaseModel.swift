@@ -654,7 +654,7 @@ public struct NRProgramModel: Codable {
     public var id: Int
     public var createTime: Int
     public var description: String?
-    public var userId: Int
+    public var userId: Int?
     public var coverUrl: String?
     public init(dj: NRDJModel, radio: NRRadioModel, subscribedCount: Int, reward: Bool, mainTrackId: Int, serialNum: Int, listenerCount: Int, name: String, id: Int, createTime: Int, description: String? = nil, userId: Int, coverUrl: String? = nil) {
         self.dj = dj

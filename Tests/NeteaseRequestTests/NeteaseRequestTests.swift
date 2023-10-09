@@ -237,8 +237,11 @@ final class NeteaseRequestTests: XCTestCase {
 //        let djRecommends = try! await fetchDJRecommend(cookie: cookie)
 //        print(djRecommends)
         
-        let djpersonalRecommends = try! await fetchPersonalRecommend(cookie: cookie)
-        print(djpersonalRecommends)
+//        let djpersonalRecommends = try! await fetchPersonalRecommend(cookie: cookie)
+//        print(djpersonalRecommends)
+        
+        let djPrograms: [NRProgramModel] = try! await fetchDJProgram(rid: 975555134)
+        print(djPrograms)
         
     }
     
