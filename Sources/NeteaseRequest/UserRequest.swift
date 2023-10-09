@@ -14,7 +14,6 @@ public func cellPhoneLogin(phone: String, password: String) async throws -> Cell
 public func fetchAccountInfo(cookie: String) async throws -> NRProfileModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.accountInfo,
                                             parameters: ["cookie": cookie],
-//                                            decoder: decoder,
                                             dataObj: "profile")
 }
 
@@ -47,7 +46,7 @@ public func fetchUserFolloweds(parameters: Parameters) async throws -> [NRUserFo
 /// 获取收藏的歌手列表
 /// - Parameters:
 ///  - cookie: cookie
-/// - Returns: [NRSingefrInfoModel]
+/// - Returns: [NRSingerInfoModel]
 
 public func fetchSublist(cookie: String) async throws -> [NRSingerInfoModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistSublist, parameters: ["cookie": cookie], dataObj: "data")
