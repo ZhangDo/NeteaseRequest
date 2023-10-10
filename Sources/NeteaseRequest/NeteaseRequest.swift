@@ -8,7 +8,7 @@ public var NR_BASEURL = ""
 
 
 
-public enum RequestError: Error {
+enum RequestError: Error {
     case networkFail
     case statusFail(code: Int, message: String)
     case decodeFail(message: String)
@@ -22,9 +22,9 @@ enum NoCookieSession {
     static let session = Session(configuration: URLSessionConfiguration.ephemeral)
 }
 
-public enum NeteaseRequest {
+enum NeteaseRequest {
     
-    public enum EndPoint {
+    enum EndPoint {
         static let cellPhoneLogin = "\(NR_BASEURL)/login/cellphone"
         static let qrKey = "\(NR_BASEURL)/login/qr/key"
         static let qrCode = "\(NR_BASEURL)/login/qr/create"
@@ -166,7 +166,7 @@ static func requestJSON(method: HTTPMethod = .get,
         }
     }
     
-    public static func request<T: Decodable>(method: HTTPMethod = .get,
+    static func request<T: Decodable>(method: HTTPMethod = .get,
                                       url: URLConvertible,
                                       parameters: Parameters = [:],
                                       headers: [String: String]? = nil,
