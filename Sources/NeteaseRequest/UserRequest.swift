@@ -26,6 +26,24 @@ public func checkQRCode(key: String) async throws -> NRQRCodeCheckModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.qrCheck, parameters: ["key": key])
 }
 
+//public func asdadaf<T: Decodable>(key: String, complete: ((WKResult<T, RequestError>) -> Void)?) {
+//    NeteaseRequest.requestJSON(method: .get, url: NeteaseRequest.EndPoint.qrCheck, parameters: ["key": key]) { response in
+//        switch response {
+//        case let .success(data):
+//            do {
+//                let data = try data.rawData()
+//                let object = try JSONDecoder().decode(T.self, from: data)
+//                complete?(.success(object))
+//            } catch let err {
+//                print("decode fail:", err)
+//                complete?(.failure(.decodeFail(message: err.localizedDescription + String(describing: err))))
+//            }
+//        case let .failure(err):
+//            complete?(.failure(err))
+//        }
+//    }
+//}
+
 //MARK: 获取账号信息
 /// 获取账号信息
 public func fetchAccountInfo(cookie: String) async throws -> NRProfileModel {
