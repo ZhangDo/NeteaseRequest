@@ -253,7 +253,6 @@ final class NeteaseRequestTests: XCTestCase {
         
         let qrCheckModel: NRQRCodeCheckModel = try! await checkQRCode(key: key)
         print(qrCheckModel)
-        
     }
     
     

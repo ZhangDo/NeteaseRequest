@@ -166,7 +166,7 @@ static func requestJSON(method: HTTPMethod = .get,
         }
     }
     
-    static func request<T: Decodable>(method: HTTPMethod = .get,
+    public static func request<T: Decodable>(method: HTTPMethod = .get,
                                       url: URLConvertible,
                                       parameters: Parameters = [:],
                                       headers: [String: String]? = nil,
