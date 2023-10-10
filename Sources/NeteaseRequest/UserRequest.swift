@@ -9,6 +9,23 @@ import Alamofire
 public func cellPhoneLogin(phone: String, password: String) async throws -> CellPhoneModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.cellPhoneLogin, parameters: ["phone": phone, "password": password])
 }
+/// 二维码 key 生成接口
+/// - Returns: NRQRKeyModel
+public func fetchQRKey() async throws -> NRQRKeyModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.qrKey, dataObj: "data")
+}
+/// 二维码生成
+/// - Parameter key: 二维码 key
+/// - Parameter qrimg:
+public func fetchQRCode(key: String, qrimg: Bool = false) async throws -> NRQRCodeModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.qrCode, parameters: ["key": key, "qrimg": qrimg], dataObj: "data")
+}
+/// 二维码检测扫码状态接口
+/// - Parameter key: 二维码 key
+public func checkQRCode(key: String) async throws -> NRQRCodeCheckModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.qrCheck, parameters: ["key": key])
+}
+
 //MARK: 获取账号信息
 /// 获取账号信息
 public func fetchAccountInfo(cookie: String) async throws -> NRProfileModel {

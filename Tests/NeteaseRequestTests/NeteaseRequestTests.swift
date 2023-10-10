@@ -243,8 +243,16 @@ final class NeteaseRequestTests: XCTestCase {
 //        let djPrograms: [NRProgramModel] = try! await fetchDJProgram(rid: 975555134)
 //        print(djPrograms)
         
-        let djProgramDetail: NRProgramModel = try! await fetchDJProgramDetail(id: 2518969003)
-        print(djProgramDetail)
+//        let djProgramDetail: NRProgramModel = try! await fetchDJProgramDetail(id: 2518969003)
+//        print(djProgramDetail)
+        
+        let key:String = try! await fetchQRKey().unikey
+        print(key)
+        let qrCode:String = try! await fetchQRCode(key: key).qrurl
+        print(qrCode)
+        
+        let qrCheckModel: NRQRCodeCheckModel = try! await checkQRCode(key: key)
+        print(qrCheckModel)
         
     }
     

@@ -26,6 +26,9 @@ enum NeteaseRequest {
     
     enum EndPoint {
         static let cellPhoneLogin = "\(NR_BASEURL)/login/cellphone"
+        static let qrKey = "\(NR_BASEURL)/login/qr/key"
+        static let qrCode = "\(NR_BASEURL)/login/qr/create"
+        static let qrCheck = "\(NR_BASEURL)/login/qr/check"
         static let accountInfo = "\(NR_BASEURL)/user/account"
         static let userSubcount = "\(NR_BASEURL)/user/subcount"
         static let userLevelInfo = "\(NR_BASEURL)/user/level"
@@ -130,6 +133,20 @@ static func requestJSON(method: HTTPMethod = .get,
             case let .success(data):
                 let json = JSON(data)
                 let errorCode = json["code"].intValue
+                do {
+                    if try url.asURL().absoluteString.contains("qr/check") {
+                        if let tempDataObj = dataObj {
+                            let dataj = json[tempDataObj]
+                            print("\(url) response: \(json)")
+                            complete?(.success(dataj))
+                        } else {
+                            complete?(.success(json))
+                        }
+                        return
+                    }
+                } catch {
+                    
+                }
                 if errorCode != 200 {
                     let message = json["message"].stringValue
                     print(errorCode, message)

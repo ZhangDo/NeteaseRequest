@@ -75,6 +75,32 @@ public enum NRBannerTargetType: Int, Codable {
     case other = 3000
 }
 
+
+public struct NRQRKeyModel: Codable {
+    public var code: Int
+    public var unikey: String
+    public init(code: Int, unikey: String) {
+        self.code = code
+        self.unikey = unikey
+    }
+}
+
+public struct NRQRCodeModel:Codable {
+    public var qrurl: String
+    public var qrimg: String
+}
+
+public struct NRQRCodeCheckModel:Codable {
+    public var code: Int
+    public var message: String?
+    public var cookie: String?
+    public init(code: Int, message: String? = nil, cookie: String? = nil) {
+        self.code = code
+        self.message = message
+        self.cookie = cookie
+    }
+}
+
 public struct CellPhoneModel: Codable {
     public var loginType: Int
     public var account: AccountModel
