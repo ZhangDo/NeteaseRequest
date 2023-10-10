@@ -22,9 +22,9 @@ enum NoCookieSession {
     static let session = Session(configuration: URLSessionConfiguration.ephemeral)
 }
 
-enum NeteaseRequest {
+public enum NeteaseRequest {
     
-    enum EndPoint {
+    public enum EndPoint {
         static let cellPhoneLogin = "\(NR_BASEURL)/login/cellphone"
         static let qrKey = "\(NR_BASEURL)/login/qr/key"
         static let qrCode = "\(NR_BASEURL)/login/qr/create"
@@ -166,7 +166,7 @@ static func requestJSON(method: HTTPMethod = .get,
         }
     }
     
-    public static func request<T: Decodable>(method: HTTPMethod = .get,
+    static func request<T: Decodable>(method: HTTPMethod = .get,
                                       url: URLConvertible,
                                       parameters: Parameters = [:],
                                       headers: [String: String]? = nil,
