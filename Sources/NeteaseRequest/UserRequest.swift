@@ -29,7 +29,7 @@ public func fetchQRCode(key: String, qrimg: Bool = false) async throws -> NRQRCo
 public func checkQRCode(key: String) async throws -> NRQRCodeCheckModel {
     let currentTimeStamp = Date().timeIntervalSince1970 * 1000
     print(currentTimeStamp)
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.qrCheck, parameters: ["key": key,"timestamp":currentTimeStamp])
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.qrCheck, parameters: ["key": key,"timestamp":currentTimeStamp,"noCookie": "true"])
 }
 
 //MARK: 获取账号信息
