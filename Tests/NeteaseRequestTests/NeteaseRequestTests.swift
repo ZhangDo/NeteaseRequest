@@ -124,7 +124,7 @@ final class NeteaseRequestTests: XCTestCase {
 //            let filterModels: [NRCatInfoModel] = sub.filter { model in
 //                model.category == 0
 //            }
-//            print(filterModels)
+//            print(catListModel)
 //            
 //        } catch {
 //            print(error)
@@ -142,16 +142,16 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
-//        do {
-//            let topListModel: [NRPlayListModel] = try await fetchTopPlayList()
-//            let filterModels: [String] = topListModel.map { model in
-//                return model.name
-//            }
-//            print(filterModels)
-//
-//        } catch {
-//            print(error)
-//        }
+        do {
+            let topListModel: [NRPlayListModel] = try await fetchTopPlayList(cat: "朋克")
+            let filterModels: [String] = topListModel.map { model in
+                return model.name
+            }
+            print(filterModels)
+
+        } catch {
+            print(error)
+        }
 //        let highqualityListModel: [NRPlayListModel] = (try? await fetchHighqualityPlayList()) ?? []
 //        let filterModels: [Int] = highqualityListModel.map { model in
 //            return model.id
@@ -246,13 +246,13 @@ final class NeteaseRequestTests: XCTestCase {
 //        let djProgramDetail: NRProgramModel = try! await fetchDJProgramDetail(id: 2518969003)
 //        print(djProgramDetail)
         
-        let key:String = try! await fetchQRKey().unikey
-        print(key)
-        let qrCode:String = try! await fetchQRCode(key: key).qrurl
-        print(qrCode)
-        
-        let qrCheckModel: NRQRCodeCheckModel = try! await checkQRCode(key: key)
-        print(qrCheckModel)
+//        let key:String = try! await fetchQRKey().unikey
+//        print(key)
+//        let qrCode:String = try! await fetchQRCode(key: key).qrurl
+//        print(qrCode)
+//        
+//        let qrCheckModel: NRQRCodeCheckModel = try! await checkQRCode(key: key)
+//        print(qrCheckModel)
     }
     
     
