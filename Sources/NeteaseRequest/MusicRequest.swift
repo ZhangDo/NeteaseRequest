@@ -176,8 +176,8 @@ public func fetchDJCatelist() async throws -> [NRDJCatelistModel] {
 /// 电台 - 类别热门电台
 ///  - cateId: 分类id
 ///  - Returns: [NRDJRadioModel]
-public func fetchDJHotRadio(cateId: Int) async throws -> [NRDJRadioModel] {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djHotRadio, parameters: ["cateId": cateId], dataObj: "djRadios")
+public func fetchDJHotRadio(cateId: Int, limit: Int = 100) async throws -> [NRDJRadioModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djHotRadio, parameters: ["cateId": cateId, "limit": limit], dataObj: "djRadios")
 }
 /// 获取推荐电台节目
 ///  - limit: 10
