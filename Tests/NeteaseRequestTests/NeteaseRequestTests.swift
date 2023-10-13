@@ -79,15 +79,15 @@ final class NeteaseRequestTests: XCTestCase {
 //        }
 //
 //
-//        do {
-//            let songModel: [NRSongModel] = try await fetchTopSongs(singerId: 31211)
-//            let name: [String] = songModel.map { model in
-//                return model.name
-//            }
-//            print("song ==== \(name)")
-//        } catch {
-//            print(error)
-//        }
+        do {
+            let songModel: [NRSongModel] = try await fetchTopSongs(singerId: 31211)
+            let name: [String] = songModel.map { model in
+                return model.name
+            }
+            print("song ==== \(name)")
+        } catch {
+            print(error)
+        }
 //
 //        do {
 //            let audioUrlModel: [NRAudioUrlModel] = try await fetchAudioUrl(id: 442869301, cookie: cookie)
@@ -142,16 +142,16 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
-        do {
-            let topListModel: [NRPlayListModel] = try await fetchTopPlayList(cat: "朋克")
-            let filterModels: [String] = topListModel.map { model in
-                return model.name
-            }
-            print(filterModels)
-
-        } catch {
-            print(error)
-        }
+//        do {
+//            let topListModel: [NRPlayListModel] = try await fetchTopPlayList(cat: "朋克")
+//            let filterModels: [String] = topListModel.map { model in
+//                return model.name
+//            }
+//            print(filterModels)
+//
+//        } catch {
+//            print(error)
+//        }
 //        let highqualityListModel: [NRPlayListModel] = (try? await fetchHighqualityPlayList()) ?? []
 //        let filterModels: [Int] = highqualityListModel.map { model in
 //            return model.id
@@ -240,8 +240,8 @@ final class NeteaseRequestTests: XCTestCase {
 //        let djpersonalRecommends = try! await fetchPersonalRecommend(cookie: cookie)
 //        print(djpersonalRecommends)
         
-        let djPrograms: [NRProgramModel] = try! await fetchDJProgram(rid: 975555134)
-        print(djPrograms)
+//        let djPrograms: [NRProgramModel] = try! await fetchDJProgram(rid: 975555134)
+//        print(djPrograms)
         
 //        let djProgramDetail: NRProgramModel = try! await fetchDJProgramDetail(id: 2518969003)
 //        print(djProgramDetail)

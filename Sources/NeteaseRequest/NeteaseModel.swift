@@ -286,6 +286,19 @@ public struct NRArtistModel: Codable {
     }
 }
 
+public struct NRAudioQualityModel: Codable {
+    public var br: Int
+    public var fid: Int
+    public var size: Int
+    public var sr: Int
+    public init(br: Int, fid: Int, size: Int, sr: Int) {
+        self.br = br
+        self.fid = fid
+        self.size = size
+        self.sr = sr
+    }
+}
+
 public struct NRSongModel: Codable {
     public var name: String
     public var id: Int
@@ -296,8 +309,17 @@ public struct NRSongModel: Codable {
     public var fee: NRFee?
     public var originCoverType: NROriginCoverType?
     public var dt: Int
+    /// 无损质量文件信息
+    public var sq: NRAudioQualityModel?
+    /// 高质量文件信息
+    public var h: NRAudioQualityModel?
+    /// 中质量文件信息
+    public var m: NRAudioQualityModel?
+    /// 低质量文件信息
+    public var l: NRAudioQualityModel?
     
-    public init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel, ar: [NRArModel], fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil, dt: Int) {
+    
+    public init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel, ar: [NRArModel], fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil, dt: Int, sq: NRAudioQualityModel? = nil, l: NRAudioQualityModel? = nil, h: NRAudioQualityModel? = nil, m: NRAudioQualityModel? = nil) {
         self.name = name
         self.id = id
         self.publishTime = publishTime
@@ -307,7 +329,24 @@ public struct NRSongModel: Codable {
         self.fee = fee
         self.originCoverType = originCoverType
         self.dt = dt
+        self.sq = sq
+        self.l = l
+        self.h = h
+        self.m = m
     }
+
+    
+//    public init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel, ar: [NRArModel], fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil, dt: Int) {
+//        self.name = name
+//        self.id = id
+//        self.publishTime = publishTime
+//        self.level = level
+//        self.al = al
+//        self.ar = ar
+//        self.fee = fee
+//        self.originCoverType = originCoverType
+//        self.dt = dt
+//    }
 }
 
 public struct NRArModel: Codable {
