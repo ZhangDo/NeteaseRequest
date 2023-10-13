@@ -671,6 +671,7 @@ public struct NRDJProgramModel: Codable {
 public struct NRProgramModel: Codable {
     public var dj: NRDJModel
     public var radio: NRRadioModel
+    public var duration: Int
     public var subscribedCount: Int
     public var reward: Bool
     public var mainTrackId: Int
@@ -682,9 +683,10 @@ public struct NRProgramModel: Codable {
     public var description: String?
     public var userId: Int?
     public var coverUrl: String?
-    public init(dj: NRDJModel, radio: NRRadioModel, subscribedCount: Int, reward: Bool, mainTrackId: Int, serialNum: Int, listenerCount: Int, name: String, id: Int, createTime: Int, description: String? = nil, userId: Int, coverUrl: String? = nil) {
+    public init(dj: NRDJModel, radio: NRRadioModel, duration: Int, subscribedCount: Int, reward: Bool, mainTrackId: Int, serialNum: Int, listenerCount: Int, name: String, id: Int, createTime: Int, description: String? = nil, userId: Int? = nil, coverUrl: String? = nil) {
         self.dj = dj
         self.radio = radio
+        self.duration = duration
         self.subscribedCount = subscribedCount
         self.reward = reward
         self.mainTrackId = mainTrackId
