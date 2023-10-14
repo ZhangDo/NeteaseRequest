@@ -79,15 +79,15 @@ final class NeteaseRequestTests: XCTestCase {
 //        }
 //
 //
-        do {
-            let songModel: [NRSongModel] = try await fetchTopSongs(singerId: 31211)
-            let name: [String] = songModel.map { model in
-                return model.name
-            }
-            print("song ==== \(name)")
-        } catch {
-            print(error)
-        }
+//        do {
+//            let songModel: [NRSongModel] = try await fetchTopSongs(singerId: 31211)
+//            let name: [String] = songModel.map { model in
+//                return model.name
+//            }
+//            print("song ==== \(name)")
+//        } catch {
+//            print(error)
+//        }
 //
 //        do {
 //            let audioUrlModel: [NRAudioUrlModel] = try await fetchAudioUrl(id: 442869301, cookie: cookie)
@@ -253,6 +253,14 @@ final class NeteaseRequestTests: XCTestCase {
 //        
 //        let qrCheckModel: NRQRCodeCheckModel = try! await checkQRCode(key: key)
 //        print(qrCheckModel)
+        
+        do {
+            let searchModle: NRSearchModel = try await search(keywords: "我", type: 100, limit: 100)
+            let names: [String] = searchModle.artists!.map { $0.name }
+            print(names)
+        } catch {
+            print(error)
+        }
     }
     
     

@@ -81,6 +81,9 @@ enum NeteaseRequest {
         //获取电台节目详情
         static let djPRogramDetail = "\(NR_BASEURL)/dj/program/detail"
         
+        ///搜索
+        static let search = "\(NR_BASEURL)/search"
+        
     }
     
     
