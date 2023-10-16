@@ -138,7 +138,7 @@ public struct NRProfileModel: Codable {
     public var nickname: String
     public var avatarImgId: Int
     public var avatarUrl: String
-    public var backgroundUrl: String
+    public var backgroundUrl: String?
     public var birthday: TimeInterval?
     public var gender: Int
     public var vipType: Int
@@ -265,7 +265,7 @@ public struct NRArtistModel: Codable {
     public var albumSize: Int?
     public var briefDesc: String?
     public var fansCount: Int?
-    public var followed: Bool
+    public var followed: Bool?
     public var id: Int
     public var img1v1Url: String?
     public var name: String

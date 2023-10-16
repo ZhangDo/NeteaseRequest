@@ -255,8 +255,8 @@ final class NeteaseRequestTests: XCTestCase {
 //        print(qrCheckModel)
         
         do {
-            let searchModle: NRSearchModel = try await search(keywords: "我", type: 100, limit: 100)
-            let names: [String] = searchModle.artists!.map { $0.name }
+            let searchModle: NRSearchModel = try await search(keywords: "aa", type: 1002, limit: 100)
+            let names: [String] = searchModle.userprofiles!.map { $0.nickname }
             print(names)
         } catch {
             print(error)
