@@ -812,10 +812,10 @@ public struct NRArtistIdentifyModel: Codable {
 
 public struct NRArtistDetailModel: Codable {
     public var videoCount: Int
-    public var identify: NRArtistIdentifyModel
+    public var identify: NRArtistIdentifyModel?
     public var artist: NRArtistModel?
     
-    public init(videoCount: Int, identify: NRArtistIdentifyModel, artist: NRArtistModel? = nil) {
+    public init(videoCount: Int, identify: NRArtistIdentifyModel? = nil, artist: NRArtistModel? = nil) {
         self.videoCount = videoCount
         self.identify = identify
         self.artist = artist
