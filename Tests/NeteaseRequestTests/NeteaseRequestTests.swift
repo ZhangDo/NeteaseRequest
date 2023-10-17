@@ -278,12 +278,18 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
-            do {
-                let singerAlbum: [NRAlbumModel] = try await fetchArtistAlbum(id: 3684, limit: 100)
-                print(singerAlbum)
-            } catch {
-                print(error)
-            }
+//            do {
+//                let singerAlbum: [NRAlbumModel] = try await fetchArtistAlbum(id: 3684, limit: 100)
+//                print(singerAlbum)
+//            } catch {
+//                print(error)
+//            }
+        do {
+            let singerMVs: [NRMVModel] = try await fetchArtistMV(id: 3684)
+            print(singerMVs)
+        } catch {
+            print(error)
+        }
         
     }
     

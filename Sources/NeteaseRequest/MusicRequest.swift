@@ -246,6 +246,13 @@ public func fetchArtistAlbum(id: Int, limit: Int = 100) async throws -> [NRAlbum
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerAlbum, parameters: ["id": id, "limit": limit], dataObj: "hotAlbums")
 }
 
+/// 获取歌手MV
+///  - id: 歌手 id
+/// - Returns: [NRMVModel]
+public func fetchArtistMV(id: Int) async throws -> [NRMVModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerMV, parameters: ["id": id], dataObj: "mvs")
+}
+
 
 /// 搜索
 ///  - keywords:  关键词
