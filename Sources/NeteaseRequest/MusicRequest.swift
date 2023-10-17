@@ -249,8 +249,15 @@ public func fetchArtistAlbum(id: Int, limit: Int = 100) async throws -> [NRAlbum
 /// 获取歌手MV
 ///  - id: 歌手 id
 /// - Returns: [NRMVModel]
-public func fetchArtistMV(id: Int) async throws -> [NRMVModel] {
+public func fetchArtistMV(id: Int) async throws -> [NRMVListModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerMV, parameters: ["id": id], dataObj: "mvs")
+}
+
+/// 获取 MV 详情
+///  - mvid: mv 的 id
+/// - Returns: NRMVDetailModel
+public func fetchMVDetail(mvid: Int) async throws -> NRMVDetailModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mvDetail, parameters: ["mvid": mvid], dataObj: "data")
 }
 
 

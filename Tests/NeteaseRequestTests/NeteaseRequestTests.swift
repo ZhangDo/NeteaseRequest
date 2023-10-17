@@ -284,9 +284,16 @@ final class NeteaseRequestTests: XCTestCase {
 //            } catch {
 //                print(error)
 //            }
+//        do {
+//            let singerMVs: [NRMVListModel] = try await fetchArtistMV(id: 3684)
+//            print(singerMVs)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let singerMVs: [NRMVModel] = try await fetchArtistMV(id: 3684)
-            print(singerMVs)
+            let mvDetail: NRMVDetailModel = try await fetchMVDetail(mvid: 14634962)
+            print(mvDetail)
         } catch {
             print(error)
         }

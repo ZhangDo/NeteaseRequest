@@ -818,7 +818,7 @@ public struct NRArtistDetailModel: Codable {
     }
 }
 
-public struct NRMVModel: Codable {
+public struct NRMVListModel: Codable {
     public var id: Int
     public var name: String
     public var artistName: String
@@ -841,3 +841,34 @@ public struct NRMVModel: Codable {
         self.publishTime = publishTime
     }
 }
+
+public struct NRMVDetailModel: Codable {
+    public var id: Int
+    public var name: String
+    public var artistId: Int
+    public var artistName: String
+    public var briefDesc: String?
+    public var desc: String?
+    public var cover: String
+    public var playCount: Int
+    public var duration: Int
+    public var publishTime: String
+    public var artists: [NRArtistModel]?
+    
+    public init(id: Int, name: String, artistId: Int, artistName: String, briefDesc: String? = nil, desc: String? = nil, cover: String, playCount: Int, duration: Int, publishTime: String, artists: [NRArtistModel]? = nil) {
+        self.id = id
+        self.name = name
+        self.artistId = artistId
+        self.artistName = artistName
+        self.briefDesc = briefDesc
+        self.desc = desc
+        self.cover = cover
+        self.playCount = playCount
+        self.duration = duration
+        self.publishTime = publishTime
+        self.artists = artists
+    }
+    
+}
+
+
