@@ -366,14 +366,16 @@ public struct NRAudioUrlModel: Codable {
     public var expi: Int
     public var time: Int
     public var type: String?
+    public var level: String?
     
-    public init(id: Int, url: String, size: Int, expi: Int, time: Int, type: String) {
+    public init(id: Int, url: String? = nil, size: Int, expi: Int, time: Int, type: String? = nil, level: String? = nil) {
         self.id = id
         self.url = url
         self.size = size
         self.expi = expi
         self.time = time
         self.type = type
+        self.level = level
     }
 }
 

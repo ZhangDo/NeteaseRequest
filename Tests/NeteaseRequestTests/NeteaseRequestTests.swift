@@ -89,15 +89,15 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
 //
-//        do {
-//            let audioUrlModel: [NRAudioUrlModel] = try await fetchAudioUrl(id: 442869301, cookie: cookie)
-//            let name: [String] = audioUrlModel.map { model in
-//                return model.url!
-//            }
-//            print("audioUrlModel.url ==== \(name)")
-//        } catch {
-//            print(error)
-//        }
+        do {
+            let audioUrlModel: [NRAudioUrlModel] = try await fetchAudioUrl(id: 442869301, cookie: cookie)
+            let level: [String] = audioUrlModel.map { model in
+                return model.level!
+            }
+            print("audioUrlModel.level ==== \(level)")
+        } catch {
+            print(error)
+        }
         
 //        do {
 //            let songModel: [NRSongModel] = try await fetchAllSongs(singerId: 31211)
@@ -254,13 +254,13 @@ final class NeteaseRequestTests: XCTestCase {
 //        let qrCheckModel: NRQRCodeCheckModel = try! await checkQRCode(key: key)
 //        print(qrCheckModel)
         
-        do {
-            let searchModle: NRSearchModel = try await search(keywords: "aa", type: 1002, limit: 100)
-            let names: [String] = searchModle.userprofiles!.map { $0.nickname }
-            print(names)
-        } catch {
-            print(error)
-        }
+//        do {
+//            let searchModle: NRSearchModel = try await search(keywords: "aa", type: 1002, limit: 100)
+//            let names: [String] = searchModle.userprofiles!.map { $0.nickname }
+//            print(names)
+//        } catch {
+//            print(error)
+//        }
     }
     
     
