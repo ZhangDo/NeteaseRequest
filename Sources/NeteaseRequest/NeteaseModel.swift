@@ -793,3 +793,27 @@ public struct NRSearchModel: Codable {
         self.djRadios = djRadios
     }
 }
+
+public struct NRArtistIdentifyModel: Codable {
+    public var imageUrl: String?
+    public var imageDesc: String?
+    public var actionUrl: String?
+    
+    public init(imageUrl: String? = nil, imageDesc: String? = nil, actionUrl: String? = nil) {
+        self.imageUrl = imageUrl
+        self.imageDesc = imageDesc
+        self.actionUrl = actionUrl
+    }
+}
+
+public struct NRArtistDetailModel: Codable {
+    public var videoCount: Int
+    public var identify: NRArtistIdentifyModel
+    public var artist: NRArtistModel?
+    
+    public init(videoCount: Int, identify: NRArtistIdentifyModel, artist: NRArtistModel? = nil) {
+        self.videoCount = videoCount
+        self.identify = identify
+        self.artist = artist
+    }
+}

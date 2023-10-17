@@ -254,15 +254,23 @@ final class NeteaseRequestTests: XCTestCase {
 //        let qrCheckModel: NRQRCodeCheckModel = try! await checkQRCode(key: key)
 //        print(qrCheckModel)
         
+//        do {
+//            let searchModle: NRSearchModel = try await search(keywords: "aa", type: 1, limit: 100)
+//            let ids: String = searchModle.songs!.map { String($0.id) }.joined(separator: ",")
+//            print(ids)
+//            let songs:[NRSongModel] = try await fetchSongDetail(ids: ids)
+//            print(songs)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let searchModle: NRSearchModel = try await search(keywords: "aa", type: 1, limit: 100)
-            let ids: String = searchModle.songs!.map { String($0.id) }.joined(separator: ",")
-            print(ids)
-            let songs:[NRSongModel] = try await fetchSongDetail(ids: ids)
-            print(songs)
+            let singerDetail: NRArtistDetailModel = try await fetchArtistDetail(id: 3684)
+            print(singerDetail)
         } catch {
             print(error)
         }
+        
     }
     
     

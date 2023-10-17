@@ -225,6 +225,13 @@ public func fetchDJProgramDetail(id: Int) async throws -> NRProgramModel {
 public func fetchSongDetail(ids: String) async throws -> [NRSongModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.songDetail, parameters: ["ids": ids], dataObj: "songs")
 }
+/// 获取歌手详情
+///  - ids: 歌手 id
+/// - Returns: NRArtistDetailModel
+public func fetchArtistDetail(id: Int) async throws -> NRArtistDetailModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerDetail, parameters: ["id": id], dataObj: "data")
+}
+
 /// 搜索
 ///  - keywords:  关键词
 ///  - type:  搜索类型；默认为 1 即单曲 , 取值意义 : 1: 单曲, 10: 专辑, 100: 歌手, 1000: 歌单, 1002: 用户, 1004: MV, 1006: 歌词, 1009: 电台, 1014: 视频, 1018:综合, 2000:声音(搜索声音返回字段格式会不一样)

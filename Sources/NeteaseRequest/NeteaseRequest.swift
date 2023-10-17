@@ -40,6 +40,7 @@ enum NeteaseRequest {
         static let artistSublist = "\(NR_BASEURL)/artist/sublist"
         static let audioUrl = "\(NR_BASEURL)/song/url/v1"
         static let songDetail = "\(NR_BASEURL)/song/detail"
+        static let singerDetail = "\(NR_BASEURL)/artist/detail"
         
         static let catList = "\(NR_BASEURL)/playlist/catlist"
         static let hotPlayList = "\(NR_BASEURL)/playlist/hot"
