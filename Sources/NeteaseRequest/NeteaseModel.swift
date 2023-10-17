@@ -272,8 +272,10 @@ public struct NRArtistModel: Codable {
     public var musicSize: Int?
     public var picUrl: String?
     public var trans: String?
+    public var cover: String?
+    public var avatar: String?
     
-    public init(accountId: Int? = nil, albumSize: Int? = nil, briefDesc: String? = nil, fansCount: Int? = nil, followed: Bool, id: Int, img1v1Url: String? = nil, name: String, musicSize: Int? = nil, picUrl: String? = nil, trans: String? = nil) {
+    public init(accountId: Int? = nil, albumSize: Int? = nil, briefDesc: String? = nil, fansCount: Int? = nil, followed: Bool? = nil, id: Int, img1v1Url: String? = nil, name: String, musicSize: Int? = nil, picUrl: String? = nil, trans: String? = nil, cover: String? = nil, avatar: String? = nil) {
         self.accountId = accountId
         self.albumSize = albumSize
         self.briefDesc = briefDesc
@@ -285,6 +287,8 @@ public struct NRArtistModel: Codable {
         self.musicSize = musicSize
         self.picUrl = picUrl
         self.trans = trans
+        self.cover = cover
+        self.avatar = avatar
     }
     
 }
