@@ -367,6 +367,24 @@ public struct NRAudioUrlModel: Codable {
     public var time: Int
     public var type: String?
     public var level: String?
+    public var levelName: String {
+        switch level {
+        case "standard":
+            return "标准"
+        case "higher":
+            return "较高"
+        case "exhigh":
+            return "极高"
+        case "lossless":
+            return "无损"
+        case "hires":
+            return "Hi-Res"
+        case "jymaster":
+            return "超清母带"
+        default:
+            return ""
+        }
+    }
     
     public init(id: Int, url: String? = nil, size: Int, expi: Int, time: Int, type: String? = nil, level: String? = nil) {
         self.id = id

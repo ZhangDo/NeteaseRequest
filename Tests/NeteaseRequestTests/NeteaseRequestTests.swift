@@ -92,7 +92,7 @@ final class NeteaseRequestTests: XCTestCase {
         do {
             let audioUrlModel: [NRAudioUrlModel] = try await fetchAudioUrl(id: 442869301, cookie: cookie)
             let level: [String] = audioUrlModel.map { model in
-                return model.level!
+                return model.levelName
             }
             print("audioUrlModel.level ==== \(level)")
         } catch {
