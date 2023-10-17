@@ -264,12 +264,26 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
-        do {
-            let singerDetail: NRArtistDetailModel = try await fetchArtistDetail(id: 3684)
-            print(singerDetail)
-        } catch {
-            print(error)
-        }
+//        do {
+//            let singerDetail: NRArtistDetailModel = try await fetchArtistDetail(id: 3684)
+//            print(singerDetail)
+//        } catch {
+//            print(error)
+//        }
+        
+//        do {
+//            let singerSongs: [NRSongModel] = try await fetchAllSongs(singerId: 3684, order: .hot, limit: 100)
+//            print(singerSongs)
+//        } catch {
+//            print(error)
+//        }
+        
+            do {
+                let singerAlbum: [NRAlbumModel] = try await fetchArtistAlbum(id: 3684, limit: 100)
+                print(singerAlbum)
+            } catch {
+                print(error)
+            }
         
     }
     

@@ -351,7 +351,7 @@ public struct NRArModel: Codable {
 public struct NRAlModel: Codable {
     public var name: String
     public var id: Int
-    public var picUrl: String
+    public var picUrl: String?
     public init(name: String, id: Int, picUrl: String) {
         self.name = name
         self.id = id

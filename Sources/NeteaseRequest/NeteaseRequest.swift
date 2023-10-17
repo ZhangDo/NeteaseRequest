@@ -41,6 +41,8 @@ enum NeteaseRequest {
         static let audioUrl = "\(NR_BASEURL)/song/url/v1"
         static let songDetail = "\(NR_BASEURL)/song/detail"
         static let singerDetail = "\(NR_BASEURL)/artist/detail"
+        static let singerSong = "\(NR_BASEURL)/artists"
+        static let singerAlbum = "\(NR_BASEURL)/artist/album"
         
         static let catList = "\(NR_BASEURL)/playlist/catlist"
         static let hotPlayList = "\(NR_BASEURL)/playlist/hot"
@@ -150,7 +152,7 @@ static func requestJSON(method: HTTPMethod = .get,
                         return
                     }
                 } catch {
-                    
+                   print(error)
                 }
                 if errorCode != 200 {
                     let message = json["message"].stringValue

@@ -219,18 +219,33 @@ public func fetchDJProgramDetail(id: Int) async throws -> NRProgramModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djPRogramDetail, parameters: ["id": id], dataObj: "program")
 }
 
-/// 获取歌曲详情 -调用此接口 , 传入音乐 id(支持多个 id, 用 , 隔开), 可获得歌曲详情(dt为歌曲时长)
-///  - ids: 音乐 id
+/// 获取歌曲详情 
+///  - note: 调用此接口 , 传入音乐 `id`(支持多个 `id`, 用 , 隔开), 可获得歌曲详情(`dt`为歌曲时长)
+///  - ids:  音乐 id
 /// - Returns: [NRSongModel]
 public func fetchSongDetail(ids: String) async throws -> [NRSongModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.songDetail, parameters: ["ids": ids], dataObj: "songs")
 }
 /// 获取歌手详情
-///  - ids: 歌手 id
+///  - id: 歌手 id
 /// - Returns: NRArtistDetailModel
 public func fetchArtistDetail(id: Int) async throws -> NRArtistDetailModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerDetail, parameters: ["id": id], dataObj: "data")
 }
+/// 获取歌手单曲
+///  - id: 歌手 id
+/// - Returns: [NRSongModel]
+public func fetchArtistSongs(id: Int) async throws -> [NRSongModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerSong, parameters: ["id": id], dataObj: "hotSongs")
+}
+/// 获取歌手专辑
+///  - id: 歌手 id
+///   - limit:
+/// - Returns: [NRAlbumModel]
+public func fetchArtistAlbum(id: Int, limit: Int = 100) async throws -> [NRAlbumModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerAlbum, parameters: ["id": id, "limit": limit], dataObj: "hotAlbums")
+}
+
 
 /// 搜索
 ///  - keywords:  关键词
