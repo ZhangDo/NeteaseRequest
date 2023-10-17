@@ -89,15 +89,15 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
 //
-        do {
-            let audioUrlModel: [NRAudioUrlModel] = try await fetchAudioUrl(id: 442869301, cookie: cookie)
-            let level: [String] = audioUrlModel.map { model in
-                return model.levelName
-            }
-            print("audioUrlModel.level ==== \(level)")
-        } catch {
-            print(error)
-        }
+//        do {
+//            let audioUrlModel: [NRAudioUrlModel] = try await fetchAudioUrl(id: 442869301, cookie: cookie)
+//            let level: [String] = audioUrlModel.map { model in
+//                return model.levelName
+//            }
+//            print("audioUrlModel.level ==== \(level)")
+//        } catch {
+//            print(error)
+//        }
         
 //        do {
 //            let songModel: [NRSongModel] = try await fetchAllSongs(singerId: 31211)
@@ -254,13 +254,15 @@ final class NeteaseRequestTests: XCTestCase {
 //        let qrCheckModel: NRQRCodeCheckModel = try! await checkQRCode(key: key)
 //        print(qrCheckModel)
         
-//        do {
-//            let searchModle: NRSearchModel = try await search(keywords: "aa", type: 1002, limit: 100)
-//            let names: [String] = searchModle.userprofiles!.map { $0.nickname }
-//            print(names)
-//        } catch {
-//            print(error)
-//        }
+        do {
+            let searchModle: NRSearchModel = try await search(keywords: "aa", type: 1, limit: 100)
+            let ids: String = searchModle.songs!.map { String($0.id) }.joined(separator: ",")
+            print(ids)
+            let songs:[NRSongModel] = try await fetchSongDetail(ids: ids)
+            print(songs)
+        } catch {
+            print(error)
+        }
     }
     
     

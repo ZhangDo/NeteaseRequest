@@ -219,6 +219,12 @@ public func fetchDJProgramDetail(id: Int) async throws -> NRProgramModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djPRogramDetail, parameters: ["id": id], dataObj: "program")
 }
 
+/// 获取歌曲详情 -调用此接口 , 传入音乐 id(支持多个 id, 用 , 隔开), 可获得歌曲详情(dt为歌曲时长)
+///  - ids: 音乐 id
+/// - Returns: [NRSongModel]
+public func fetchSongDetail(ids: String) async throws -> [NRSongModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.songDetail, parameters: ["ids": ids], dataObj: "songs")
+}
 /// 搜索
 ///  - keywords:  关键词
 ///  - type:  搜索类型；默认为 1 即单曲 , 取值意义 : 1: 单曲, 10: 专辑, 100: 歌手, 1000: 歌单, 1002: 用户, 1004: MV, 1006: 歌词, 1009: 电台, 1014: 视频, 1018:综合, 2000:声音(搜索声音返回字段格式会不一样)
