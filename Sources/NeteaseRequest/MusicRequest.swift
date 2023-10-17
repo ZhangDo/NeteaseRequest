@@ -260,6 +260,13 @@ public func fetchMVDetail(mvid: Int) async throws -> NRMVDetailModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mvDetail, parameters: ["mvid": mvid], dataObj: "data")
 }
 
+/// 获取 MV 地址
+///  - id: mv 的 id
+/// - Returns: NRMVDetailModel
+public func fetchMVUrl(id: Int) async throws -> NRMVUrlModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mvUrl, parameters: ["id": id], dataObj: "data")
+}
+
 
 /// 搜索
 ///  - keywords:  关键词

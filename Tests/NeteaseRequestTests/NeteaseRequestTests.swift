@@ -298,6 +298,13 @@ final class NeteaseRequestTests: XCTestCase {
             print(error)
         }
         
+        do {
+            let mvUrlModel: NRMVUrlModel = try await fetchMVUrl(id: 14634962)
+            print(mvUrlModel)
+        } catch {
+            print(error)
+        }
+        
     }
     
     
