@@ -780,6 +780,20 @@ public struct NRRadioModel: Codable {
     }
 }
 
+public struct NRVideoModel: Codable {
+    public var coverUrl: String?
+    public var title: String
+    public var durationms: Int
+    public var vid: Int
+    
+    public init(coverUrl: String? = nil, title: String, durationms: Int, vid: Int) {
+        self.coverUrl = coverUrl
+        self.title = title
+        self.durationms = durationms
+        self.vid = vid
+    }
+}
+
 
 public struct NRSearchModel: Codable {
     public var songs: [NRSongModel]?
@@ -788,6 +802,8 @@ public struct NRSearchModel: Codable {
     public var playlists: [NRPlayListModel]?
     public var userprofiles: [NRProfileModel]?
     public var djRadios: [NRDJRadioModel]?
+    public var mvs: [NRMVListModel]?
+    public var videos: [NRVideoModel]?
     
     public init(songs: [NRSongModel]? = nil, albums: [NRAlbumModel]? = nil, artists: [NRArtistModel]? = nil, playlists: [NRPlayListModel]? = nil, userprofiles: [NRProfileModel]? = nil, djRadios: [NRDJRadioModel]? = nil) {
         self.songs = songs
@@ -832,9 +848,9 @@ public struct NRMVListModel: Codable {
     public var artist: NRArtistModel?
     public var duration: Int
     public var playCount: Int
-    public var publishTime: String
+    public var publishTime: String?
     
-    public init(id: Int, name: String, artistName: String, imgurl: String? = nil, imgurl16v9: String? = nil, artist: NRArtistModel? = nil, duration: Int, playCount: Int, publishTime: String) {
+    public init(id: Int, name: String, artistName: String, imgurl: String? = nil, imgurl16v9: String? = nil, artist: NRArtistModel? = nil, duration: Int, playCount: Int, publishTime: String? = nil) {
         self.id = id
         self.name = name
         self.artistName = artistName
