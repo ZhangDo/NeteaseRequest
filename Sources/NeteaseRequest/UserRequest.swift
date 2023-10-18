@@ -74,4 +74,13 @@ public func fetchUserFolloweds(parameters: Parameters) async throws -> [NRUserFo
 public func fetchSublist(cookie: String) async throws -> [NRSingerInfoModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistSublist, parameters: ["cookie": cookie], dataObj: "data")
 }
+/// 获取歌手粉丝数量
+///  - Parameters:
+///   - id: 歌手 id
+///  - Returns:
+public func fetchArtistFansCount(id: Int) async throws -> NRArtistFansCountModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistFansCount, parameters: ["id": id], dataObj: "data")
+}
+
+
 

@@ -891,4 +891,17 @@ public struct NRMVUrlModel: Codable {
     }
 }
 
+public struct NRArtistFansCountModel: Codable {
+    public var isFollow: Bool
+    public var fansCnt: Int
+    public var followCnt: Int
+    public var follow: Bool
+    
+    public init(isFollow: Bool, fansCnt: Int, followCnt: Int, follow: Bool) {
+        self.isFollow = isFollow
+        self.fansCnt = fansCnt
+        self.followCnt = followCnt
+        self.follow = follow
+    }
+}
 

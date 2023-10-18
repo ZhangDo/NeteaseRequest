@@ -291,16 +291,22 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let mvDetail: NRMVDetailModel = try await fetchMVDetail(mvid: 14634962)
+//            print(mvDetail)
+//        } catch {
+//            print(error)
+//        }
+//        
+//        do {
+//            let mvUrlModel: NRMVUrlModel = try await fetchMVUrl(id: 14634962)
+//            print(mvUrlModel)
+//        } catch {
+//            print(error)
+//        }
         do {
-            let mvDetail: NRMVDetailModel = try await fetchMVDetail(mvid: 14634962)
-            print(mvDetail)
-        } catch {
-            print(error)
-        }
-        
-        do {
-            let mvUrlModel: NRMVUrlModel = try await fetchMVUrl(id: 14634962)
-            print(mvUrlModel)
+            let fansCountModel: NRArtistFansCountModel = try await fetchArtistFansCount(id: 3684)
+            print(fansCountModel)
         } catch {
             print(error)
         }

@@ -34,6 +34,8 @@ enum NeteaseRequest {
         static let userLevelInfo = "\(NR_BASEURL)/user/level"
         static let userFollows = "\(NR_BASEURL)/user/follows"
         static let userFolloweds = "\(NR_BASEURL)/user/followeds"
+        ///获取歌手粉丝数量 /artist/follow/count
+        static let artistFansCount = "\(NR_BASEURL)/artist/follow/count"
         static let artistList = "\(NR_BASEURL)/artist/list"
         static let topSong = "\(NR_BASEURL)/artist/top/song"
         static let allSong = "\(NR_BASEURL)/artist/songs"
