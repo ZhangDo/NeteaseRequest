@@ -878,17 +878,18 @@ public struct NRMVDetailModel: Codable {
 
 public struct NRMVUrlModel: Codable {
     public var id: Int
-    public var url: String
+    public var url: String?
     public var r: Int
     public var size: Int
     public var expi: Int
-    
-    public init(id: Int, url: String, r: Int, size: Int, expi: Int) {
+    public var msg: String?
+    public init(id: Int, url: String, r: Int, size: Int, expi: Int, msg: String? = nil) {
         self.id = id
         self.url = url
         self.r = r
         self.size = size
         self.expi = expi
+        self.msg = msg
     }
 }
 
