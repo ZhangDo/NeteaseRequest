@@ -255,8 +255,8 @@ final class NeteaseRequestTests: XCTestCase {
 //        print(qrCheckModel)
         
 //        do {
-//            let searchModle: NRSearchModel = try await search(keywords: "aa", type: 1, limit: 100)
-//            let ids: String = searchModle.songs!.map { String($0.id) }.joined(separator: ",")
+//            let searchModle: NRSearchModel = try await search(keywords: "taylor", type: 1014, limit: 100)
+//            let ids: String = searchModle.videos!.map { $0.vid }.joined(separator: ",")
 //            print(ids)
 //            let songs:[NRSongModel] = try await fetchSongDetail(ids: ids)
 //            print(songs)
@@ -284,12 +284,12 @@ final class NeteaseRequestTests: XCTestCase {
 //            } catch {
 //                print(error)
 //            }
-        do {
-            let singerMVs: [NRMVListModel] = try await fetchArtistMV(id: 3684)
-            print(singerMVs)
-        } catch {
-            print(error)
-        }
+//        do {
+//            let singerMVs: [NRMVListModel] = try await fetchArtistMV(id: 3684)
+//            print(singerMVs)
+//        } catch {
+//            print(error)
+//        }
         
 //        do {
 //            let mvDetail: NRMVDetailModel = try await fetchMVDetail(mvid: 14634962)

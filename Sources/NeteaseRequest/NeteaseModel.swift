@@ -784,9 +784,9 @@ public struct NRVideoModel: Codable {
     public var coverUrl: String?
     public var title: String
     public var durationms: Int
-    public var vid: Int
+    public var vid: String
     
-    public init(coverUrl: String? = nil, title: String, durationms: Int, vid: Int) {
+    public init(coverUrl: String? = nil, title: String, durationms: Int, vid: String) {
         self.coverUrl = coverUrl
         self.title = title
         self.durationms = durationms
@@ -843,6 +843,7 @@ public struct NRMVListModel: Codable {
     public var id: Int
     public var name: String
     public var artistName: String
+    public var cover: String?
     public var imgurl: String?
     public var imgurl16v9: String?
     public var artist: NRArtistModel?
@@ -850,10 +851,11 @@ public struct NRMVListModel: Codable {
     public var playCount: Int
     public var publishTime: String?
     
-    public init(id: Int, name: String, artistName: String, imgurl: String? = nil, imgurl16v9: String? = nil, artist: NRArtistModel? = nil, duration: Int, playCount: Int, publishTime: String? = nil) {
+    public init(id: Int, name: String, artistName: String, cover: String? = nil, imgurl: String? = nil, imgurl16v9: String? = nil, artist: NRArtistModel? = nil, duration: Int, playCount: Int, publishTime: String? = nil) {
         self.id = id
         self.name = name
         self.artistName = artistName
+        self.cover = cover
         self.imgurl = imgurl
         self.imgurl16v9 = imgurl16v9
         self.artist = artist
