@@ -316,6 +316,7 @@ public struct NRSongModel: Codable {
     public var fee: NRFee?
     public var originCoverType: NROriginCoverType?
     public var dt: Int?
+    public var tns: [String]?
     /// 无损质量文件信息
     public var sq: NRAudioQualityModel?
     /// 高质量文件信息
@@ -325,8 +326,7 @@ public struct NRSongModel: Codable {
     /// 低质量文件信息
     public var l: NRAudioQualityModel?
     
-    
-    init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel? = nil, ar: [NRArModel]? = nil, fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil, dt: Int? = nil, sq: NRAudioQualityModel? = nil, h: NRAudioQualityModel? = nil, m: NRAudioQualityModel? = nil, l: NRAudioQualityModel? = nil) {
+    public init(name: String, id: Int, publishTime: TimeInterval? = nil, level: NRSongLevel? = nil, al: NRAlModel? = nil, ar: [NRArModel]? = nil, fee: NRFee? = nil, originCoverType: NROriginCoverType? = nil, dt: Int? = nil, tns: [String]? = nil, sq: NRAudioQualityModel? = nil, h: NRAudioQualityModel? = nil, m: NRAudioQualityModel? = nil, l: NRAudioQualityModel? = nil) {
         self.name = name
         self.id = id
         self.publishTime = publishTime
@@ -336,6 +336,7 @@ public struct NRSongModel: Codable {
         self.fee = fee
         self.originCoverType = originCoverType
         self.dt = dt
+        self.tns = tns
         self.sq = sq
         self.h = h
         self.m = m

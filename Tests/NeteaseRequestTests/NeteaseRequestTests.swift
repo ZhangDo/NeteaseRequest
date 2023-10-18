@@ -304,13 +304,19 @@ final class NeteaseRequestTests: XCTestCase {
 //        } catch {
 //            print(error)
 //        }
-        do {
-            let fansCountModel: NRArtistFansCountModel = try await fetchArtistFansCount(id: 3684)
-            print(fansCountModel)
-        } catch {
-            print(error)
-        }
+//        do {
+//            let fansCountModel: NRArtistFansCountModel = try await fetchArtistFansCount(id: 3684)
+//            print(fansCountModel)
+//        } catch {
+//            print(error)
+//        }
         
+        do {
+            let songModels: [NRSongModel] = try await fetchArtistSongs(id: 3684)
+            print(songModels.map { $0.tns })
+        } catch {
+            
+        }
     }
     
     
