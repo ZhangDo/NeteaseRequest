@@ -256,15 +256,15 @@ public func fetchArtistMV(id: Int, limit: Int = 100) async throws -> [NRMVListMo
 /// 获取 MV 详情
 ///  - mvid: mv 的 id
 /// - Returns: NRMVDetailModel
-public func fetchMVDetail(mvid: Int) async throws -> NRMVDetailModel {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mvDetail, parameters: ["mvid": mvid], dataObj: "data")
+public func fetchMVDetail(mvid: Int, cookie: String) async throws -> NRMVDetailModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mvDetail, parameters: ["mvid": mvid, "cookie": cookie], dataObj: "data")
 }
 
 /// 获取 MV 地址
 ///  - id: mv 的 id
 /// - Returns: NRMVDetailModel
-public func fetchMVUrl(id: Int) async throws -> NRMVUrlModel {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mvUrl, parameters: ["id": id], dataObj: "data")
+public func fetchMVUrl(id: Int, cookie: String) async throws -> NRMVUrlModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mvUrl, parameters: ["id": id, "cookie": cookie], dataObj: "data")
 }
 
 
