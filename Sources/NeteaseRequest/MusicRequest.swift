@@ -269,7 +269,7 @@ public func fetchMVUrl(id: Int, cookie: String) async throws -> NRMVUrlModel {
 /// 获取 最近播放-播客
 ///  - cookie:
 ///  - limit:
-/// - Returns: NRRecentPlayDJModel
+/// - Returns: NRRecentPlayModel
 public func fetchRecentDj(cookie: String, limit: Int = 100) async throws -> NRRecentPlayModel<NRDJRadioModel> {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentDj, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
 }
@@ -277,9 +277,17 @@ public func fetchRecentDj(cookie: String, limit: Int = 100) async throws -> NRRe
 /// 获取 最近播放-歌曲
 ///  - cookie:
 ///  - limit:
-/// - Returns: NRRecentPlayDJModel
+/// - Returns: NRRecentPlayModel
 public func fetchRecentSong(cookie: String, limit: Int = 100) async throws -> NRRecentPlayModel<NRSongModel> {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentSong, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
+}
+
+/// 获取 最近播放-歌单
+///  - cookie:
+///  - limit:
+/// - Returns: NRRecentPlayModel
+public func fetchRecentPlaylist(cookie: String, limit: Int = 100) async throws -> NRRecentPlayModel<NRPlayListModel> {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentPlaylist, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
 }
 
 
