@@ -266,6 +266,13 @@ public func fetchMVDetail(mvid: Int, cookie: String) async throws -> NRMVDetailM
 public func fetchMVUrl(id: Int, cookie: String) async throws -> NRMVUrlModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mvUrl, parameters: ["id": id, "cookie": cookie], dataObj: "data")
 }
+/// 获取 最近播放-播客
+///  - cookie:
+///  - limit:
+/// - Returns: NRRecentPlayDJModel
+public func fetchRecentDj(cookie: String, limit: Int = 100) async throws -> NRRecentPlayDJModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentDj, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
+}
 
 
 /// 搜索

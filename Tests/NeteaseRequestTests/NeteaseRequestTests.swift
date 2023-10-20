@@ -317,6 +317,12 @@ final class NeteaseRequestTests: XCTestCase {
 //        } catch {
 //            
 //        }
+        do {
+            let recentModel: NRRecentPlayDJModel = try await fetchRecentDj(cookie: cookie)
+            print(recentModel)
+        } catch {
+            print(error)
+        }
     }
     
     

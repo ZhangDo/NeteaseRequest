@@ -645,20 +645,20 @@ public struct NRDJCatelistModel: Codable {
 
 public struct NRDJRadioModel: Codable {
     public var dj: NRDJModel
-    public var category: String
+    public var category: String?
     public var secondCategory: String?
-    public var buyed: Bool
+    public var buyed: Bool?
     public var lastProgramName: String?
     public var picUrl: String
     public var programCount: Int
-    public var subCount: Int
+    public var subCount: Int?
     public var lastProgramId: Int?
     public var desc: String?
     public var name: String
     public var id: Int
     public var rcmdtext: String?
     
-    public init(dj: NRDJModel, category: String, secondCategory: String, buyed: Bool, lastProgramName: String, picUrl: String, programCount: Int, subCount: Int, lastProgramId: Int, desc: String, name: String, id: Int, rcmdtext: String) {
+    public init(dj: NRDJModel, category: String? = nil, secondCategory: String? = nil, buyed: Bool? = nil, lastProgramName: String? = nil, picUrl: String, programCount: Int, subCount: Int? = nil, lastProgramId: Int? = nil, desc: String? = nil, name: String, id: Int, rcmdtext: String? = nil) {
         self.dj = dj
         self.category = category
         self.secondCategory = secondCategory
@@ -922,6 +922,28 @@ public struct NRArtistFansCountModel: Codable {
         self.fansCnt = fansCnt
         self.followCnt = followCnt
         self.follow = follow
+    }
+}
+
+public struct NRRecentPlayDJModel: Codable {
+    public var total: Int
+    public var list: [NRDJResourceModel]
+    public init(total: Int, list: [NRDJResourceModel]) {
+        self.total = total
+        self.list = list
+    }
+}
+
+public struct NRDJResourceModel: Codable {
+    public var resourceId: String
+    public var playTime: Int
+    public var resourceType: String
+    public var data: NRDJRadioModel
+    public init(resourceId: String, playTime: Int, resourceType: String, data: NRDJRadioModel) {
+        self.resourceId = resourceId
+        self.playTime = playTime
+        self.resourceType = resourceType
+        self.data = data
     }
 }
 
