@@ -290,6 +290,14 @@ public func fetchRecentPlaylist(cookie: String, limit: Int = 100) async throws -
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentPlaylist, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
 }
 
+/// 获取 最近播放-专辑
+///  - cookie:
+///  - limit:
+/// - Returns: NRRecentPlayModel
+public func fetchRecentAlbum(cookie: String, limit: Int = 100) async throws -> NRRecentPlayModel<NRAlbumModel> {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentAlbum, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
+}
+
 
 /// 搜索
 ///  - keywords:  关键词
