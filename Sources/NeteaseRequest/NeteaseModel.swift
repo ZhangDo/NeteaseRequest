@@ -782,14 +782,16 @@ public struct NRRadioModel: Codable {
 
 public struct NRVideoModel: Codable {
     public var coverUrl: String?
-    public var title: String
-    public var durationms: Int
-    public var vid: String
+    public var title: String?
+    public var durationms: Int?
+    public var duration: Int?
+    public var vid: String?
     
-    public init(coverUrl: String? = nil, title: String, durationms: Int, vid: String) {
+    public init(coverUrl: String? = nil, title: String? = nil, durationms: Int? = nil, duration: Int? = nil, vid: String? = nil) {
         self.coverUrl = coverUrl
         self.title = title
         self.durationms = durationms
+        self.duration = duration
         self.vid = vid
     }
 }

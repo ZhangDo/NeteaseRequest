@@ -298,6 +298,15 @@ public func fetchRecentAlbum(cookie: String, limit: Int = 100) async throws -> N
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentAlbum, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
 }
 
+/// 获取 最近播放-视频
+///  - cookie:
+///  - limit:
+/// - Returns: NRRecentPlayModel
+public func fetchRecentVideo(cookie: String, limit: Int = 100) async throws -> NRRecentPlayModel<NRVideoModel> {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentVideo, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
+}
+
+
 
 /// 搜索
 ///  - keywords:  关键词
