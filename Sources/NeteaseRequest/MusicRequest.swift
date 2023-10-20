@@ -270,7 +270,7 @@ public func fetchMVUrl(id: Int, cookie: String) async throws -> NRMVUrlModel {
 ///  - cookie:
 ///  - limit:
 /// - Returns: NRRecentPlayDJModel
-public func fetchRecentDj(cookie: String, limit: Int = 100) async throws -> NRRecentPlayDJModel {
+public func fetchRecentDj(cookie: String, limit: Int = 100) async throws -> NRRecentPlayModel<NRDJRadioModel> {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentDj, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
 }
 

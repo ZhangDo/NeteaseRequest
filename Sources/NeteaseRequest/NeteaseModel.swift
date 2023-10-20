@@ -925,25 +925,28 @@ public struct NRArtistFansCountModel: Codable {
     }
 }
 
-public struct NRRecentPlayDJModel: Codable {
+public struct NRRecentPlayModel<T: Codable>: Codable {
     public var total: Int
-    public var list: [NRDJResourceModel]
-    public init(total: Int, list: [NRDJResourceModel]) {
+    public var list: [NRRencentResourceModel<T>]
+
+    public init(total: Int, list: [NRRencentResourceModel<T>]) {
         self.total = total
         self.list = list
     }
 }
 
-public struct NRDJResourceModel: Codable {
+public struct NRRencentResourceModel<T: Codable>: Codable{
     public var resourceId: String
     public var playTime: Int
     public var resourceType: String
-    public var data: NRDJRadioModel
-    public init(resourceId: String, playTime: Int, resourceType: String, data: NRDJRadioModel) {
+    public var data: T
+
+    public init(resourceId: String, playTime: Int, resourceType: String, data: T) {
         self.resourceId = resourceId
         self.playTime = playTime
         self.resourceType = resourceType
         self.data = data
     }
 }
+
 
