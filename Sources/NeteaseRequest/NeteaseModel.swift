@@ -297,8 +297,8 @@ public struct NRAudioQualityModel: Codable {
     public var br: Int
     public var fid: Int
     public var size: Int
-    public var sr: Int
-    public init(br: Int, fid: Int, size: Int, sr: Int) {
+    public var sr: Int?
+    public init(br: Int, fid: Int, size: Int, sr: Int? = nil) {
         self.br = br
         self.fid = fid
         self.size = size

@@ -93,6 +93,8 @@ enum NeteaseRequest {
         static let recentDj = "\(NR_BASEURL)/record/recent/dj"
         ///最近播放-歌曲
         static let recentSong = "\(NR_BASEURL)/record/recent/song"
+        ///最近播放-声音
+        static let recentVoice = "\(NR_BASEURL)/record/recent/voice"
         
         ///搜索
         static let search = "\(NR_BASEURL)/search"
