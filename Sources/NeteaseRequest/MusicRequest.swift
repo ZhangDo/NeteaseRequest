@@ -260,6 +260,15 @@ public func fetchMVDetail(mvid: Int, cookie: String) async throws -> NRMVDetailM
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mvDetail, parameters: ["mvid": mvid, "cookie": cookie], dataObj: "data")
 }
 
+/// 获取全部MV
+///  - area:  地区,可选值为全部,内地,港台,欧美,日本,韩国,不填则为全部 type: 类型,可选值为全部,官方版,原生,现场版,网易出品,不填则为全部
+///  - order:  排序,可选值为上升最快,最热,最新,不填则为上升最快
+///  - limit:
+///  - offset:
+public func fetchAllMV(area: String = "全部", order: String = "上升最快", limit: Int = 100, offset: Int = 0) async throws -> [NRMVListModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.allMV, parameters: ["area": area, "order": order, "limit": limit, "offset": offset], dataObj: "data")
+}
+
 /// 获取 MV 地址
 ///  - id: mv 的 id
 /// - Returns: NRMVDetailModel

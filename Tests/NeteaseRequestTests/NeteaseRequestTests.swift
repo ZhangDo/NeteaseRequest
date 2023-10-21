@@ -345,9 +345,16 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let recentModel: NRRecentPlayModel = try await fetchRecentVideo(cookie: cookie)
+//            print(recentModel.list.first!.data)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let recentModel: NRRecentPlayModel = try await fetchRecentVideo(cookie: cookie)
-            print(recentModel.list[1].data)
+            let mvModelList: [NRMVListModel] = try await fetchAllMV(area: "韩国", order: "最热")
+            print(mvModelList)
         } catch {
             print(error)
         }
