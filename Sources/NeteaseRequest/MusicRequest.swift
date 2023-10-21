@@ -325,3 +325,12 @@ public func fetchRecentVideo(cookie: String, limit: Int = 100) async throws -> N
 public func search(keywords: String, type: Int, limit: Int = 100) async throws -> NRSearchModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.search, parameters: ["keywords": keywords, "type": type, "limit": limit], dataObj: "result")
 }
+
+
+///收藏/取消收藏歌单
+/// - t : 类型,1:收藏,2:取消收藏
+/// - id : 歌单 id
+/// - cookie:
+public func subscribePlaylist(t: Int, id: Int, cookie: String, complete: ((Result<JSON, RequestError>) -> Void)? = nil) {
+    NeteaseRequest.requestJSON(url: NeteaseRequest.EndPoint.subscribePlaylist, parameters: ["t": t, "id": id, "cookie": cookie], complete: complete)
+}

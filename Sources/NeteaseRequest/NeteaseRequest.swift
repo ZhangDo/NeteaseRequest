@@ -8,7 +8,7 @@ public var NR_BASEURL = ""
 
 
 
-enum RequestError: Error {
+public enum RequestError: Error {
     case networkFail
     case statusFail(code: Int, message: String)
     case decodeFail(message: String)
@@ -107,6 +107,8 @@ enum NeteaseRequest {
         ///搜索
         static let search = "\(NR_BASEURL)/search"
         
+        ///收藏/取消收藏歌单
+        static let subscribePlaylist = "\(NR_BASEURL)/playlist/subscribe"
     }
     
     
