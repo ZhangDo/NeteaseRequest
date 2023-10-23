@@ -143,6 +143,8 @@ public struct NRProfileModel: Codable {
     public var gender: Int
     public var vipType: Int
     public var signature: String?
+    public var followeds: Int?
+    public var follows: Int?
    
     public var birthd: String {
         let date = Date(timeIntervalSince1970: (birthday ?? TimeInterval()) / 1000)
@@ -151,7 +153,7 @@ public struct NRProfileModel: Codable {
         return dateformatter.string(from: date)
     }
     
-    public init(userId: Int, userType: Int, nickname: String, avatarImgId: Int, avatarUrl: String, backgroundUrl: String, birthday: TimeInterval? = nil, gender: Int, vipType: Int, signature: String? = nil) {
+    public init(userId: Int, userType: Int, nickname: String, avatarImgId: Int, avatarUrl: String, backgroundUrl: String? = nil, birthday: TimeInterval? = nil, gender: Int, vipType: Int, signature: String? = nil, followeds: Int? = nil, follows: Int? = nil) {
         self.userId = userId
         self.userType = userType
         self.nickname = nickname
@@ -162,6 +164,8 @@ public struct NRProfileModel: Codable {
         self.gender = gender
         self.vipType = vipType
         self.signature = signature
+        self.followeds = followeds
+        self.follows = follows
     }
     
 }

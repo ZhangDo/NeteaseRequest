@@ -32,6 +32,13 @@ final class NeteaseRequestTests: XCTestCase {
 //        } catch  {
 //            print(error);
 //        }
+        
+            do {
+                let profileModel: NRProfileModel = try await fetchUserInfoDetail(uid: 81479026, cookie: cookie)
+                print("profileModel ==== \(profileModel)")
+            } catch  {
+                print(error);
+            }
 //
 //        do {
 //            let userSubcount: NRUserSubcountModel = try await fetchUserSubcount(cookie: cookie)
@@ -352,12 +359,12 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
-        do {
-            let mvModelList: [NRMVListModel] = try await fetchAllMV(area: "韩国", order: "最热")
-            print(mvModelList)
-        } catch {
-            print(error)
-        }
+//        do {
+//            let mvModelList: [NRMVListModel] = try await fetchAllMV(area: "韩国", order: "最热")
+//            print(mvModelList)
+//        } catch {
+//            print(error)
+//        }
     }
     
     
