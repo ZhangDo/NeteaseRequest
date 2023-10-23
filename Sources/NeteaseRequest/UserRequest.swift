@@ -43,8 +43,8 @@ public func fetchAccountInfo(cookie: String) async throws -> NRProfileModel {
 /// - uid:
 /// - cookie:
 ///  - Returns: NRProfileModel
-public func fetchUserInfoDetail(uid: Int, cookie: String) async throws -> NRProfileModel {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userDetail, parameters: ["uid": uid, "cookie": cookie], dataObj: "profile")
+public func fetchUserInfoDetail(uid: Int, cookie: String) async throws -> NRUserDetailModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userDetail, parameters: ["uid": uid, "cookie": cookie])
 }
 //MARK: 获取用户信息 , 歌单，收藏，mv, dj 数量
 ///获取用户信息 , 歌单，收藏，mv, dj 数量

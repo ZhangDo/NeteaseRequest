@@ -170,6 +170,23 @@ public struct NRProfileModel: Codable {
     
 }
 
+public struct NRUserDetailModel: Codable {
+    public var level: Int
+    public var listenSongs: Int
+    public var createTime: TimeInterval?
+    public var createDays: Int
+    public var profile: NRProfileModel
+    
+    public init(level: Int, listenSongs: Int, createTime: TimeInterval? = nil, createDays: Int, profile: NRProfileModel) {
+        self.level = level
+        self.listenSongs = listenSongs
+        self.createTime = createTime
+        self.createDays = createDays
+        self.profile = profile
+    }
+}
+
+
 public struct NRUserSubcountModel: Codable {
     public var programCount: Int
     public var djRadioCount: Int

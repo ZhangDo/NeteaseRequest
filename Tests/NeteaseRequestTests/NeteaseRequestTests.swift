@@ -34,7 +34,7 @@ final class NeteaseRequestTests: XCTestCase {
 //        }
         
             do {
-                let profileModel: NRProfileModel = try await fetchUserInfoDetail(uid: 81479026, cookie: cookie)
+                let profileModel: NRUserDetailModel = try await fetchUserInfoDetail(uid: 81479026, cookie: cookie)
                 print("profileModel ==== \(profileModel)")
             } catch  {
                 print(error);
