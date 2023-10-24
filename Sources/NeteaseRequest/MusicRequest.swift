@@ -291,6 +291,14 @@ public func fetchRecentSong(cookie: String, limit: Int = 100) async throws -> NR
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentSong, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
 }
 
+/// 获取 最近播放-声音
+///  - cookie:
+///  - limit:
+/// - Returns: NRRecentPlayModel
+public func fetchRecentVoice(cookie: String, limit: Int = 100) async throws -> NRRecentPlayModel<NRRencentVoiceModel> {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentVoice, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
+}
+
 /// 获取 最近播放-歌单
 ///  - cookie:
 ///  - limit:

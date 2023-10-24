@@ -972,4 +972,11 @@ public struct NRRencentResourceModel<T: Codable>: Codable{
     }
 }
 
-
+public struct NRRencentVoiceModel: Codable {
+    public var pubDJProgramData: NRProgramModel
+    public var commentCount: Int
+    public init(pubDJProgramData: NRProgramModel, commentCount: Int) {
+        self.pubDJProgramData = pubDJProgramData
+        self.commentCount = commentCount
+    }
+}
