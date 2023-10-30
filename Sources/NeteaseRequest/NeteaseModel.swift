@@ -24,7 +24,7 @@ public enum NROrder: String {
     
 }
 
-public enum NRSongLevel: String, Codable {
+public enum NRSongLevel: String, Codable, CaseIterable {
     ///标准
     case standard = "standard"
     ///较高
