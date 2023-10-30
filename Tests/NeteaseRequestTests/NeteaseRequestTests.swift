@@ -375,12 +375,24 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let userPlaylist: [NRPlayListModel] = try await fetchUserPlaylist(cookie: cookie, uid: 81479026).filter { model in
+//                model.userId != 81479026
+//            }
+//            print(userPlaylist)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let userPlaylist: [NRPlayListModel] = try await fetchUserPlaylist(cookie: cookie, uid: 81479026)
-            print(userPlaylist)
+            let albumSublist: [NRAlbumModel] = try await fetchAlbumSublist(cookie: cookie, limit: 100, offset:  0)
+            print(albumSublist)
         } catch {
             print(error)
         }
+        
+        
+        
         
         
         
