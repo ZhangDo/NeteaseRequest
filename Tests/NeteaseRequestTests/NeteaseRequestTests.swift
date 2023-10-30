@@ -384,14 +384,19 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let albumSublist: [NRAlbumModel] = try await fetchAlbumSublist(cookie: cookie, limit: 100, offset:  0)
+//            print(albumSublist)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let albumSublist: [NRAlbumModel] = try await fetchAlbumSublist(cookie: cookie, limit: 100, offset:  0)
-            print(albumSublist)
+            let djSublist: [NRDJRadioModel] = try await fetchDjSublist(cookie: cookie, limit: 100, offset:  0)
+            print(djSublist)
         } catch {
             print(error)
         }
-        
-        
         
     }
     

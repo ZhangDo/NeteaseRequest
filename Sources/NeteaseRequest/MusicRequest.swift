@@ -332,12 +332,20 @@ public func fetchUserPlaylist(cookie: String, uid: Int, limit: Int = 100, offset
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userPlaylist, parameters: ["cookie": cookie, "uid": uid, "limit": limit, "offset": offset], dataObj: "playlist")
 }
 
-/// 获取用户歌单
+/// 获取我收藏的专辑
 ///  - limit:
 ///  - offset:
 /// - Returns: NRRecentPlayModel
 public func fetchAlbumSublist(cookie: String, limit: Int = 100, offset: Int = 0) async throws -> [NRAlbumModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.albumSublist, parameters: ["cookie": cookie, "limit": limit, "offset": offset], dataObj: "data")
+}
+
+/// 获取我收藏的播客
+///  - limit:
+///  - offset:
+/// - Returns: NRRecentPlayModel
+public func fetchDjSublist(cookie: String, limit: Int = 100, offset: Int = 0) async throws -> [NRDJRadioModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.djSublist, parameters: ["cookie": cookie, "limit": limit, "offset": offset], dataObj: "djRadios")
 }
 
 
