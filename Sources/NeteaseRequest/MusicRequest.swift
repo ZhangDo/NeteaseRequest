@@ -323,6 +323,15 @@ public func fetchRecentVideo(cookie: String, limit: Int = 100) async throws -> N
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.recentVideo, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
 }
 
+/// 获取用户歌单
+///  - uid:
+///  - limit:
+///  - offset:
+/// - Returns: NRRecentPlayModel
+public func fetchUserPlaylist(cookie: String, uid: Int, limit: Int = 100, offset: Int = 0) async throws -> [NRPlayListModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userPlaylist, parameters: ["cookie": cookie, "uid": uid, "limit": limit, "offset": offset], dataObj: "playlist")
+}
+
 
 
 /// 搜索

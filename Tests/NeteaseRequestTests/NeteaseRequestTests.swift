@@ -359,12 +359,12 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
-        do {
-            let recentModel: NRRecentPlayModel = try await fetchRecentVoice(cookie: cookie)
-            print(recentModel.list.first!.data)
-        } catch {
-            print(error)
-        }
+//        do {
+//            let recentModel: NRRecentPlayModel = try await fetchRecentVoice(cookie: cookie)
+//            print(recentModel.list.first!.data)
+//        } catch {
+//            print(error)
+//        }
         
         
         
@@ -374,6 +374,13 @@ final class NeteaseRequestTests: XCTestCase {
 //        } catch {
 //            print(error)
 //        }
+        
+        do {
+            let userPlaylist: [NRPlayListModel] = try await fetchUserPlaylist(cookie: cookie, uid: 81479026)
+            print(userPlaylist)
+        } catch {
+            print(error)
+        }
         
         
         
