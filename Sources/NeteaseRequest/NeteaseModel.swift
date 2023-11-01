@@ -1,19 +1,29 @@
 import Foundation
 
 public enum NRSingerType: Int {
-    case allSinger = -1 // 全部
-    case male = 1 // 男歌手
-    case female = 2 // 女歌手
-    case band = 3 // 乐队
+    /// 全部
+    case allSinger = -1
+    /// 男歌手
+    case male = 1
+    /// 女歌手
+    case female = 2
+    /// 乐队
+    case band = 3
 }
 
 public enum NRAreaType: Int {
-    case allArea = -1 // 全部
-    case other = 0 // 其他
-    case chinese = 7 // 华语
-    case japanese = 8 // 日本
-    case korean = 16 // 韩国
-    case western = 96 // 欧美
+    /// 全部
+    case allArea = -1
+    /// 其他
+    case other = 0
+    /// 华语
+    case chinese = 7
+    /// 日本
+    case japanese = 8
+    /// 韩国
+    case korean = 16
+    /// 欧美
+    case western = 96
 }
 
 public enum NROrder: String {

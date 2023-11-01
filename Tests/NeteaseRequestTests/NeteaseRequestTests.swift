@@ -3,7 +3,7 @@ import XCTest
 
 final class NeteaseRequestTests: XCTestCase {
     func testExample() async {
-        
+        //腾讯云 serverless 部署
         NR_BASEURL = "https://service-ioi18dzi-1259615918.gz.apigw.tencentcs.com/release"
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
