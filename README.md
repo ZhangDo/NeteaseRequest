@@ -5,7 +5,7 @@
 ## Swift Package Manager
 - File > Swift Packages > Add Package Dependency
 - Add https://github.com/ZhangDo/NeteaseRequest.git
-- Select "Up to Next Major" with "0.7.4"
+- Select "Up to Next Major" with “0.7.5”
 
 ## 参考及引用
 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
