@@ -6,6 +6,9 @@
 - File > Swift Packages > Add Package Dependency
 - Add https://github.com/ZhangDo/NeteaseRequest.git
 - Select "Up to Next Major" with “0.7.5”
+## Apple TV 客户端
+
+[NeteaseTVDemo](https://github.com/ZhangDo/NeteaseTVDemo) - 网易云音乐 tvOS 客户端
 
 ## 参考及引用
 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
