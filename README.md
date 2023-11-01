@@ -10,6 +10,8 @@
 
 [NeteaseTVDemo](https://github.com/ZhangDo/NeteaseTVDemo) - 网易云音乐 tvOS 客户端
 
+![预览图](https://github.com/ZhangDo/NeteaseTVDemo/blob/main/images/preview.png)
+
 ## 参考及引用
 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
 
