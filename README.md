@@ -2,6 +2,10 @@
 
 一个 [网易云音乐](https://github.com/Binaryify/NeteaseCloudMusicApi) API 的 Swift 封装
 
+## 提醒
+为了自己的账号安全，请尽量使用自己部署的服务。
+具体部署方法在 [这里](https://github.com/Binaryify/NeteaseCloudMusicApi) 
+
 ## Swift Package Manager
 - File > Swift Packages > Add Package Dependency
 - Add https://github.com/ZhangDo/NeteaseRequest.git
@@ -13,7 +17,7 @@
 ![预览图](https://github.com/ZhangDo/NeteaseTVDemo/blob/main/images/preview.png)
 
 ## 参考及引用
-[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+[NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)  - 网易云音乐 API
 
 ## 声明
 
