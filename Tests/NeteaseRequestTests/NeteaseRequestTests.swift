@@ -19,14 +19,7 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
-        
-//        do {
-//            let cellPhoneModel: CellPhoneModel = try await cellPhoneLogin(phone: "17610363682", password: "Feel.8023")
-//            UserDefaults.standard.set(cellPhoneModel.cookie, forKey: "cookie")
-//        } catch {
-//            print(error)
-//        }
-        let cookie: String = UserDefaults.standard.value(forKey: "cookie") as! String
+//        let cookie: String = UserDefaults.standard.value(forKey: "cookie") as! String
 
 //        do {
 //            let profileModel: NRProfileModel = try await fetchAccountInfo(cookie: cookie)
@@ -393,12 +386,12 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
-        do {
-            let djSublist: [NRDJRadioModel] = try await fetchDjSublist(cookie: cookie, limit: 100, offset:  0)
-            print(djSublist)
-        } catch {
-            print(error)
-        }
+//        do {
+//            let djSublist: [NRDJRadioModel] = try await fetchDjSublist(cookie: cookie, limit: 100, offset:  0)
+//            print(djSublist)
+//        } catch {
+//            print(error)
+//        }
         
     }
     
