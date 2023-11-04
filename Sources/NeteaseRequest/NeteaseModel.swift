@@ -990,3 +990,35 @@ public struct NRRencentVoiceModel: Codable {
         self.commentCount = commentCount
     }
 }
+
+public struct NRCommentModel: Codable {
+    public var commentId: Int
+    public var content: String
+    public var timeStr: String
+    public var likedCount: Int
+    public var user: NRCommentUserModel
+    
+    public struct NRCommentUserModel: Codable {
+        public var userType: Int
+        public var avatarUrl: String
+        public var nickname: String
+        public var userId: Int
+    }
+    
+    public init(commentId: Int, content: String, timeStr: String, likedCount: Int, user: NRCommentUserModel) {
+        self.commentId = commentId
+        self.content = content
+        self.timeStr = timeStr
+        self.likedCount = likedCount
+        self.user = user
+    }
+}
+
+public struct NRFloorCommentModel: Codable {
+    public var ownerComment: NRCommentModel
+    public var comments: [NRCommentModel]
+    public init(ownerComment: NRCommentModel, comments: [NRCommentModel]) {
+        self.ownerComment = ownerComment
+        self.comments = comments
+    }
+}

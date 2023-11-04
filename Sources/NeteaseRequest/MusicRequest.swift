@@ -367,3 +367,19 @@ public func search(keywords: String, type: Int, limit: Int = 100) async throws -
 public func subscribePlaylist(t: Int, id: Int, cookie: String, complete: ((Result<JSON, RequestError>) -> Void)? = nil) {
     NeteaseRequest.requestJSON(url: NeteaseRequest.EndPoint.subscribePlaylist, parameters: ["t": t, "id": id, "cookie": cookie], complete: complete)
 }
+
+/// 获取歌曲热门评论
+///  - id:
+///  - limit:
+/// - Returns: [NRCommentModel]
+public func fetchMusicHotComment(id: Int, limit: Int = 100) async throws -> [NRCommentModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.musicComment, parameters: ["id": id, "limit": limit], dataObj: "hotComments")
+}
+
+/// 获取楼层评论
+///  - id:
+///  - limit:
+/// - Returns: NRFloorCommentModel
+public func fetchFloorComment(parentCommentId: Int, id: Int, type: Int = 0, limit: Int = 20) async throws -> NRFloorCommentModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.floorComment, parameters: ["parentCommentId": parentCommentId, "id": id, "type": type, "limit": limit], dataObj: "data")
+}

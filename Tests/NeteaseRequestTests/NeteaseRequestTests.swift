@@ -392,6 +392,18 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let commentlist: [NRCommentModel] = try await fetchMusicHotComment(id: 186016)
+//            print(commentlist)
+//        } catch {
+//            print(error)
+//        }
+        do {
+            let floorComment: NRFloorCommentModel = try await fetchFloorComment(parentCommentId: 4956438, id: 186016)
+            print(floorComment)
+        } catch {
+            print(error)
+        }
     }
     
     

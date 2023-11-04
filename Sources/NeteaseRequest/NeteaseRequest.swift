@@ -139,6 +139,10 @@ enum NeteaseRequest {
         static let search = "\(NR_BASEURL)/search"
         ///收藏/取消收藏歌单
         static let subscribePlaylist = "\(NR_BASEURL)/playlist/subscribe"
+        ///歌曲评论
+        static let musicComment = "\(NR_BASEURL)/comment/music"
+        ///楼层评论 comment/floor
+        static let floorComment = "\(NR_BASEURL)/comment/floor"
     }
     
     
