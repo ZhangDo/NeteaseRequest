@@ -377,8 +377,9 @@ public func fetchMusicHotComment(id: Int, limit: Int = 100) async throws -> [NRC
 }
 
 /// 获取楼层评论
-///  - id:
-///  - limit:
+///  - parentCommentId: 楼层评论 id
+///  - type: type: 数字 , 资源类型 , 对应歌曲 , mv, 专辑 , 歌单 , 电台, 视频对应以下类型 0: 歌曲 1: mv 2: 歌单3: 专辑4: 电台节目5: 视频 6: 动态 7: 电台
+///  - id: 资源 id
 /// - Returns: NRFloorCommentModel
 public func fetchFloorComment(parentCommentId: Int, id: Int, type: Int = 0, limit: Int = 20) async throws -> NRFloorCommentModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.floorComment, parameters: ["parentCommentId": parentCommentId, "id": id, "type": type, "limit": limit], dataObj: "data")
