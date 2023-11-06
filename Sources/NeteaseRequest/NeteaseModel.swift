@@ -1022,3 +1022,27 @@ public struct NRFloorCommentModel: Codable {
         self.comments = comments
     }
 }
+
+public struct NRTopListModel: Codable {
+    public var updateFrequency: String
+    public var coverImgUrl: String
+    public var id: Int
+    public var name: String
+    public var ToplistType: String?
+    public var playCount: Int
+    public var subscribedCount: Int
+    public var createTime: TimeInterval
+    public var description: String?
+    public init(updateFrequency: String, coverImgUrl: String, id: Int, name: String, ToplistType: String, playCount: Int, subscribedCount: Int, createTime: TimeInterval, description: String) {
+        self.updateFrequency = updateFrequency
+        self.coverImgUrl = coverImgUrl
+        self.id = id
+        self.name = name
+        self.ToplistType = ToplistType
+        self.playCount = playCount
+        self.subscribedCount = subscribedCount
+        self.createTime = createTime
+        self.description = description
+    }
+    
+}

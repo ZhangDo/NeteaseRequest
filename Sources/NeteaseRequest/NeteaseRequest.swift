@@ -143,6 +143,8 @@ enum NeteaseRequest {
         static let musicComment = "\(NR_BASEURL)/comment/music"
         ///楼层评论 comment/floor
         static let floorComment = "\(NR_BASEURL)/comment/floor"
+        ///所有榜单toplist
+        static let allToplist = "\(NR_BASEURL)/toplist"
     }
     
     

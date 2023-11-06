@@ -384,3 +384,9 @@ public func fetchMusicHotComment(id: Int, limit: Int = 100) async throws -> [NRC
 public func fetchFloorComment(parentCommentId: Int, id: Int, type: Int = 0, limit: Int = 20) async throws -> NRFloorCommentModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.floorComment, parameters: ["parentCommentId": parentCommentId, "id": id, "type": type, "limit": limit], dataObj: "data")
 }
+
+/// 获取所有榜单
+/// - Returns: [NRTopListModel]
+public func fetchAllToplist() async throws -> [NRTopListModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.allToplist, dataObj: "list")
+}
