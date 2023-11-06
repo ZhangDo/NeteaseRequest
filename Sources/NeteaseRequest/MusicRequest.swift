@@ -390,3 +390,9 @@ public func fetchFloorComment(parentCommentId: Int, id: Int, type: Int = 0, limi
 public func fetchAllToplist() async throws -> [NRTopListModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.allToplist, dataObj: "list")
 }
+/// 获取歌手榜
+///  - type: 1: 华语 2: 欧美 3: 韩国 4: 日本
+/// - Returns: NRArtistToplistModel
+public func fetchSingerToplist(type: Int = 0) async throws -> NRArtistToplistModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerToplist, parameters: ["type": type], dataObj: "list")
+}

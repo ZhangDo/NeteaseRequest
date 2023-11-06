@@ -405,12 +405,19 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let allToplist: [NRTopListModel] = try await fetchAllToplist()
+//            print(allToplist)
+//        } catch {
+//            print(error)
+//        }
         do {
-            let allToplist: [NRTopListModel] = try await fetchAllToplist()
-            print(allToplist)
+            let artistToplist: NRArtistToplistModel = try await fetchSingerToplist(type: 1)
+            print(artistToplist.artists)
         } catch {
             print(error)
         }
+        
     }
     
     

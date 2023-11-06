@@ -145,6 +145,8 @@ enum NeteaseRequest {
         static let floorComment = "\(NR_BASEURL)/comment/floor"
         ///所有榜单toplist
         static let allToplist = "\(NR_BASEURL)/toplist"
+        ///歌手榜
+        static let singerToplist = "\(NR_BASEURL)/toplist/artist"
     }
     
     

@@ -1044,5 +1044,16 @@ public struct NRTopListModel: Codable {
         self.createTime = createTime
         self.description = description
     }
-    
 }
+
+public struct NRArtistToplistModel: Codable {
+    public var artists: [NRArtistModel]
+    public var updateTime: TimeInterval
+    public var type: Int
+    public init(artists: [NRArtistModel], updateTime: TimeInterval, type: Int) {
+        self.artists = artists
+        self.updateTime = updateTime
+        self.type = type
+    }
+}
+
