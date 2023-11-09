@@ -18,7 +18,7 @@ final class NeteaseRequestTests: XCTestCase {
 //        } catch {
 //            print(error)
 //        }
-//        let cookie: String = UserDefaults.standard.value(forKey: "cookie") as! String
+        let cookie: String = UserDefaults.standard.value(forKey: "cookie") as! String
 
 //        do {
 //            let profileModel: NRProfileModel = try await fetchAccountInfo(cookie: cookie)
@@ -411,9 +411,16 @@ final class NeteaseRequestTests: XCTestCase {
 //        } catch {
 //            print(error)
 //        }
+//        do {
+//            let artistToplist: NRArtistToplistModel = try await fetchSingerToplist(type: 1)
+//            print(artistToplist.artists)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let artistToplist: NRArtistToplistModel = try await fetchSingerToplist(type: 1)
-            print(artistToplist.artists)
+            let artistList: [NRArtistModel] = try await fetchSimiArtistList(id: 3684, cookie: cookie)
+            print(artistList)
         } catch {
             print(error)
         }

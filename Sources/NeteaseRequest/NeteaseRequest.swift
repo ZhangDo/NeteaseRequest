@@ -147,6 +147,8 @@ enum NeteaseRequest {
         static let allToplist = "\(NR_BASEURL)/toplist"
         ///歌手榜
         static let singerToplist = "\(NR_BASEURL)/toplist/artist"
+        ///获取相似歌手
+        static let simiArtist = "\(NR_BASEURL)/simi/artist"
     }
     
     
