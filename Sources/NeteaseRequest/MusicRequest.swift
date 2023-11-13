@@ -404,3 +404,10 @@ public func fetchSingerToplist(type: Int = 0) async throws -> NRArtistToplistMod
 public func fetchSimiArtistList(id: Int, cookie: String) async throws -> [NRArtistModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.simiArtist, parameters: ["id": id, "cookie": cookie], dataObj: "artists")
 }
+/// 获取喜欢音乐列表
+/// - uid:
+/// - cookie:
+/// - Returns:[Int]
+public func fetchLikeMusicList(uid: Int, cookie: String) async throws -> [Int] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.likelist, parameters: ["uid": uid, "cookie": cookie], dataObj: "ids")
+}

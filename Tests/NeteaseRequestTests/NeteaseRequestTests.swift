@@ -418,9 +418,16 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let artistList: [NRArtistModel] = try await fetchSimiArtistList(id: 3684, cookie: cookie)
+//            print(artistList)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let artistList: [NRArtistModel] = try await fetchSimiArtistList(id: 3684, cookie: cookie)
-            print(artistList)
+            let songIds: [Int] = try await fetchLikeMusicList(uid: 81479026, cookie: cookie)
+            print(songIds)
         } catch {
             print(error)
         }
