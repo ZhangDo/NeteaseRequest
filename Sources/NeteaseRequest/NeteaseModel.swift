@@ -350,6 +350,8 @@ public struct NRSongModel: Codable {
     public var tns: [String]?
     /// 无损质量文件信息
     public var sq: NRAudioQualityModel?
+    ///Hi-Res质量文件信息
+    public var hr: NRAudioQualityModel?
     /// 高质量文件信息
     public var h: NRAudioQualityModel?
     /// 中质量文件信息
