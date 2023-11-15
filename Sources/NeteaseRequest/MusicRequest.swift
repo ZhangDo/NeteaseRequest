@@ -411,3 +411,12 @@ public func fetchSimiArtistList(id: Int, cookie: String) async throws -> [NRArti
 public func fetchLikeMusicList(uid: Int, cookie: String) async throws -> [Int] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.likelist, parameters: ["uid": uid, "cookie": cookie], dataObj: "ids")
 }
+
+/// 获取歌手百科信息
+/// - id:
+/// - cookie:
+/// - Returns:NRArtistIntroduceModel
+public func fetchArtistIntroduce(id: Int, cookie: String) async throws -> NRArtistIntroduceModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistIntroduce, parameters: ["id": id, "cookie": cookie], dataObj: "data")
+}
+

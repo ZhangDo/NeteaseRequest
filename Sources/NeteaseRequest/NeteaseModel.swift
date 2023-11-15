@@ -11,7 +11,7 @@ public enum NRSingerType: Int {
     case band = 3
 }
 
-public enum NRAreaType: Int {
+public enum NRAreaType: Int, Codable {
     /// 全部
     case allArea = -1
     /// 其他
@@ -1059,3 +1059,25 @@ public struct NRArtistToplistModel: Codable {
     }
 }
 
+public struct NRArtistIntroduceModel: Codable {
+    public var artistId: Int
+    public var artistName: String
+    public var alias: String
+    public var headPicUrl: String
+    public var area: NRAreaType
+    public var type: Int
+    public var desc: String
+    public var production: String
+    public var avatarPicUrl: String
+    public init(artistId: Int, artistName: String, alias: String, headPicUrl: String, area: NRAreaType, type: Int, desc: String, production: String, avatarPicUrl: String) {
+        self.artistId = artistId
+        self.artistName = artistName
+        self.alias = alias
+        self.headPicUrl = headPicUrl
+        self.area = area
+        self.type = type
+        self.desc = desc
+        self.production = production
+        self.avatarPicUrl = avatarPicUrl
+    }
+}
