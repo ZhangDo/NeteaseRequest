@@ -432,13 +432,19 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let artistIntroduce: NRArtistIntroduceModel = try await fetchArtistIntroduce(id: 3684, cookie: cookie)
+//            print(artistIntroduce)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let artistIntroduce: NRArtistIntroduceModel = try await fetchArtistIntroduce(id: 3684, cookie: cookie)
-            print(artistIntroduce)
+            let mlogUrlDetail: NRMlogUrlDetailModel = try await fetchMlogUrlDetail(id: "a1A2PV3VDaT1YwX")
+            print(mlogUrlDetail)
         } catch {
             print(error)
         }
-        
     }
     
     

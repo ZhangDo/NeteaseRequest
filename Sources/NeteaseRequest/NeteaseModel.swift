@@ -1081,3 +1081,47 @@ public struct NRArtistIntroduceModel: Codable {
         self.avatarPicUrl = avatarPicUrl
     }
 }
+
+public struct NRMlogUrlDetailModel: Codable {
+    public var id: String
+    public var type: String
+    public var squareFeedType: Int
+    public var resource: NRMlogResourceModel
+    
+    public struct NRMlogResourceModel: Codable {
+        public var threadId: String
+        public var commentCount: Int
+        public var likedCount: Int
+        public var shareCount: Int
+        public var maxCommentShowNum: Int
+        public var content: NRMlogContentModel
+        
+        public struct NRMlogContentModel: Codable {
+            public var title: String
+            public var text: String
+            public var video: NRMlogVideoModel
+            
+            public struct NRMlogVideoModel: Codable {
+                public var duration: Int
+                public var coverUrl: String
+                public var frameUrl: String
+                public var urlInfo: NRMlogUrlInfoModel
+                
+                public struct NRMlogUrlInfoModel: Codable {
+                    public var id: String
+                    public var url: String
+                    public var size: Int
+                }
+                
+            }
+        }
+        
+    }
+    
+    public init(id: String, type: String, squareFeedType: Int, resource: NRMlogResourceModel) {
+        self.id = id
+        self.type = type
+        self.squareFeedType = squareFeedType
+        self.resource = resource
+    }
+}

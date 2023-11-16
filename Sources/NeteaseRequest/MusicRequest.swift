@@ -420,3 +420,10 @@ public func fetchArtistIntroduce(id: Int, cookie: String) async throws -> NRArti
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.artistIntroduce, parameters: ["id": id, "cookie": cookie], dataObj: "data")
 }
 
+/// 获取 mlog 播放地址
+/// - Returns:NRMlogUrlDetailModel
+public func fetchMlogUrlDetail(id: String) async throws -> NRMlogUrlDetailModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mlogUrl, parameters: ["id": id] ,dataObj: "data")
+}
+
+
