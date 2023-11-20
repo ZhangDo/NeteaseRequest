@@ -439,9 +439,16 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let mlogUrlDetail: NRMlogUrlDetailModel = try await fetchMlogUrlDetail(id: "a1A2PV3VDaT1YwX")
+//            print(mlogUrlDetail)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let mlogUrlDetail: NRMlogUrlDetailModel = try await fetchMlogUrlDetail(id: "a1A2PV3VDaT1YwX")
-            print(mlogUrlDetail)
+            let anonimousLogin: NRAnonimousModel = try await anonimousLogin()
+            print(anonimousLogin)
         } catch {
             print(error)
         }

@@ -9,6 +9,10 @@ import Alamofire
 public func cellPhoneLogin(phone: String, password: String) async throws -> CellPhoneModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.cellPhoneLogin, parameters: ["phone": phone, "password": password])
 }
+///游客登录
+public func anonimousLogin() async throws -> NRAnonimousModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.anonimousLogin)
+}
 /// 二维码 key 生成接口
 /// - Returns: NRQRKeyModel
 public func fetchQRKey() async throws -> NRQRKeyModel {

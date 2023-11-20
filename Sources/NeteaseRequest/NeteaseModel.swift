@@ -1125,3 +1125,18 @@ public struct NRMlogUrlDetailModel: Codable {
         self.resource = resource
     }
 }
+
+public struct NRAnonimousModel: Codable {
+    public let code: Int
+    public let userId: Int
+    public let createTime: TimeInterval
+    public let cookie: String
+    
+    public init(code: Int, userId: Int, createTime: TimeInterval, cookie: String) {
+        self.code = code
+        self.userId = userId
+        self.createTime = createTime
+        self.cookie = cookie
+    }
+}
+
