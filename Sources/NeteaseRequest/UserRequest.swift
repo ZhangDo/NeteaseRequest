@@ -6,10 +6,12 @@ import Alamofire
 ///手机密码登录
 /// - Parameter phone: 手机号
 /// - Parameter password: 密码
+/// - Returns: CellPhoneModel
 public func cellPhoneLogin(phone: String, password: String) async throws -> CellPhoneModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.cellPhoneLogin, parameters: ["phone": phone, "password": password])
 }
 ///游客登录
+/// - Returns:NRAnonimousModel
 public func anonimousLogin() async throws -> NRAnonimousModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.anonimousLogin)
 }
