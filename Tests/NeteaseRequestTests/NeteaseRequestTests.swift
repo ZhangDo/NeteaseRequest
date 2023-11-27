@@ -446,9 +446,16 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let anonimousLogin: NRAnonimousModel = try await anonimousLogin()
+//            print(anonimousLogin)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let anonimousLogin: NRAnonimousModel = try await anonimousLogin()
-            print(anonimousLogin)
+            let newLyric: NRLyricModel = try await fetchNewLyric(id: 29814898)
+            print(newLyric)
         } catch {
             print(error)
         }

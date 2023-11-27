@@ -91,6 +91,8 @@ enum NeteaseRequest {
         static let checkAudio = "\(NR_BASEURL)/check/music"
         ///获取歌词
         static let lyric = "\(NR_BASEURL)/lyric"
+        ///获取逐字歌词
+        static let newLyric = "\(NR_BASEURL)/lyric/new"
         ///获取每日推荐歌单
         static let recommendPlayList = "\(NR_BASEURL)/recommend/resource"
         ///获取每日推荐歌曲

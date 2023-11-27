@@ -108,6 +108,12 @@ public func checkAudio(id: Int) async throws -> NRCheckAudioModel {
 public func fetchLyric(id: Int) async throws -> NRLyricModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.lyric, parameters: ["id":id], dataObj: "lrc")
 }
+///获取逐字歌词
+/// - id: 音频 id
+///  - Returns: NRLyricModel
+public func fetchNewLyric(id: Int) async throws -> NRLyricModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.newLyric, parameters: ["id":id], dataObj: "klyric")
+}
 
 /// 获取每日推荐歌单
 
