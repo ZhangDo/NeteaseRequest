@@ -5,7 +5,7 @@ final class NeteaseRequestTests: XCTestCase {
     func testExample() async {
         //腾讯云 serverless 部署
         //TODO:  服务部署请参考 https://github.com/Binaryify/NeteaseCloudMusicApi/blob/master/README.MD
-        //下面是我在腾讯云部署的（免费额度用完后，我会关掉的）
+        //下面是我在腾讯云部署的（不保证一直能用）
         NR_BASEURL = "https://service-ioi18dzi-1259615918.gz.apigw.tencentcs.com/release"
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
