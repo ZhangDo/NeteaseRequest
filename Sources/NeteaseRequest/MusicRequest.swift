@@ -91,8 +91,8 @@ public func fetchPlayListDetail(id: Int, cookie: String) async throws -> NRPlayL
 ///  - limit: 50
 /// - Returns: [NRSongModel]
 ///
-public func fetchPlayListTrackAll(id: Int, limit: Int = 30, offset: Int = 0) async throws -> [NRSongModel]  {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.playListTrackAll, parameters: ["id": id, "limit": limit, "offset": offset], dataObj: "songs")
+public func fetchPlayListTrackAll(cookie: String, id: Int, limit: Int = 30, offset: Int = 0) async throws -> [NRSongModel]  {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.playListTrackAll, parameters: ["cookie": cookie, "id": id, "limit": limit, "offset": offset], dataObj: "songs")
 }
 
 ///检查音频是否可用
