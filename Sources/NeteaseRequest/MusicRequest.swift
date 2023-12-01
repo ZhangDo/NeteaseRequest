@@ -361,8 +361,8 @@ public func fetchDjSublist(cookie: String, limit: Int = 100, offset: Int = 0) as
 ///  - type:  搜索类型；默认为 1 即单曲 , 取值意义 : 1: 单曲, 10: 专辑, 100: 歌手, 1000: 歌单, 1002: 用户, 1004: MV, 1006: 歌词, 1009: 电台, 1014: 视频, 1018:综合, 2000:声音(搜索声音返回字段格式会不一样)
 ///  - limit: 默认 100
 ///  - Returns:NRSearchModel
-public func search(keywords: String, type: Int, limit: Int = 100) async throws -> NRSearchModel {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.search, parameters: ["keywords": keywords, "type": type, "limit": limit], dataObj: "result")
+public func search(cookie: String, keywords: String, type: Int, limit: Int = 100) async throws -> NRSearchModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.search, parameters: ["cookie": cookie, "keywords": keywords, "type": type, "limit": limit], dataObj: "result")
 }
 
 
