@@ -241,15 +241,15 @@ public func fetchArtistDetail(id: Int) async throws -> NRArtistDetailModel {
 /// 获取歌手单曲
 ///  - id: 歌手 id
 /// - Returns: [NRSongModel]
-public func fetchArtistSongs(id: Int) async throws -> [NRSongModel] {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerSong, parameters: ["id": id], dataObj: "hotSongs")
+public func fetchArtistSongs(cookie: String, id: Int) async throws -> [NRSongModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerSong, parameters: ["cookie": cookie, "id": id], dataObj: "hotSongs")
 }
 /// 获取歌手专辑
 ///  - id: 歌手 id
 ///   - limit:
 /// - Returns: [NRAlbumModel]
-public func fetchArtistAlbum(id: Int, limit: Int = 100) async throws -> [NRAlbumModel] {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerAlbum, parameters: ["id": id, "limit": limit], dataObj: "hotAlbums")
+public func fetchArtistAlbum(cookie: String, id: Int, limit: Int = 100) async throws -> [NRAlbumModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.singerAlbum, parameters: ["cookie":cookie, "id": id, "limit": limit], dataObj: "hotAlbums")
 }
 
 /// 获取歌手MV
