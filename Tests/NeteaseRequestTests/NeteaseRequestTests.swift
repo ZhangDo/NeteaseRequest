@@ -255,15 +255,15 @@ final class NeteaseRequestTests: XCTestCase {
         //        let qrCheckModel: NRQRCodeCheckModel = try! await checkQRCode(key: key)
         //        print(qrCheckModel)
         
-                do {
-                    let searchModle: NRSearchModel = try await search(cookie: cookie,keywords: "taylor", type: 100, limit: 100)
-//                    let ids: String = searchModle.videos!.map { $0.vid! }.joined(separator: ",")
-                    print(searchModle.artists as Any)
-//                    let songs:[NRSongModel] = try await fetchSongDetail(ids: ids)
-//                    print(songs)
-                } catch {
-                    print(error)
-                }
+//                do {
+//                    let searchModle: NRSearchModel = try await search(cookie: cookie,keywords: "taylor", type: 100, limit: 100)
+////                    let ids: String = searchModle.videos!.map { $0.vid! }.joined(separator: ",")
+//                    print(searchModle.artists as Any)
+////                    let songs:[NRSongModel] = try await fetchSongDetail(ids: ids)
+////                    print(songs)
+//                } catch {
+//                    print(error)
+//                }
         
         //        do {
         //            let singerDetail: NRArtistDetailModel = try await fetchArtistDetail(id: 3684)
@@ -459,6 +459,13 @@ final class NeteaseRequestTests: XCTestCase {
 //        } catch {
 //            print(error)
 //        }
+        
+        do {
+            let mvSublist: [NRMVSublistModel] = try await fetchMVSublist(cookie: cookie)
+            print(mvSublist)
+        } catch {
+            print(error)
+        }
     }
     
     

@@ -1139,4 +1139,19 @@ public struct NRAnonimousModel: Codable {
         self.cookie = cookie
     }
 }
-
+public struct NRMVSublistModel: Codable {
+    public let type: Int
+    public let title: String
+    public let durationms: Int
+    public let playTime: Int
+    public let coverUrl: String
+    public let vid: String
+    public init(type: Int, title: String, durationms: Int, playTime: Int, coverUrl: String, vid: String) {
+        self.type = type
+        self.title = title
+        self.durationms = durationms
+        self.playTime = playTime
+        self.coverUrl = coverUrl
+        self.vid = vid
+    }
+}

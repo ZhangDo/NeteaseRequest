@@ -431,5 +431,11 @@ public func fetchArtistIntroduce(id: Int, cookie: String) async throws -> NRArti
 public func fetchMlogUrlDetail(id: String) async throws -> NRMlogUrlDetailModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mlogUrl, parameters: ["id": id] ,dataObj: "data")
 }
+/// 获取收藏的 MV 列表
+/// - cookie:
+/// - Returns:[NRMVSublistModel]
+public func fetchMVSublist(cookie: String) async throws -> [NRMVSublistModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.mvSublist, parameters: ["cookie": cookie], dataObj: "data")
+}
 
 

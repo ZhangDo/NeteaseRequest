@@ -141,6 +141,8 @@ enum NeteaseRequest {
         static let albumSublist = "\(NR_BASEURL)/album/sublist"
         ///获取我收藏的播客
         static let djSublist = "\(NR_BASEURL)/dj/sublist"
+        ///获取收藏的 MV
+        static let mvSublist = "\(NR_BASEURL)/mv/sublist"
         ///搜索
         static let search = "\(NR_BASEURL)/search"
         ///收藏/取消收藏歌单
