@@ -460,9 +460,16 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let mvSublist: [NRMVSublistModel] = try await fetchMVSublist(cookie: cookie)
+//            print(mvSublist)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let mvSublist: [NRMVSublistModel] = try await fetchMVSublist(cookie: cookie)
-            print(mvSublist)
+            let userCloudData: [NRUserCloudDataModel] = try await fetchUserCloudData(cookie: cookie)
+            print(userCloudData)
         } catch {
             print(error)
         }

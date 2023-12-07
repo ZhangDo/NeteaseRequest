@@ -161,6 +161,8 @@ enum NeteaseRequest {
         static let likelist = "\(NR_BASEURL)/likelist"
         ///歌手简要百科信息
         static let artistIntroduce = "\(NR_BASEURL)/ugc/artist/get"
+        ///获取云盘数据
+        static let userCloudData = "\(NR_BASEURL)/user/cloud"
     }
     
     

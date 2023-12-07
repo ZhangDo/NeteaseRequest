@@ -1155,3 +1155,17 @@ public struct NRMVSublistModel: Codable {
         self.vid = vid
     }
 }
+
+public struct NRUserCloudDataModel: Codable {
+    public let songId: Int
+    public let songName: String
+    public let addTime: Int
+    public let album: String?
+    public init(songId: Int, songName: String, addTime: Int, album: String?) {
+        self.songId = songId
+        self.songName = songName
+        self.addTime = addTime
+        self.album = album
+    }
+}
+
