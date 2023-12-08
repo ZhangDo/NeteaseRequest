@@ -440,7 +440,7 @@ public func fetchMVSublist(cookie: String) async throws -> [NRMVSublistModel] {
 /// 获取云盘数据
 /// - cookie:
 /// - Returns: [NRUserCloudDataModel]
-public func fetchUserCloudData(cookie: String) async throws -> [NRUserCloudDataModel] {
-    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userCloudData, parameters: ["cookie": cookie], dataObj: "data")
+public func fetchUserCloudData(cookie: String, limit: Int = 200) async throws -> [NRUserCloudDataModel] {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userCloudData, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
 }
 
