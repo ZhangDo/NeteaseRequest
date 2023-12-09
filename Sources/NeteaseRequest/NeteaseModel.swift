@@ -387,10 +387,10 @@ public struct NRArModel: Codable {
 }
 
 public struct NRAlModel: Codable {
-    public var name: String
+    public var name: String?
     public var id: Int
     public var picUrl: String?
-    public init(name: String, id: Int, picUrl: String) {
+    public init(name: String? = nil, id: Int, picUrl: String? = nil) {
         self.name = name
         self.id = id
         self.picUrl = picUrl
@@ -1157,11 +1157,14 @@ public struct NRMVSublistModel: Codable {
 }
 
 public struct NRUserCloudDataModel: Codable {
+    public let simpleSong: NRSongModel
     public let songId: Int
     public let songName: String
     public let addTime: Int
     public let album: String?
-    public init(songId: Int, songName: String, addTime: Int, album: String?) {
+    
+    public init(simpleSong: NRSongModel, songId: Int, songName: String, addTime: Int, album: String?) {
+        self.simpleSong = simpleSong
         self.songId = songId
         self.songName = songName
         self.addTime = addTime
