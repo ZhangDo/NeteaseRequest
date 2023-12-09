@@ -16,6 +16,9 @@
 
 ![预览图](https://github.com/ZhangDo/NeteaseTVDemo/blob/main/images/preview.png)
 
+## 项目动态
+![Alt](https://repobeats.axiom.co/api/embed/8d5572b482c08a0b7476e203bf842cff642de957.svg "Repobeats analytics image")
+
 ## 参考及引用
 [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)  - 网易云音乐 API
 
