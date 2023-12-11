@@ -474,12 +474,20 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let historyDate: NRHistoryDateModel = try await fetchHistoryDate(cookie: cookie)
+//            print(historyDate)
+//        } catch {
+//            print(error)
+//        }
+//
         do {
-            let historyDate: NRHistoryDateModel = try await fetchHistoryDate(cookie: cookie)
-            print(historyDate)
+            let historyRecommendDetail: NRHistoryDateModel = try await fetchHistoryRecommendDetail(cookie: cookie, date: "2023-12-08")
+            print(historyRecommendDetail)
         } catch {
             print(error)
         }
+        
     }
     
     

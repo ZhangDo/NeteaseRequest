@@ -165,6 +165,8 @@ enum NeteaseRequest {
         static let userCloudData = "\(NR_BASEURL)/user/cloud"
         ///获取历史日推可用日期 
         static let historyDate = "\(NR_BASEURL)/history/recommend/songs"
+        ///获取历史日推详情数据
+        static let historyRecommendDetail = "\(NR_BASEURL)/history/recommend/songs/detail"
     }
     
     

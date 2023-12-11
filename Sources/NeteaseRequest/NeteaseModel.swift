@@ -1176,10 +1176,12 @@ public struct NRHistoryDateModel: Codable {
     public let dates: [String]?
     public let description: String?
     public let noHistoryMessage: String?
-    public init(dates: [String]?, description: String?, noHistoryMessage: String?) {
+    public let songs: [NRSongModel]?
+    public init(dates: [String]?, description: String?, noHistoryMessage: String?, songs: [NRSongModel]?) {
         self.dates = dates
         self.description = description
         self.noHistoryMessage = noHistoryMessage
+        self.songs = songs
     }
 }
 

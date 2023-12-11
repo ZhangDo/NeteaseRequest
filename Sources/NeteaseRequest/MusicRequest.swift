@@ -449,3 +449,10 @@ public func fetchUserCloudData(cookie: String, limit: Int = 200) async throws ->
 public func fetchHistoryDate(cookie: String) async throws -> NRHistoryDateModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.historyDate, parameters: ["cookie": cookie], dataObj: "data")
 }
+///获取历史日推详情数据
+/// - date: 日期
+/// - cookie:
+/// - Returns: 
+public func fetchHistoryRecommendDetail(cookie: String, date: String) async throws -> NRHistoryDateModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.historyRecommendDetail, parameters: ["cookie": cookie, "date": date], dataObj: "data")
+}
