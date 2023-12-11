@@ -163,6 +163,8 @@ enum NeteaseRequest {
         static let artistIntroduce = "\(NR_BASEURL)/ugc/artist/get"
         ///获取云盘数据
         static let userCloudData = "\(NR_BASEURL)/user/cloud"
+        ///获取历史日推可用日期 
+        static let historyDate = "\(NR_BASEURL)/history/recommend/songs"
     }
     
     

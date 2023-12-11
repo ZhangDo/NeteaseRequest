@@ -443,4 +443,9 @@ public func fetchMVSublist(cookie: String) async throws -> [NRMVSublistModel] {
 public func fetchUserCloudData(cookie: String, limit: Int = 200) async throws -> [NRUserCloudDataModel] {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.userCloudData, parameters: ["cookie": cookie, "limit": limit], dataObj: "data")
 }
-
+///获取历史日推可用日期
+/// - cookie:
+/// - Returns: NRHistoryDateModel
+public func fetchHistoryDate(cookie: String) async throws -> NRHistoryDateModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.historyDate, parameters: ["cookie": cookie], dataObj: "data")
+}

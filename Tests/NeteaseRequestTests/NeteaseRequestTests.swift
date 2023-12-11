@@ -467,9 +467,16 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
         
+//        do {
+//            let userCloudData: [NRUserCloudDataModel] = try await fetchUserCloudData(cookie: cookie)
+//            print(userCloudData)
+//        } catch {
+//            print(error)
+//        }
+        
         do {
-            let userCloudData: [NRUserCloudDataModel] = try await fetchUserCloudData(cookie: cookie)
-            print(userCloudData)
+            let historyDate: NRHistoryDateModel = try await fetchHistoryDate(cookie: cookie)
+            print(historyDate)
         } catch {
             print(error)
         }

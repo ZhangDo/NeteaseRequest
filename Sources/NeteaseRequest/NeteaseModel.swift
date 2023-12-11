@@ -1172,3 +1172,14 @@ public struct NRUserCloudDataModel: Codable {
     }
 }
 
+public struct NRHistoryDateModel: Codable {
+    public let dates: [String]?
+    public let description: String?
+    public let noHistoryMessage: String?
+    public init(dates: [String]?, description: String?, noHistoryMessage: String?) {
+        self.dates = dates
+        self.description = description
+        self.noHistoryMessage = noHistoryMessage
+    }
+}
+
