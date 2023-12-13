@@ -135,6 +135,8 @@ enum NeteaseRequest {
         static let recentVideo = "\(NR_BASEURL)/record/recent/video"
         ///获取 mlog 播放地址
         static let mlogUrl = "\(NR_BASEURL)/mlog/url"
+        ///获取视频地址
+        static let videoUrl = "\(NR_BASEURL)/video/url"
         ///获取用户歌单
         static let userPlaylist = "\(NR_BASEURL)/user/playlist"
         ///获取我收藏的专辑
@@ -159,6 +161,8 @@ enum NeteaseRequest {
         static let simiArtist = "\(NR_BASEURL)/simi/artist"
         ///喜欢音乐列表
         static let likelist = "\(NR_BASEURL)/likelist"
+        ///喜欢音乐
+        static let likeMusic = "\(NR_BASEURL)/like"
         ///歌手简要百科信息
         static let artistIntroduce = "\(NR_BASEURL)/ugc/artist/get"
         ///获取云盘数据

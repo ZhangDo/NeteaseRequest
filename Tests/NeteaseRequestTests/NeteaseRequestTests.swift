@@ -189,11 +189,11 @@ final class NeteaseRequestTests: XCTestCase {
         //
         //        print(recommendPlayListNames)
         
-        //        let dailySongModel: NRDailySongModel =  try! await fetchDailtSongs(cookie: cookie)
-        //        let filterModels: [String] = dailySongModel.dailySongs.map { model in
-        //            return model.name
-        //        }
-        //        print(filterModels)
+//                let dailySongModel: NRDailySongModel =  try! await fetchDailtSongs(cookie: cookie)
+//                let filterModels: [String] = dailySongModel.dailySongs.map { model in
+//                    return model.name
+//                }
+//                print(filterModels)
         
         //        let personalFMModels: [NRPersonalFMModel] = try! await fetchPersonalFM(cookie: cookie)
         //        let filterModels: [String] = personalFMModels.map { model in
@@ -241,8 +241,8 @@ final class NeteaseRequestTests: XCTestCase {
         //        let djpersonalRecommends = try! await fetchPersonalRecommend(cookie: cookie)
         //        print(djpersonalRecommends)
         
-        //        let djPrograms: [NRProgramModel] = try! await fetchDJProgram(rid: 975555134)
-        //        print(djPrograms)
+//                let djPrograms: [NRProgramModel] = try! await fetchDJProgram(rid: 975555134)
+//                print(djPrograms)
         
         //        let djProgramDetail: NRProgramModel = try! await fetchDJProgramDetail(id: 2518969003)
         //        print(djProgramDetail)
@@ -481,12 +481,18 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
 //
-        do {
-            let historyRecommendDetail: NRHistoryDateModel = try await fetchHistoryRecommendDetail(cookie: cookie, date: "2023-12-08")
-            print(historyRecommendDetail)
-        } catch {
-            print(error)
-        }
+//        do {
+//            let historyRecommendDetail: NRHistoryDateModel = try await fetchHistoryRecommendDetail(cookie: cookie, date: "2023-12-08")
+//            print(historyRecommendDetail)
+//        } catch {
+//            print(error)
+//        }
+        
+        
+//        NeteaseRequest.requestJSON(url: NeteaseRequest.EndPoint.likeMusic, parameters: ["cookie": cookie, "id": 451095267, "like": false]) {
+//            result in
+//            
+//        }
         
     }
     

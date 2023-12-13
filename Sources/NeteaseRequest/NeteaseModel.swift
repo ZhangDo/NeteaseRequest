@@ -580,10 +580,10 @@ public struct NRDailySongModel: Codable {
 public struct NRRecommendReasonModel: Codable {
     public var songId: Int
     public var reason: String
-    public var reasonId: String
+    public var reasonId: String?
     public var targetUrl: String?
     
-    public init(songId: Int, reason: String, reasonId: String, targetUrl: String? = nil) {
+    public init(songId: Int, reason: String, reasonId: String? = nil, targetUrl: String? = nil) {
         self.songId = songId
         self.reason = reason
         self.reasonId = reasonId
@@ -772,7 +772,8 @@ public struct NRProgramModel: Codable {
     public var description: String?
     public var userId: Int?
     public var coverUrl: String?
-    public init(dj: NRDJModel, radio: NRRadioModel, duration: Int, subscribedCount: Int, reward: Bool, mainTrackId: Int, serialNum: Int, listenerCount: Int, name: String, id: Int, createTime: Int, description: String? = nil, userId: Int? = nil, coverUrl: String? = nil) {
+    public var subscribed: Bool
+    public init(dj: NRDJModel, radio: NRRadioModel, duration: Int, subscribedCount: Int, reward: Bool, mainTrackId: Int, serialNum: Int, listenerCount: Int, name: String, id: Int, createTime: Int, description: String? = nil, userId: Int? = nil, coverUrl: String? = nil, subscribed: Bool) {
         self.dj = dj
         self.radio = radio
         self.duration = duration
@@ -787,6 +788,7 @@ public struct NRProgramModel: Codable {
         self.description = description
         self.userId = userId
         self.coverUrl = coverUrl
+        self.subscribed = subscribed
     }
     
 }
