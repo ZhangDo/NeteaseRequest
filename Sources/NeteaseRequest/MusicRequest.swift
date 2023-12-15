@@ -456,3 +456,7 @@ public func fetchHistoryDate(cookie: String) async throws -> NRHistoryDateModel 
 public func fetchHistoryRecommendDetail(cookie: String, date: String) async throws -> NRHistoryDateModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.historyRecommendDetail, parameters: ["cookie": cookie, "date": date], dataObj: "data")
 }
+///喜欢音乐
+public func likeMusic(cookie: String, id: Int, complete: ((Result<JSON, RequestError>) -> Void)? = nil) {
+    NeteaseRequest.requestJSON(url: NeteaseRequest.EndPoint.likeMusic, parameters: ["cookie": cookie, "id": 451095267, "like": false], complete: complete)
+}
