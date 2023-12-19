@@ -183,7 +183,10 @@ enum NeteaseRequest {
                                    noCookie: Bool = false,
                                    complete: ((Result<Data, RequestError>) -> Void)? = nil)
     {
-        
+        var modifiedParameters = parameters
+        let infoDictionary = Bundle.main.infoDictionary!
+        let appDisplayName = infoDictionary["CFBundleDisplayName"]
+        modifiedParameters["channel"] = appDisplayName ?? "OTHER"
         var session = Session.default
         if noCookie {
             session = NoCookieSession.session
@@ -193,7 +196,7 @@ enum NeteaseRequest {
         session.sessionConfiguration.timeoutIntervalForRequest = 90
         session.request(url,
                         method: method,
-                        parameters: parameters,
+                        parameters: modifiedParameters,
                         encoding: URLEncoding.default,
                         headers: [:],
                         interceptor: nil)

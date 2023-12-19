@@ -481,12 +481,12 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
 //
-//        do {
-//            let historyRecommendDetail: NRHistoryDateModel = try await fetchHistoryRecommendDetail(cookie: cookie, date: "2023-12-08")
-//            print(historyRecommendDetail)
-//        } catch {
-//            print(error)
-//        }
+        do {
+            let historyRecommendDetail: NRHistoryDateModel = try await fetchHistoryRecommendDetail(cookie: cookie, date: "2023-12-08")
+            print(historyRecommendDetail)
+        } catch {
+            print(error)
+        }
         
         
 //        NeteaseRequest.requestJSON(url: NeteaseRequest.EndPoint.likeMusic, parameters: ["cookie": cookie, "id": 451095267, "like": false]) {
@@ -494,8 +494,8 @@ final class NeteaseRequestTests: XCTestCase {
 //            
 //        }
         
-        likeMusic(cookie: cookie, id: 451095267, like: false) { result in
-        }
+//        likeMusic(cookie: cookie, id: 451095267, like: false) { result in
+//        }
         
     }
     
