@@ -420,7 +420,7 @@ public struct NRAudioUrlModel: Codable {
         case "jymaster":
             return "超清母带"
         default:
-            return ""
+            return "标准"
         }
     }
     
