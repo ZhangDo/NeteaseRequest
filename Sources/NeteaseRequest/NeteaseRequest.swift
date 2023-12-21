@@ -171,6 +171,8 @@ enum NeteaseRequest {
         static let historyDate = "\(NR_BASEURL)/history/recommend/songs"
         ///获取历史日推详情数据
         static let historyRecommendDetail = "\(NR_BASEURL)/history/recommend/songs/detail"
+        ///听歌打卡
+        static let scrobble = "\(NR_BASEURL)/scrobble"
     }
     
     

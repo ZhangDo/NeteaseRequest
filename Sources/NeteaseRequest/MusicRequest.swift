@@ -458,5 +458,13 @@ public func fetchHistoryRecommendDetail(cookie: String, date: String) async thro
 }
 ///喜欢音乐
 public func likeMusic(cookie: String, id: Int, like: Bool, complete: ((Result<JSON, RequestError>) -> Void)? = nil) {
-    NeteaseRequest.requestJSON(url: NeteaseRequest.EndPoint.likeMusic, parameters: ["cookie": cookie, "id": 451095267, "like": like], complete: complete)
+    NeteaseRequest.requestJSON(url: NeteaseRequest.EndPoint.likeMusic, parameters: ["cookie": cookie, "id": id, "like": like], complete: complete)
+}
+/// 听歌打卡
+/// - cookie:
+/// - id: 歌曲 id
+/// - sourceid: 歌单或专辑 id
+/// - time: 歌曲播放时间,单位为秒
+public func scrobble(cookie: String, id: Int, sourceid: Int, time: Int = 0, complete: ((Result<JSON, RequestError>) -> Void)? = nil) {
+    NeteaseRequest.requestJSON(url: NeteaseRequest.EndPoint.scrobble, parameters: ["cookie": cookie, "id": id, "sourceid": sourceid, "time": time], complete: complete)
 }
