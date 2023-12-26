@@ -468,3 +468,8 @@ public func likeMusic(cookie: String, id: Int, like: Bool, complete: ((Result<JS
 public func scrobble(cookie: String, id: Int, sourceid: Int, time: Int = 0, complete: ((Result<JSON, RequestError>) -> Void)? = nil) {
     NeteaseRequest.requestJSON(url: NeteaseRequest.EndPoint.scrobble, parameters: ["cookie": cookie, "id": id, "sourceid": sourceid, "time": time], complete: complete)
 }
+
+///通用请求
+public func requestData(url: String, parameters: Parameters = [:], complete: ((Result<JSON, RequestError>) -> Void)? = nil) {
+    NeteaseRequest.requestJSON(url: url, parameters: parameters, complete: complete)
+}
