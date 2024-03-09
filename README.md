@@ -4,7 +4,7 @@
 
 ## 提醒
 为了自己的账号安全，请尽量使用自己部署的服务。
-具体部署方法在 [这里](https://github.com/Binaryify/NeteaseCloudMusicApi) 
+具体部署方法在 [这里](https://github.com/ZhangDo/NeteaseCloudMusicApi) 
 
 ## Swift Package Manager
 - File > Swift Packages > Add Package Dependency
