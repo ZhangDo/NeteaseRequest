@@ -74,6 +74,8 @@ public enum NROriginCoverType: Int, Codable {
     case origin = 1
     ///翻唱
     case cover = 2
+    ///
+    case cover3 = 3
 }
 
 public enum NRBannerTargetType: Int, Codable {

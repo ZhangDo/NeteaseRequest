@@ -325,12 +325,12 @@ final class NeteaseRequestTests: XCTestCase {
         //            print(error)
         //        }
         
-        //        do {
-        //            let recentModel: NRRecentPlayModel = try await fetchRecentSong(cookie: cookie)
-        //            print(recentModel.list.first?.data)
-        //        } catch {
-        //            print(error)
-        //        }
+                do {
+                    let recentModel: NRRecentPlayModel = try await fetchRecentSong(cookie: cookie)
+                    print(recentModel.list.first?.data)
+                } catch {
+                    print(error)
+                }
         
         //        do {
         //            let recentModel: NRRecentPlayModel = try await fetchRecentPlaylist(cookie: cookie)
@@ -353,12 +353,12 @@ final class NeteaseRequestTests: XCTestCase {
         //            print(error)
         //        }
         
-                do {
-                    let recentModel: NRRecentPlayModel = try await fetchRecentVoice(cookie: cookie)
-                    print(recentModel.list.first!.data)
-                } catch {
-                    print(error)
-                }
+//                do {
+//                    let recentModel: NRRecentPlayModel = try await fetchRecentVoice(cookie: cookie)
+//                    print(recentModel.list.first!.data)
+//                } catch {
+//                    print(error)
+//                }
         
         
         
@@ -481,12 +481,12 @@ final class NeteaseRequestTests: XCTestCase {
 //            print(error)
 //        }
 //
-        do {
-            let historyRecommendDetail: NRHistoryDateModel = try await fetchHistoryRecommendDetail(cookie: cookie, date: "2023-12-08")
-            print(historyRecommendDetail)
-        } catch {
-            print(error)
-        }
+//        do {
+//            let historyRecommendDetail: NRHistoryDateModel = try await fetchHistoryRecommendDetail(cookie: cookie, date: "2023-12-08")
+//            print(historyRecommendDetail)
+//        } catch {
+//            print(error)
+//        }
         
         
 //        NeteaseRequest.requestJSON(url: NeteaseRequest.EndPoint.likeMusic, parameters: ["cookie": cookie, "id": 451095267, "like": false]) {
