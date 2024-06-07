@@ -65,6 +65,8 @@ public enum NRFee: Int, Codable {
     
     ///非会员可免费播放低音质，会员可播放高音质及下载
     case notVip = 8
+    
+    case unknow = 16
 }
 
 public enum NROriginCoverType: Int, Codable {

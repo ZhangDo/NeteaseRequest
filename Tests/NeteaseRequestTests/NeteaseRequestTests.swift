@@ -162,14 +162,14 @@ final class NeteaseRequestTests: XCTestCase {
         //
         //        print(playListDetail)
         
-        //        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(id: 7780071743)
-        //        let filterModels: [String] = allSongs.map { $0.dt }.map { dt in
-        //            let min = dt / 1000 / 60
-        //            let sec = dt / 1000 % 60
-        //            return String(format: "%d:%02d", min, sec)
-        //        }
-        //
-        //        print(filterModels)
+        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(cookie: cookie, id: 79990514, limit: 100)
+        let filterModels: [String] = allSongs.map { $0.dt! }.map { dt in
+                let min = dt / 1000 / 60
+                let sec = dt / 1000 % 60
+                return String(format: "%d:%02d", min, sec)
+            }
+        
+        print(filterModels)
         //
         //        do {
         //            let checkModel: NRCheckAudioModel = try await checkAudio(id: filterModels.first!)
@@ -325,12 +325,12 @@ final class NeteaseRequestTests: XCTestCase {
         //            print(error)
         //        }
         
-                do {
-                    let recentModel: NRRecentPlayModel = try await fetchRecentSong(cookie: cookie)
-                    print(recentModel.list.first?.data)
-                } catch {
-                    print(error)
-                }
+//                do {
+//                    let recentModel: NRRecentPlayModel = try await fetchRecentSong(cookie: cookie)
+//                    print(recentModel.list.first?.data)
+//                } catch {
+//                    print(error)
+//                }
         
         //        do {
         //            let recentModel: NRRecentPlayModel = try await fetchRecentPlaylist(cookie: cookie)
