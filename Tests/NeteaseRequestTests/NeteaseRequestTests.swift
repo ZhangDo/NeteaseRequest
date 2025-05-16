@@ -18,7 +18,7 @@ final class NeteaseRequestTests: XCTestCase {
         //        } catch {
         //            print(error)
         //        }
-        let cookie: String = UserDefaults.standard.value(forKey: "cookie") as! String
+//        let cookie: String = UserDefaults.standard.value(forKey: "cookie") as! String
         
         //        do {
         //            let profileModel: NRProfileModel = try await fetchAccountInfo(cookie: cookie)
@@ -162,14 +162,14 @@ final class NeteaseRequestTests: XCTestCase {
         //
         //        print(playListDetail)
         
-        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(cookie: cookie, id: 79990514, limit: 100)
-        let filterModels: [String] = allSongs.map { $0.dt! }.map { dt in
-                let min = dt / 1000 / 60
-                let sec = dt / 1000 % 60
-                return String(format: "%d:%02d", min, sec)
-            }
-        
-        print(filterModels)
+//        let allSongs: [NRSongModel] =  try! await fetchPlayListTrackAll(cookie: cookie, id: 79990514, limit: 100)
+//        let filterModels: [String] = allSongs.map { $0.dt! }.map { dt in
+//                let min = dt / 1000 / 60
+//                let sec = dt / 1000 % 60
+//                return String(format: "%d:%02d", min, sec)
+//            }
+//        
+//        print(filterModels)
         //
         //        do {
         //            let checkModel: NRCheckAudioModel = try await checkAudio(id: filterModels.first!)
@@ -496,6 +496,7 @@ final class NeteaseRequestTests: XCTestCase {
         
 //        likeMusic(cookie: cookie, id: 451095267, like: false) { result in
 //        }
+        
         
     }
     

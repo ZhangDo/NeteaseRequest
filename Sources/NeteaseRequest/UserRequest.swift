@@ -38,6 +38,16 @@ public func checkQRCode(key: String) async throws -> NRQRCodeCheckModel {
     return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.qrCheck, parameters: ["key": key,"timestamp":currentTimeStamp,"noCookie": "true"])
 }
 
+/// 手机号登录
+///
+public func loginWithPhone(phone: String, captcha: String) async throws -> NRQRCodeCheckModel {
+    return try await NeteaseRequest.request(url: NeteaseRequest.EndPoint.cellPhoneLogin, parameters: ["phone": phone,"captcha":captcha])
+}
+/// 获取验证码
+public func fetchCaptcha(phone: String, ctcode: String = "86", complete: ((Result<JSON, RequestError>) -> Void)? = nil) {
+    NeteaseRequest.requestJSON(url: NeteaseRequest.EndPoint.fetchCaptcha, parameters: ["phone": phone, "ctcode": ctcode], complete: complete)
+}
+
 //MARK: 获取账号信息
 /// 获取账号信息
 public func fetchAccountInfo(cookie: String) async throws -> NRProfileModel {

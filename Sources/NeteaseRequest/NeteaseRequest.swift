@@ -27,6 +27,8 @@ enum NeteaseRequest {
     enum EndPoint {
         ///手机登录
         static let cellPhoneLogin = "\(NR_BASEURL)/login/cellphone"
+        ///获取验证码
+        static let fetchCaptcha = "\(NR_BASEURL)/captcha/sent"
         ///游客登录
         static let anonimousLogin = "\(NR_BASEURL)/register/anonimous"
         ///二维码 key 生成接口
