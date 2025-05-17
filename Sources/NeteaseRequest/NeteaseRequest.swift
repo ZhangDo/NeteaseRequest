@@ -191,6 +191,7 @@ enum NeteaseRequest {
         let infoDictionary = Bundle.main.infoDictionary!
         let appDisplayName = infoDictionary["CFBundleDisplayName"]
         modifiedParameters["channel"] = appDisplayName ?? "OTHER"
+        modifiedParameters["realIP"] = "116.25.146.177"
         var session = Session.default
         if noCookie {
             session = NoCookieSession.session
